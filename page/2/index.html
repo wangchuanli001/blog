@@ -1,0 +1,583 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sky &amp; Sea - Blue Sky and Sea.</title><meta name="description" content="wangchuanli&#39;s blog"><meta name="keywords" content="博客,blog,王传礼,java,python,大数据"><meta name="author" content="cl,978252321@qq.com"><meta name="copyright" content="cl"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://i.loli.net/2020/06/19/OuDBhHn3GCE6mr7.jpg"><link rel="canonical" href="https://wangchuanli001.github.io/page/2/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta name="baidu-site-verification" content="qKvGNFZPF9"/><meta property="og:type" content="website"><meta property="og:title" content="Sky &amp; Sea"><meta property="og:url" content="https://wangchuanli001.github.io/page/2/"><meta property="og:site_name" content="Sky &amp; Sea"><meta property="og:description" content="wangchuanli&#39;s blog"><meta property="og:image" content="https://i.loli.net/2020/06/19/NbXetJWUwHQEC9z.jpg"><meta property="article:published_time" content="2020-06-23T09:09:10.608Z"><meta property="article:modified_time" content="2020-06-23T09:09:10.609Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39bd6e37a6e70dc030e6a043a642784e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Sky & Sea" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://i.loli.net/2020/06/19/NbXetJWUwHQEC9z.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">33</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">20</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fa fa-picture-o"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://i.loli.net/2020/06/19/npIZ9Dkqfd3gaRS.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Sky &amp; Sea</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fa fa-picture-o"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">Sky &amp; Sea</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/wangchuanli001" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:wangchuanli_@hotamil.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS链接"><i class="fa fa-rss"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/55138.html" title="Radis学习整理">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Radis学习整理"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/55138.html" title="Radis学习整理">Radis学习整理</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-11-27 16:32:53"><i class="far fa-calendar-alt"></i>2018-11-27</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Radis/">Radis</a></span></div><div class="content">Radis缓存技术知识、数据类型、使用场景、数据持久化、事务等
+
+一、概述
+二、数据类型
+STRING
+LIST
+SET
+HASH
+ZSET
+
+
+三、数据结构
+字典
+跳跃表
+
+
+四、使用场景
+计数器
+缓存
+查找表
+消息队列
+会话缓存
+分布式锁实现
+其它
+
+
+五、Redis 与 Memcached
+数据类型
+数据持久化
+分布式
+内存管理机制
+
+
+六、键的过期时间
+七、数据淘汰策略
+八、持久化
+RDB 持久化
+AOF 持久化
+
+
+九、事务
+十、事件
+文件事件
+时间事件
+事件的调度与执行
+
+
+十一、复制
+连接过程
+主从链
+
+
+十二、Sentinel
+十三、分片
+十四、一个简单的论坛系统分析
+文章信息
+点赞功能
+对文章进行排序
+
+
+参考资料
+
+
+
+
+一、概述Redis 是速度非常快的非关系型（NoSQL）内存键值数据库，可以存储键和五种不同类型的值之间的映射。
+键的类型只能为字符串，值支持的五种类型数据类型为：字符串、列表、集合、有序集合、散列表。
+Redis 支持很多特性，例如将内存中的数据持久化到硬盘中，使用复制来扩展读性能，使用分片来扩展写性能。
+二、数据类型
+
+
+数据类型
+可以存储的值 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/35693.html" title="优秀blog订阅">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="优秀blog订阅"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/35693.html" title="优秀blog订阅">优秀blog订阅</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-11-26 19:42:53"><i class="far fa-calendar-alt"></i>2018-11-26</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Star/">Star</a></span></div><div class="content">一些优秀的IT的博客MARKRss-IT人======
+技术博客
+酷壳
+ 网站 : CoolShell.cn Rss地址 : http://coolshell.cn/feed
+
+阮一峰的网络日志  
+ 网站 : ruanyifeng.com/blog  
+ Rss地址 : http://www.ruanyifeng.com/blog/atom.xml
+
+四火的唠叨  
+ 网站 :   raychase.net  
+ Rss地址 : http://www.raychase.net/feed 
+
+云风的 BLOG  
+ 网站 : blog.codingnow.com    
+ Rss地址 : http://blog.codingnow.com/atom.xml
+
+运维与架构  
+ 网站 : nginx.cn  
+ Rss地址 : http://www.nginx.cn/feed
+
+ImportNew  
+ 网站 : importnew.com   
+ Rss地址 : http://www.importnew.com/feed
+
+Styling Android  
+ 网站 : blog.st ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/19479.html" title="Linux操作系统">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux操作系统"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/19479.html" title="Linux操作系统">Linux操作系统</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-11-26 11:52:33"><i class="far fa-calendar-alt"></i>2018-11-26</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="content">Linux相关内容、常用操作、磁盘、分区、文件系统压缩、正则匹配、进程管理等
+
+一、常用操作以及概念
+快捷键
+求助
+关机
+PATH
+sudo
+包管理工具
+发行版
+VIM 三个模式
+GNU
+开源协议
+
+
+二、磁盘
+磁盘接口
+磁盘的文件名
+
+
+三、分区
+分区表
+开机检测程序
+
+
+四、文件系统
+分区与文件系统
+组成
+文件读取
+磁盘碎片
+block
+inode
+目录
+日志
+挂载
+目录配置
+
+
+五、文件
+文件属性
+文件与目录的基本操作
+修改权限
+文件默认权限
+目录的权限
+链接
+获取文件内容
+指令与文件搜索
+
+
+六、压缩与打包
+压缩文件名
+压缩指令
+打包
+
+
+七、Bash
+特性
+变量操作
+指令搜索顺序
+数据流重定向
+
+
+八、管线指令
+提取指令
+排序指令
+双向输出重定向
+字符转换指令
+分区指令
+
+
+九、正则表达式
+grep
+printf
+awk
+
+
+十、进程管理
+查看进程
+进程状态
+SIGCHLD
+wait()
+waitpid()
+孤儿进程
+僵尸进程
+
+
+参考资料
+
+
+
+
+一、常用操作以及概念快捷键
+Tab：命令和文件名补全；
+Ctrl+C：中断正在运行的程序；
+Ctrl+D：结束键盘输入（End  ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/8398.html" title="计算机操作系统">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机操作系统"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/8398.html" title="计算机操作系统">计算机操作系统</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-11-25 18:16:23"><i class="far fa-calendar-alt"></i>2018-11-25</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="content">有关于计算机操作系统的相关知识和内容，进程、内存、死锁、磁盘、编译等一、概述基本特征1. 并发并发是指宏观上在一段时间内能同时运行多个程序，而并行则指同一时刻能运行多个指令。
+并行需要硬件支持，如多流水线或者多处理器。
+操作系统通过引入进程和线程，使得程序能够并发运行。
+2. 共享共享是指系统中的资源可以被多个并发进程共同使用。
+有两种共享方式：互斥共享和同时共享。
+互斥共享的资源称为临界资源，例如打印机等，在同一时间只允许一个进程访问，需要用同步机制来实现对临界资源的访问。
+3. 虚拟虚拟技术把一个物理实体转换为多个逻辑实体。
+主要有两种虚拟技术：时分复用技术和空分复用技术。例如多个进程能在同一个处理器上并发执行使用了时分复用技术，让每个进程轮流占有处理器，每次只执行一小个时间片并快速切换。
+4. 异步异步指进程不是一次性执行完毕，而是走走停停，以不可知的速度向前推进。
+基本功能1. 进程管理进程控制、进程同步、进程通信、死锁处理、处理机调度等。
+2. 内存管理内存分配、地址映射、内存保护与共享、虚拟内存等。
+3. 文件管理文件存储空间的管理、目录管理、文件读写管理和保护等。
+4.  ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/20676.html" title="SQL经典例题学习">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SQL经典例题学习"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/20676.html" title="SQL经典例题学习">SQL经典例题学习</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-11-24 17:45:53"><i class="far fa-calendar-alt"></i>2018-11-24</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/SQL/">SQL</a></span></div><div class="content">SQL方面的经典例题实践。数据库建库语句use fuxi;
+
+CREATE TABLE STUDENT
+(
+  SNO       VARCHAR(3) NOT NULL,
+  SNAME     VARCHAR(4) NOT NULL,
+  SSEX      VARCHAR(2) NOT NULL,
+  SBIRTHDAY DATETIME,
+  CLASS     VARCHAR(5)
+);
+
+CREATE TABLE COURSE
+(
+  CNO   VARCHAR(5)  NOT NULL,
+  CNAME VARCHAR(10) NOT NULL,
+  TNO   VARCHAR(10) NOT NULL
+);
+
+CREATE TABLE SCORE
+(
+  SNO    VARCHAR(3)     NOT NULL,
+  CNO    VARCHAR(5)     NOT NULL,
+  DEGREE NUMERIC(10, 1) NOT NULL
+);
+
+CREATE TABLE TEACHER
+(
+  TNO       VARCHAR(3)  NOT NULL,
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/32011.html" title="SQL学习">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SQL学习"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/32011.html" title="SQL学习">SQL学习</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-11-24 11:21:13"><i class="far fa-calendar-alt"></i>2018-11-24</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/SQL/">SQL</a></span></div><div class="content">sql基础、库表的基本操作、连接、分组、函数、视图、触发器、权限、事务等。。。一、基础模式定义了数据如何存储、存储什么样的数据以及数据如何分解等信息，数据库和表都有模式。
+主键的值不允许修改，也不允许复用（不能使用已经删除的主键值赋给新数据行的主键）。
+SQL（Structured Query Language)，标准 SQL 由 ANSI 标准委员会管理，从而称为 ANSI SQL。各个 DBMS 都有自己的实现，如 PL/SQL、Transact-SQL 等。
+SQL 语句不区分大小写，但是数据库表名、列名和值是否区分依赖于具体的 DBMS 以及配置。
+SQL 支持以下三种注释：
+# 注释SELECT *FROM mytable; -- 注释/* 注释1   注释2 */
+
+数据库创建与使用：
+CREATE DATABASE test;USE test;
+
+二、创建表CREATE TABLE mytable (  id INT NOT NULL AUTO_INCREMENT,  col1 INT NOT NULL DEFAULT 1,  col2 VARCHAR(45) NULL, ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/13105.html" title="正则表达式学习">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="正则表达式学习"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/13105.html" title="正则表达式学习">正则表达式学习</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-11-23 17:37:43"><i class="far fa-calendar-alt"></i>2018-11-23</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a></span></div><div class="content">正则表达式的学习和使用一、概述正则表达式用于文本内容的查找和替换。
+正则表达式内置于其它语言或者软件产品中，它本身不是一种语言或者软件。
+正则表达式在线工具
+二、匹配单个字符.  可以用来匹配任何的单个字符，但是在绝大多数实现里面，不能匹配换行符；
+.  是元字符，表示它有特殊的含义，而不是字符本身的含义。如果需要匹配 . ，那么要用 \ 进行转义，即在 . 前面加上 \ 。
+正则表达式一般是区分大小写的，但是也有些实现是不区分。
+正则表达式 
+nam.
+
+匹配结果 
+My  name  is Zheng.
+三、匹配一组字符[ ]  定义一个字符集合；
+0-9、a-z 定义了一个字符区间，区间使用 ASCII 码来确定，字符区间在 [ ] 中使用。
+-  只有在 [ ] 之间才是元字符，在 [ ] 之外就是一个普通字符；
+^  在 [ ] 中是取非操作。
+应用 
+匹配以 abc 为开头，并且最后一个字母不为数字的字符串：
+正则表达式 
+abc[^0-9]
+
+匹配结果 
+
+abcd 
+abc1
+abc2
+
+四、使用元字符匹配空白字符
+
+
+元字符
+说明
+
+
+
+[\b]
+回退（删除）一个字符 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/54936.html" title="消息队列学习">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="消息队列学习"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/54936.html" title="消息队列学习">消息队列学习</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-11-23 11:23:32"><i class="far fa-calendar-alt"></i>2018-11-23</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">消息队列</a></span></div><div class="content">消息队列模式和它的应用场景、可靠性、同步和异步性一、消息模型点对点消息生产者向消息队列中发送了一个消息之后，只能被一个消费者消费一次。
+  
+
+发布/订阅消息生产者向频道发送一个消息之后，多个消费者可以从该频道订阅到这条消息并消费。
+  
+
+发布与订阅模式和观察者模式有以下不同：
+
+观察者模式中，观察者和主题都知道对方的存在；而在发布与订阅模式中，发布者与订阅者不知道对方的存在，它们之间通过频道进行通信。
+观察者模式是同步的，当事件触发时，主题会去调用观察者的方法，然后等待方法返回；而发布与订阅模式是异步的，发布者向频道发送一个消息之后，就不需要关心订阅者何时去订阅这个消息。
+
+  
+
+参考：
+
+Observer vs Pub-Sub
+消息队列中点对点与发布订阅区别
+
+二、使用场景异步处理发送者将消息发送给消息队列之后，不需要同步等待消息接收者处理完毕，而是立即返回进行其它操作。消息接收者从消息队列中订阅消息之后异步处理。
+例如在注册流程中通常需要发送验证邮件来确保注册用户的身份合法，可以使用消息队列使发送验证邮件的操作异步处理，用户在填写完注册信息之后就可以完成注册，而将发送验证邮件 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/39368.html" title="HTTP相关学习">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTTP相关学习"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/39368.html" title="HTTP相关学习">HTTP相关学习</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-11-23 09:17:52"><i class="far fa-calendar-alt"></i>2018-11-23</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/HTTP/">HTTP</a></span></div><div class="content">Http基础知识、方法、状态码、具体应用等
+一 、基础概念
+URL
+请求和响应报文
+
+
+二、HTTP 方法
+GET
+HEAD
+POST
+PUT
+PATCH
+DELETE
+OPTIONS
+CONNECT
+TRACE
+
+
+三、HTTP 状态码
+1XX 信息
+2XX 成功
+3XX 重定向
+4XX 客户端错误
+5XX 服务器错误
+
+
+四、HTTP 首部
+通用首部字段
+请求首部字段
+响应首部字段
+实体首部字段
+
+
+五、具体应用
+Cookie
+缓存
+连接管理
+内容协商
+内容编码
+范围请求
+分块传输编码
+多部分对象集合
+虚拟主机
+通信数据转发
+
+
+六、HTTPs
+加密
+认证
+完整性保护
+HTTPs 的缺点
+配置 HTTPs
+
+
+七、HTTP/2.0
+HTTP/1.x 缺陷
+二进制分帧层
+服务端推送
+首部压缩
+
+
+八、GET 和 POST 的区别
+作用
+参数
+安全
+幂等性
+可缓存
+XMLHttpRequest
+
+
+九、HTTP/1.0 与 HTTP/1.1 的区别
+参考资料
+
+一 、基础概念URL
+URI（Uniform Resource Identifier，统一资源标识符）
+URL（Uniform ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/64075.html" title="MySQL学习整理">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySQL学习整理"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/64075.html" title="MySQL学习整理">MySQL学习整理</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-11-22 19:42:53"><i class="far fa-calendar-alt"></i>2018-11-22</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/SQL/">SQL</a></span></div><div class="content">mysql学习内容整理、存储引擎、索引、性能优化、切分
+
+一、存储引擎
+InnoDB
+MyISAM
+比较
+
+
+二、数据类型
+整型
+浮点数
+字符串
+时间和日期
+
+
+三、索引
+B+ Tree 原理
+索引分类
+索引的优点
+索引优化
+
+
+四、查询性能优化
+使用 Explain 进行分析
+优化数据访问
+重构查询方式
+
+
+五、切分
+水平切分
+垂直切分
+Sharding 策略
+Sharding 存在的问题及解决方案
+
+
+六、复制
+主从复制
+读写分离
+
+
+参考资料
+
+
+
+
+一、存储引擎InnoDBInnoDB 是 MySQL 默认的事务型存储引擎，只有在需要 InnoDB 不支持的特性时，才考虑使用其它存储引擎。
+实现了四个标准的隔离级别，默认级别是可重复读（REPEATABLE READ）。在可重复读隔离级别下，通过多版本并发控制（MVCC）+ 间隙锁（next-key locking）防止幻影读。
+主索引是聚簇索引，在索引中保存了数据，从而避免直接读取磁盘，因此对查询性能有很大的提升。
+内部做了很多优化，包括从磁盘读取数据时采用的可预测性读、能够加快读操作并且自动创建的自适应哈希索引、能够加速插入 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://i.loli.net/2020/06/19/NbXetJWUwHQEC9z.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">cl</div><div class="author-info__description">wangchuanli's blog</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">33</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">20</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">5</div></a></div></div><div class="card-info-bookmark is-center"><button class="button--animated" id="bookmark-it" title="加入书签"><i class="fas fa-bookmark"></i><span>加入书签</span></button></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/wangchuanli001" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:wangchuanli_@hotamil.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS链接"><i class="fa fa-rss"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/posts/63534.html"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="test" alt="test"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/63534.html" title="test">test</div><time class="aside-post_meta post-meta__date" title="发表于 2020-06-23 14:18:00">2020-06-23</time></div></a></div><div class="aside-recent-post"><a href="/posts/3791.html"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/06/19/NbXetJWUwHQEC9z.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="使用pm2在Linux后台监控hexo运行" alt="使用pm2在Linux后台监控hexo运行"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/3791.html" title="使用pm2在Linux后台监控hexo运行">使用pm2在Linux后台监控hexo运行</div><time class="aside-post_meta post-meta__date" title="发表于 2020-06-23 14:18:00">2020-06-23</time></div></a></div><div class="aside-recent-post"><a href="/posts/56200.html"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/06/19/NbXetJWUwHQEC9z.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Butterfly 文章Demo" alt="Butterfly 文章Demo"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/56200.html" title="Butterfly 文章Demo">Butterfly 文章Demo</div><time class="aside-post_meta post-meta__date" title="发表于 2020-02-02 00:00:00">2020-02-02</time></div></a></div><div class="aside-recent-post"><a href="/posts/16566.html"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="面向对象的思想" alt="面向对象的思想"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/16566.html" title="面向对象的思想">面向对象的思想</div><time class="aside-post_meta post-meta__date" title="发表于 2018-12-02 12:11:21">2018-12-02</time></div></a></div><div class="aside-recent-post"><a href="/posts/19844.html"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="项目构建工具" alt="项目构建工具"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/19844.html" title="项目构建工具">项目构建工具</div><time class="aside-post_meta post-meta__date" title="发表于 2018-12-02 12:11:21">2018-12-02</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/hexo/"><span class="card-category-list-name">hexo</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/pm2/"><span class="card-category-list-name">pm2</span><span class="card-category-list-count">1</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/pm2/hexo/"><span class="card-category-list-name">hexo</span><span class="card-category-list-count">1</span></a></li></ul><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%9B%86%E5%90%88/"><span class="card-category-list-name">集合</span><span class="card-category-list-count">1</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%9B%86%E5%90%88/Hexo/"><span class="card-category-list-name">Hexo</span><span class="card-category-list-count">1</span></a></li></ul>
+                       
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/HTTP/" style="font-size: 16px; color: #999">HTTP</a> <a href="/tags/I-O/" style="font-size: 16px; color: #999">I/O</a> <a href="/tags/Java/" style="font-size: 20.5px; color: #99a5b6">Java</a> <a href="/tags/OO/" style="font-size: 16px; color: #999">OO</a> <a href="/tags/Python/" style="font-size: 16px; color: #999">Python</a> <a href="/tags/Radis/" style="font-size: 16px; color: #999">Radis</a> <a href="/tags/SQL/" style="font-size: 19px; color: #99a1ac">SQL</a> <a href="/tags/Star/" style="font-size: 22px; color: #99a9bf">Star</a> <a href="/tags/Tools/" style="font-size: 16px; color: #999">Tools</a> <a href="/tags/demo/" style="font-size: 16px; color: #999">demo</a> <a href="/tags/git/" style="font-size: 16px; color: #999">git</a> <a href="/tags/hexo/" style="font-size: 16px; color: #999">hexo</a> <a href="/tags/linux/" style="font-size: 16px; color: #999">linux</a> <a href="/tags/pm2/" style="font-size: 16px; color: #999">pm2</a> <a href="/tags/test/" style="font-size: 16px; color: #999">test</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 17.5px; color: #999da3">操作系统</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 16px; color: #999">教程</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 16px; color: #999">正则表达式</a> <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" style="font-size: 16px; color: #999">消息队列</a> <a href="/tags/%E7%BC%93%E5%AD%98/" style="font-size: 16px; color: #999">缓存</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">六月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/02/"><span class="card-archive-list-date">二月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2018/12/"><span class="card-archive-list-date">十二月 2018</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2018/11/"><span class="card-archive-list-date">十一月 2018</span><span class="card-archive-list-count">18</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2018/09/"><span class="card-archive-list-date">九月 2018</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2018/08/"><span class="card-archive-list-date">八月 2018</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2018/07/"><span class="card-archive-list-date">七月 2018</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2018/06/"><span class="card-archive-list-date">六月 2018</span><span class="card-archive-list-count">5</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">33</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已运行时间 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" publish_date="6/7/2018 00:00:00">     </div></div><div class="webinfo-item"><div class="webinfo-site-wordcount-name">本站总字数 :</div><div class="webinfo-site-wordcount">114.9k</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://i.loli.net/2020/06/19/npIZ9Dkqfd3gaRS.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2020 By cl</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener external nofollow noreferrer"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener external nofollow noreferrer"><span>Butterfly</span></a></div><div class="footer_custom_text">Welcome to Here!</div><div class="icp"><a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener external nofollow noreferrer"><img class="icp-icon" src="/img/icp.png"/><span>皖ICP-978252321</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">简</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button id="chat_btn" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener external nofollow noreferrer" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script defer id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleType = function () {
+  loadScript('https://sdk.jinrishici.com/v2/browser/jinrishici.js',function () {
+      var subtitleEffect = true
+      jinrishici.load(function (result) {
+        if (subtitleEffect) {
+          var sub = "今日事&#44;今日毕,Never put off till tomorrow what you can do today".length == 0 ? new Array() : "今日事&#44;今日毕,Never put off till tomorrow what you can do today".split(',')
+          var content = result.data.content
+          var both = sub.unshift(content)
+          var typed = new Typed('#subtitle', {
+            strings: sub,
+            startDelay: 300,
+            typeSpeed: 150,
+            loop: true,
+            backSpeed: 50,
+          })
+        } else {
+          document.getElementById('subtitle').innerHTML = result.data.content
+        }
+      })
+    }
+  )
+}
+window.addEventListener('load', subtitleType)
+</script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script><script>var isChatBtn = true
+
+if (isChatBtn) {
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'wangchuangli-/community',
+    activationElement: '#chat_btn'
+  };
+} else {
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'wangchuangli-/community',
+  };
+
+  if (true) {
+    var gitterBtn = document.getElementsByClassName('gitter-open-chat-button')
+
+    function chatBtnHide () {
+      gitterBtn[0].style.display= 'none'
+    }
+
+    function chatBtnShow () {
+      gitterBtn[0].style.display= 'block'
+    }
+  }
+}
+</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="async" defer="defer"></script></body></html>

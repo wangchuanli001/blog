@@ -1,0 +1,922 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Java资源大全 | Sky &amp; Sea</title><meta name="description" content="Java资源大全中文    java相关工具、相关知识书籍、java相关资源链接 Java资源大全中文版我想很多程序员应该记得 GitHub 上有一个 Awesome - XXX 系列的资源整理。awesome-java 就是 akullpp 发起维护的 Java 资源列表，内容包括：构建工具、数据库、框架、模板、安全、代码分析、日志、第三方库、书籍、Java 站点等等。伯乐在线已经把 aweso"><meta name="keywords" content="Java"><meta name="author" content="cl,978252321@qq.com"><meta name="copyright" content="cl"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://i.loli.net/2020/06/19/OuDBhHn3GCE6mr7.jpg"><link rel="canonical" href="https://wangchuanli001.github.io/posts/56655.html"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta name="baidu-site-verification" content="qKvGNFZPF9"/><meta property="og:type" content="article"><meta property="og:title" content="Java资源大全"><meta property="og:url" content="https://wangchuanli001.github.io/posts/56655.html"><meta property="og:site_name" content="Sky &amp; Sea"><meta property="og:description" content="Java资源大全中文    java相关工具、相关知识书籍、java相关资源链接 Java资源大全中文版我想很多程序员应该记得 GitHub 上有一个 Awesome - XXX 系列的资源整理。awesome-java 就是 akullpp 发起维护的 Java 资源列表，内容包括：构建工具、数据库、框架、模板、安全、代码分析、日志、第三方库、书籍、Java 站点等等。伯乐在线已经把 aweso"><meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><meta property="article:published_time" content="2018-07-02T01:20:20.000Z"><meta property="article:modified_time" content="2020-06-23T09:06:20.426Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="prev" title="MarkDown操作" href="https://wangchuanli001.github.io/posts/32582.html"><link rel="next" title="JAVA--IO知识整理" href="https://wangchuanli001.github.io/posts/42610.html"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5/js/md5.min.js"></script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39bd6e37a6e70dc030e6a043a642784e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Sky & Sea" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://i.loli.net/2020/06/19/NbXetJWUwHQEC9z.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">33</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">20</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fa fa-picture-o"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java资源大全中文版"><span class="toc-number">1.</span> <span class="toc-text">Java资源大全中文版</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#我们要做什么？"><span class="toc-number">1.0.1.</span> <span class="toc-text">我们要做什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何参与本项目？"><span class="toc-number">1.0.2.</span> <span class="toc-text">如何参与本项目？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何为列表贡献新资源？"><span class="toc-number">1.0.3.</span> <span class="toc-text">如何为列表贡献新资源？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本项目的参与者"><span class="toc-number">1.0.4.</span> <span class="toc-text">本项目的参与者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#目录"><span class="toc-number">1.0.5.</span> <span class="toc-text">目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ancients"><span class="toc-number">1.1.</span> <span class="toc-text">古董级工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#build"><span class="toc-number">1.1.1.</span> <span class="toc-text">构建工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bytecode-manipulation"><span class="toc-number">1.1.2.</span> <span class="toc-text">字节码操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cluster-management"><span class="toc-number">1.1.3.</span> <span class="toc-text">集群管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code-analysis"><span class="toc-number">1.1.4.</span> <span class="toc-text">代码分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#compiler-compiler"><span class="toc-number">1.1.5.</span> <span class="toc-text">编译器生成工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#configuration"><span class="toc-number">1.1.6.</span> <span class="toc-text">外部配置工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#constraint-satisfaction-problem-solver"><span class="toc-number">1.1.7.</span> <span class="toc-text">约束满足问题求解程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#continuous-integration"><span class="toc-number">1.1.8.</span> <span class="toc-text">持续集成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#csv"><span class="toc-number">1.1.9.</span> <span class="toc-text">CSV解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#database"><span class="toc-number">1.1.10.</span> <span class="toc-text">数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#data-structures"><span class="toc-number">1.1.11.</span> <span class="toc-text">数据结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#date-and-time"><span class="toc-number">1.1.12.</span> <span class="toc-text">时间日期工具库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dependency-injection"><span class="toc-number">1.1.13.</span> <span class="toc-text">依赖注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#development"><span class="toc-number">1.1.14.</span> <span class="toc-text">开发流程增强工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#distributed-applications"><span class="toc-number">1.1.15.</span> <span class="toc-text">分布式应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#distributed-databases"><span class="toc-number">1.1.16.</span> <span class="toc-text">分布式数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#distribution"><span class="toc-number">1.1.17.</span> <span class="toc-text">发布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#document-processing"><span class="toc-number">1.1.18.</span> <span class="toc-text">文档处理工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#functional-programming"><span class="toc-number">1.1.19.</span> <span class="toc-text">函数式编程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#game-development"><span class="toc-number">1.1.20.</span> <span class="toc-text">游戏开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gui"><span class="toc-number">1.1.21.</span> <span class="toc-text">GUI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#high-performance"><span class="toc-number">1.1.22.</span> <span class="toc-text">高性能计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ide"><span class="toc-number">1.1.23.</span> <span class="toc-text">IDE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#imagery"><span class="toc-number">1.1.24.</span> <span class="toc-text">图像处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#json"><span class="toc-number">1.1.25.</span> <span class="toc-text">JSON</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jvm-and-jdk"><span class="toc-number">1.1.26.</span> <span class="toc-text">JVM与JDK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#languages"><span class="toc-number">1.1.27.</span> <span class="toc-text">基于JVM的语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#logging"><span class="toc-number">1.1.28.</span> <span class="toc-text">日志</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#machine-learning"><span class="toc-number">1.1.29.</span> <span class="toc-text">机器学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#messaging"><span class="toc-number">1.1.30.</span> <span class="toc-text">消息传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#miscellaneous"><span class="toc-number">1.1.31.</span> <span class="toc-text">杂项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#monitoring"><span class="toc-number">1.1.32.</span> <span class="toc-text">应用监控工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#native"><span class="toc-number">1.1.33.</span> <span class="toc-text">原生开发库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#natural-language-processing"><span class="toc-number">1.1.34.</span> <span class="toc-text">自然语言处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#networking"><span class="toc-number">1.1.35.</span> <span class="toc-text">网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orm"><span class="toc-number">1.1.36.</span> <span class="toc-text">ORM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pdf"><span class="toc-number">1.1.37.</span> <span class="toc-text">PDF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#performance-analysis"><span class="toc-number">1.1.38.</span> <span class="toc-text">性能分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reactive-libraries"><span class="toc-number">1.1.39.</span> <span class="toc-text">响应式开发库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rest-frameworks"><span class="toc-number">1.1.40.</span> <span class="toc-text">REST框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#science"><span class="toc-number">1.1.41.</span> <span class="toc-text">科学计算与分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#search"><span class="toc-number">1.1.42.</span> <span class="toc-text">搜索引擎</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#security"><span class="toc-number">1.1.43.</span> <span class="toc-text">安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#serialization"><span class="toc-number">1.1.44.</span> <span class="toc-text">序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#server"><span class="toc-number">1.1.45.</span> <span class="toc-text">应用服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#template-engine"><span class="toc-number">1.1.46.</span> <span class="toc-text">模板引擎</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#testing"><span class="toc-number">1.1.47.</span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#utility"><span class="toc-number">1.1.48.</span> <span class="toc-text">通用工具库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-crawling"><span class="toc-number">1.1.49.</span> <span class="toc-text">网络爬虫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-frameworks"><span class="toc-number">1.1.50.</span> <span class="toc-text">Web框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Business-Process-Management"><span class="toc-number">1.1.51.</span> <span class="toc-text">业务流程管理套件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#resources"><span class="toc-number">1.2.</span> <span class="toc-text">资源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#communities"><span class="toc-number">1.2.1.</span> <span class="toc-text">社区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#influential-books"><span class="toc-number">1.2.2.</span> <span class="toc-text">有影响力的书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#podcasts"><span class="toc-number">1.2.3.</span> <span class="toc-text">播客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#weibo-weixin"><span class="toc-number">1.2.4.</span> <span class="toc-text">微博、微信公众号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#twitter"><span class="toc-number">1.2.5.</span> <span class="toc-text">Twitter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#weibo-weixin"><span class="toc-number">1.2.6.</span> <span class="toc-text">微博、微信公众号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#websites"><span class="toc-number">1.2.7.</span> <span class="toc-text">知名网站</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#"><span class="toc-number">1.2.7.1.</span> <span class="toc-text">中文站点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#"><span class="toc-number">1.2.7.2.</span> <span class="toc-text">英文站点</span></a></li></ol></li></ol></li></ol></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Sky &amp; Sea</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fa fa-picture-o"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Java资源大全</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-07-02 09:20:20"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2018-07-02</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history fa-fw"></i> 更新于 2020-06-23</span></time></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">8.6k</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 28 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><pre><code>Java资源大全中文    java相关工具、相关知识书籍、java相关资源链接</code></pre><hr>
+<h1 id="Java资源大全中文版"><a href="#Java资源大全中文版" class="headerlink" title="Java资源大全中文版"></a>Java资源大全中文版</h1><p>我想很多程序员应该记得 GitHub 上有一个 Awesome - XXX 系列的资源整理。<a href="https://github.com/akullpp/awesome-java" target="_blank" rel="noopener external nofollow noreferrer">awesome-java</a> 就是 akullpp 发起维护的 Java 资源列表，内容包括：构建工具、数据库、框架、模板、安全、代码分析、日志、第三方库、书籍、Java 站点等等。伯乐在线已经把 awesome-java 资源列表翻成中文后发布于 <a href="http://www.importnew.com/14429.html" target="_blank" rel="noopener external nofollow noreferrer">ImportNew</a>。</p>
+<p>Awesome 系列虽然挺全，但基本只对收录的资源做了极为简要的介绍，如果有更详细的中文介绍，对相应开发者的帮助会更大。这也是我们发起这个开源项目的初衷。</p>
+<hr>
+<h3 id="我们要做什么？"><a href="#我们要做什么？" class="headerlink" title="我们要做什么？"></a>我们要做什么？</h3><ul>
+<li>基于 awesome-java 资源列表，我们将对各个资源项进行编译整理。</li>
+<li>整理后的内容，将收录在<a href="http://hao.jobbole.com/" target="_blank" rel="noopener external nofollow noreferrer">伯乐在线资源频道</a>。可参考已整理的内容：<ul>
+<li>《<a href="http://hao.jobbole.com/owner/" target="_blank" rel="noopener external nofollow noreferrer">OWNER：Java配置文件解决方案</a>》</li>
+<li>《<a href="http://hao.jobbole.com/spring-boot/" target="_blank" rel="noopener external nofollow noreferrer">Spring Boot：简化Spring应用初始搭建以及开发过程</a>》</li>
+<li>《<a href="http://hao.jobbole.com/sonarqube/" target="_blank" rel="noopener external nofollow noreferrer">SonarQube：开源的代码质量管理工具</a>》</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="如何参与本项目？"><a href="#如何参与本项目？" class="headerlink" title="如何参与本项目？"></a>如何参与本项目？</h3><!-- 从下面的目录来看，本项目的工作量小不了，所以非常期待能有更多程序员一起来参与。
+
+不过加入前，有几个小要求：
+
+* 英文还不错，能读懂英文并用自己的话复述；
+* 在用 Java；
+
+如有兴趣，请加 QQ：50872495。加 Q 时请注明「Java大全」 -->
+
+<hr>
+<h3 id="如何为列表贡献新资源？"><a href="#如何为列表贡献新资源？" class="headerlink" title="如何为列表贡献新资源？"></a>如何为列表贡献新资源？</h3><p>欢迎大家为列表贡献高质量的新资源，提交PR时请参照以下要求：</p>
+<ul>
+<li>请确保推荐的资源自己使用过</li>
+<li>提交PR时请注明推荐理由</li>
+</ul>
+<p>资源列表管理收到PR请求后，会定期（每周）在微博转发本周提交的PR列表，并在微博上面听取使用过这些资源的意见。确认通过后，会加入资源大全。</p>
+<p>感谢您的贡献！</p>
+<hr>
+<h3 id="本项目的参与者"><a href="#本项目的参与者" class="headerlink" title="本项目的参与者"></a>本项目的参与者</h3><ul>
+<li><p>维护者：<a href="https://github.com/tangyouhua" target="_blank" rel="noopener external nofollow noreferrer">tangyouhua</a></p>
+</li>
+<li><p>贡献者：<a href="https://github.com/tangyouhua" target="_blank" rel="noopener external nofollow noreferrer">tangyouhua</a>、<a href="https://github.com/kingzone" target="_blank" rel="noopener external nofollow noreferrer">kingzone</a>、<a href="https://github.com/llhua2329" target="_blank" rel="noopener external nofollow noreferrer">llhua2329</a>、<a href="https://github.com/BadCoderChou" target="_blank" rel="noopener external nofollow noreferrer">BadCoderChou</a>、<a href="http://www.jobbole.com/members/anankun/" target="_blank" rel="noopener external nofollow noreferrer">anankun</a>、<a href="http://www.jobbole.com/members/jianghehe/" target="_blank" rel="noopener external nofollow noreferrer">贺贺</a>、<a href="http://www.jobbole.com/members/petra/" target="_blank" rel="noopener external nofollow noreferrer">大彭</a>、<a href="https://github.com/wing00yf/" target="_blank" rel="noopener external nofollow noreferrer">superXiaoFan</a>、<a href="http://www.jobbole.com/members/3951356/" target="_blank" rel="noopener external nofollow noreferrer">javayrf</a>、<a href="http://www.jobbole.com/members/John%20Smith/" target="_blank" rel="noopener external nofollow noreferrer">John Smith</a>、<a href="http://www.jobbole.com/members/jaler/" target="_blank" rel="noopener external nofollow noreferrer">Jaler</a>、<a href="http://www.jobbole.com/members/fdconan/" target="_blank" rel="noopener external nofollow noreferrer">JM</a>、<a href="http://www.jobbole.com/members/zy124348985/" target="_blank" rel="noopener external nofollow noreferrer">dreamkidd</a>、<a href="http://www.jobbole.com/members/cheenlie" target="_blank" rel="noopener external nofollow noreferrer">cheenlie</a>、<a href="http://www.jobbole.com/members/zhangQian1991" target="_blank" rel="noopener external nofollow noreferrer">zhangQian1991</a>、<a href="http://www.jobbole.com/members/wt726553124/" target="_blank" rel="noopener external nofollow noreferrer">王涛</a>、<a href="http://www.jobbole.com/members/xun_cui" target="_blank" rel="noopener external nofollow noreferrer">马</a>、<a href="http://www.jobbole.com/members/xuhf_1988/" target="_blank" rel="noopener external nofollow noreferrer">vvkee</a>、<a href="http://www.jobbole.com/members/yangxy81118" target="_blank" rel="noopener external nofollow noreferrer">凝枫</a>、<a href="https://github.com/luhaixun" target="_blank" rel="noopener external nofollow noreferrer">haixunlu</a>、<a href="http://www.jobbole.com/members/milly/" target="_blank" rel="noopener external nofollow noreferrer">milly</a>、<a href="http://www.jobbole.com/members/xuhf_1988/" target="_blank" rel="noopener external nofollow noreferrer">Hodur</a>、<a href="http://www.jobbole.com/members/FakeHank" target="_blank" rel="noopener external nofollow noreferrer">FakeHank</a>、<a href="http://www.jobbole.com/members/%E8%BF%9E%E4%B9%90/" target="_blank" rel="noopener external nofollow noreferrer">连乐</a>、<a href="http://www.jobbole.com/members/UncleTim/" target="_blank" rel="noopener external nofollow noreferrer">UncleTim</a>、<a href="http://www.jobbole.com/members/sunbiaobiao" target="_blank" rel="noopener external nofollow noreferrer">sunbiaobiao</a>、<a href="http://www.jobbole.com/members/wx2702327993/" target="_blank" rel="noopener external nofollow noreferrer">zhiguo</a>、<a href="http://www.jobbole.com/members/zhongjianno1/" target="_blank" rel="noopener external nofollow noreferrer">光光头去打酱油</a>、<a href="http://www.jobbole.com/members/TonyAaron/" target="_blank" rel="noopener external nofollow noreferrer">云中游</a>、<a href="http://www.jobbole.com/members/zemo/" target="_blank" rel="noopener external nofollow noreferrer">Zemo</a>、<a href="https://github.com/sdcuike" target="_blank" rel="noopener external nofollow noreferrer">sdcuike</a>、<a href="https://github.com/danielwii" target="_blank" rel="noopener external nofollow noreferrer">danielwii</a>、<a href="http://www.jobbole.com/members/q1118024125/" target="_blank" rel="noopener external nofollow noreferrer">oneDay</a>、<a href="https://github.com/dfghj44444" target="_blank" rel="noopener external nofollow noreferrer">邢敏</a>、<a href="https://github.com/heikehuan" target="_blank" rel="noopener external nofollow noreferrer">heikehuan</a>、<a href="https://github.com/fgcui1204" target="_blank" rel="noopener external nofollow noreferrer">fgcui1204</a>、<a href="https://github.com/wenxueliu" target="_blank" rel="noopener external nofollow noreferrer">wenxueliu</a>、<a href="https://github.com/node" target="_blank" rel="noopener external nofollow noreferrer">Gentle Yang</a>、<a href="http://hao.jobbole.com/author/huangxiaofei/" target="_blank" rel="noopener external nofollow noreferrer">黄小非</a>、<a href="http://www.jobbole.com/members/wtgn1m1/" target="_blank" rel="noopener external nofollow noreferrer">wangtg</a>、<a href="http://www.jobbole.com/members/2937134480/" target="_blank" rel="noopener external nofollow noreferrer">百焱</a>、<a href="http://www.jobbole.com/members/2480130384/" target="_blank" rel="noopener external nofollow noreferrer">胡不GUI</a>、<a href="http://www.jobbole.com/members/mtHzm/" target="_blank" rel="noopener external nofollow noreferrer">Another_mt</a>、<a href="http://www.jobbole.com/members/adonis/" target="_blank" rel="noopener external nofollow noreferrer">Rainbow</a>、<a href="http://www.jobbole.com/members/menghuanqiqi" target="_blank" rel="noopener external nofollow noreferrer">super^糖</a>、<a href="http://www.jobbole.com/members/huangyuliang/" target="_blank" rel="noopener external nofollow noreferrer">黄余粮</a>、<a href="http://www.jobbole.com/members/sunbojian100/" target="_blank" rel="noopener external nofollow noreferrer">Sun</a>、<a href="https://github.com/SoberChina" target="_blank" rel="noopener external nofollow noreferrer">李伟高</a>、<a href="https://github.com/q977734161" target="_blank" rel="noopener external nofollow noreferrer">lixiaobao</a>、You</p>
+</li>
+</ul>
+<p>注：名单不分排名，不定期补充更新</p>
+<hr>
+<!-- ### 奖励计划
+
+虽然奖励可能并不是你加入的主要原因，但还是有必要提一下：
+
+* 整理超过 20 个资源后，可在伯乐在线上开通打赏；
+* 每整理 20 个资源，有机会获得技术书籍或各种有意思的创意、极客产品；
+* [奖励详情](http://hao.jobbole.com/rewards/)
+
+* * * -->
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li><a href="#awesome-java-cn">Java资源大全中文版</a><ul>
+<li><a href="#ancients">古董级工具</a></li>
+<li><a href="#build">构建工具</a></li>
+<li><a href="#bytecode-manipulation">字节码操作</a></li>
+<li><a href="#cluster-management">集群管理</a></li>
+<li><a href="#code-analysis">代码分析</a></li>
+<li><a href="#compiler-compiler">编译器生成工具</a></li>
+<li><a href="#configuration">外部配置工具</a></li>
+<li><a href="#constraint-satisfaction-problem-solver">约束满足问题求解程序</a></li>
+<li><a href="#continuous-integration">持续集成</a></li>
+<li><a href="#csv">CSV解析</a></li>
+<li><a href="#data-structures">数据结构</a></li>
+<li><a href="#database">数据库</a></li>
+<li><a href="#date-and-time">时间日期工具库</a></li>
+<li><a href="#dependency-injection">依赖注入</a></li>
+<li><a href="#development">开发流程增强工具</a></li>
+<li><a href="#distributed-applications">分布式应用</a></li>
+<li><a href="#distributed-databases">分布式数据库</a></li>
+<li><a href="#distribution">发布</a></li>
+<li><a href="#document-processing">文档处理工具</a></li>
+<li><a href="#functional-programming">函数式编程</a></li>
+<li><a href="#game-development">游戏开发</a></li>
+<li><a href="#gui">GUI</a></li>
+<li><a href="#high-performance">高性能计算</a></li>
+<li><a href="#ide">IDE</a></li>
+<li><a href="#imagery">图像处理</a></li>
+<li><a href="#json">JSON</a></li>
+<li><a href="#jvm-and-jdk">JVM与JDK</a></li>
+<li><a href="#languages">基于JVM的语言</a></li>
+<li><a href="#logging">日志</a></li>
+<li><a href="#machine-learning">机器学习</a></li>
+<li><a href="#messaging">消息传递</a></li>
+<li><a href="#miscellaneous">杂项</a></li>
+<li><a href="#monitoring">应用监控工具</a></li>
+<li><a href="#native">原生开发库</a></li>
+<li><a href="#natural-language-processing">自然语言处理</a></li>
+<li><a href="#networking">网络</a></li>
+<li><a href="#orm">ORM</a></li>
+<li><a href="#pdf">PDF</a></li>
+<li><a href="#performance-analysis">性能分析</a></li>
+<li><a href="#reactive-libraries">响应式开发库</a></li>
+<li><a href="#rest-frameworks">REST框架</a></li>
+<li><a href="#science">科学计算与分析</a></li>
+<li><a href="#search">搜索引擎</a></li>
+<li><a href="#security">安全</a></li>
+<li><a href="#serialization">序列化</a></li>
+<li><a href="#server">应用服务器</a></li>
+<li><a href="#template-engine">模板引擎</a></li>
+<li><a href="#testing">测试</a></li>
+<li><a href="#utility">通用工具库</a></li>
+<li><a href="#web-crawling">网络爬虫</a></li>
+<li><a href="#web-frameworks">Web框架</a></li>
+<li><a href="#Business-Process-Management">业务流程管理套件</a></li>
+</ul>
+</li>
+<li><a href="#resources">资源</a><ul>
+<li><a href="#communities">社区</a></li>
+<li><a href="#influential-books">有影响力的书</a></li>
+<li><a href="#podcasts">播客</a></li>
+<li><a href="#weibo-weixin">微博、微信公众号</a></li>
+<li><a href="#twitter">Twitter</a></li>
+<li><a href="#websites">知名网站</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="ancients">古董级工具</h2>
+
+<p><em>这些工具伴随着Java一起出现，在各自辉煌之后还在一直使用。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/apache-ant/" target="_blank" rel="noopener external nofollow noreferrer">Apache Ant</a>：基于XML的构建管理工具。<a href="http://ant.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/cglib/" target="_blank" rel="noopener external nofollow noreferrer">cglib</a>：字节码生成库。<a href="https://github.com/cglib/cglib" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/glassfish/" target="_blank" rel="noopener external nofollow noreferrer">GlassFish</a>：应用服务器，由Oracle赞助支持的Java EE参考实现。<a href="https://glassfish.java.net/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/hudson/" target="_blank" rel="noopener external nofollow noreferrer">Hudson</a>：持续集成服务器，目前仍在活跃开发。<a href="http://hudson-ci.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/javaserver-faces/" target="_blank" rel="noopener external nofollow noreferrer">JavaServer Faces</a>：Mojarra是JSF标准的一个开源实现，由Oracle开发。<a href="https://javaserverfaces.java.net/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/javaserver-pages/" target="_blank" rel="noopener external nofollow noreferrer">JavaServer Pages</a>：支持自定义标签库的网站通用模板库。<a href="https://jsp.java.net/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/liquibase/" target="_blank" rel="noopener external nofollow noreferrer">Liquibase</a>：与具体数据库独立的追踪、管理和应用数据库Scheme变化的工具。<a href="http://www.liquibase.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="build">构建工具</h3>
+
+<p><em>构建及应用依赖关系处理工具。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/maven/" target="_blank" rel="noopener external nofollow noreferrer">Apache Maven</a>：Maven是一款声明式构建及依赖管理工具，采用约定优于配置方式进行管理。相对Apache Ant更推荐使用Maven，前者采用了过程式管理，维护相对困难。<a href="http://maven.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/bazel/" target="_blank" rel="noopener external nofollow noreferrer">Bazel</a>：来自Google的构建工具，可以快速、可靠地构建代码。<a href="http://bazel.io" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/gradle/" target="_blank" rel="noopener external nofollow noreferrer">Gradle</a>：使用Groovy（非XML）进行增量构建，可以很好地与Maven依赖管理配合工作。<a href="http://gradle.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/buck/" target="_blank" rel="noopener external nofollow noreferrer">Buck</a>：Facebook构建工具。<a href="https://buckbuild.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="bytecode-manipulation">字节码操作</h3>
+
+<p><em>编程方式操作字节码的开发库。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/asm/" target="_blank" rel="noopener external nofollow noreferrer">ASM</a>：通用底层字节码操作和分析开发库。<a href="http://asm.ow2.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/byte-buddy/" target="_blank" rel="noopener external nofollow noreferrer">Byte Buddy</a>：使用流式API进一步简化字节码生成。<a href="http://bytebuddy.net/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/byteman/" target="_blank" rel="noopener external nofollow noreferrer">Byteman</a>：在运行时通过DSL（规则）操作字节码进行测试和故障排除。<a href="http://byteman.jboss.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/javassist/" target="_blank" rel="noopener external nofollow noreferrer">Javassist</a>：一个简化字节码编辑尝试。<a href="http://jboss-javassist.github.io/javassist" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="cluster-management">集群管理</h3>
+
+<p><em>在集群内动态管理应用程序的框架。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/apache-aurora/" target="_blank" rel="noopener external nofollow noreferrer">Apache Aurora</a>：Apache Aurora是一个Mesos框架，用于长时间运行服务和定时任务（cron job）。<a href="http://aurora.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/singularity/" target="_blank" rel="noopener external nofollow noreferrer">Singularity</a>：Singularity是一个Mesos框架，方便部署和操作。它支持Web Service、后台运行、调度作业和一次性任务。<a href="http://getsingularity.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="code-analysis">代码分析</h3>
+
+<p><em>测量代码指标和质量工具。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/checkstyle/" target="_blank" rel="noopener external nofollow noreferrer">Checkstyle</a>：代码编写规范和标准静态分析工具。<a href="https://github.com/checkstyle/checkstyle" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/error-prone/" target="_blank" rel="noopener external nofollow noreferrer">Error Prone</a>：将常见编程错误作为运行时错误报告。<a href="https://github.com/google/error-prone" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>FindBugs：通过字节码静态分析查找隐藏bug。<a href="http://findbugs.sourceforge.net/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jqassistant/" target="_blank" rel="noopener external nofollow noreferrer">jQAssistant</a>：使用基于Neo4J查询语言进行代码静态分析。<a href="http://jqassistant.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/pmd/" target="_blank" rel="noopener external nofollow noreferrer">PMD</a>：对源代码分析查找不良的编程习惯。<a href="https://github.com/pmd/pmd" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/sonarqube/" target="_blank" rel="noopener external nofollow noreferrer">SonarQube</a>：通过插件集成其它分析组件，对过去一段时间内的数据进行统计。<a href="http://www.sonarqube.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="compiler-compiler">编译器生成工具</h3>
+
+<p><em>用来创建解析器、解释器或编译器的框架。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/antlr/" target="_blank" rel="noopener external nofollow noreferrer">ANTLR</a>：复杂的全功能自顶向下解析框架。<a href="http://www.antlr.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="JavaCC：Java语法解析器生成工具">JavaCC</a>：JavaCC是更加专门的轻量级工具，易于上手且支持语法超前预测。<a href="https://javacc.java.net/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="configuration">外部配置工具</h3>
+
+<p><em>支持外部配置的开发库。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/config/" target="_blank" rel="noopener external nofollow noreferrer">config</a>：针对JVM语言的配置库。<a href="https://github.com/typesafehub/config" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/owner/" target="_blank" rel="noopener external nofollow noreferrer">owner</a>：减少冗余配置属性。<a href="https://github.com/lviggiano/owner" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="constraint-satisfaction-problem-solver">约束满足问题求解程序</h3>
+
+<p><em>帮助解决约束满足问题的开发库。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/choco/" target="_blank" rel="noopener external nofollow noreferrer">Choco</a>：可直接使用的约束满足问题求解程序，使用了约束规划技术。<a href="http://choco-solver.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jacop/" target="_blank" rel="noopener external nofollow noreferrer">JaCoP</a>：为FlatZinc语言提供了一个接口，可以执行MiniZinc模型。<a href="https://github.com/radsz/jacop/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/optaplanner/" target="_blank" rel="noopener external nofollow noreferrer">OptaPlanner</a>：业务规划与资源调度优化求解程序。<a href="http://www.optaplanner.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/sat4j/" target="_blank" rel="noopener external nofollow noreferrer">Sat4J</a>：逻辑代数与优化问题最先进的求解程序。<a href="http://www.sat4j.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="continuous-integration">持续集成</h3>
+
+<ul>
+<li><a href="http://hao.jobbole.com/bamboo/" target="_blank" rel="noopener external nofollow noreferrer">Bamboo</a>：Atlassian解决方案，可以很好地集成Atlassian的其他产品。可以选择开源许可，也可以购买商业版。<a href="https://www.atlassian.com/software/bamboo" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>CircleCI：提供托管服务，可以免费试用。<a href="https://circleci.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/codeship/" target="_blank" rel="noopener external nofollow noreferrer">Codeship</a>：提供托管服务，提供有限的免费模式。<a href="https://codeship.com/features" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="hao.jobbole.com/fabric8/">fabric8</a>：容器集成平台。<a href="http://fabric8.io/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/go/" target="_blank" rel="noopener external nofollow noreferrer">Go</a>：ThoughtWork开源解决方案。<a href="https://www.gocd.io/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jenkins/" target="_blank" rel="noopener external nofollow noreferrer">Jenkins</a>：支持基于服务器的部署服务。<a href="http://jenkins-ci.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/teamcity/" target="_blank" rel="noopener external nofollow noreferrer">TeamCity</a>：JetBrain的持续集成解决方案，有免费版。<a href="http://www.jetbrains.com/teamcity/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/travis/" target="_blank" rel="noopener external nofollow noreferrer">Travis</a>：通常用作开源项目的托管服务。<a href="https://travis-ci.org" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/buildkite/" target="_blank" rel="noopener external nofollow noreferrer">Buildkite</a>: 持续集成工具，用简单的脚本就能设置pipeline，而且能快速构建，可以免费试用。<a href="https://buildkite.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="csv">CSV解析</h3>
+
+<p><em>简化CSV数据读写的框架与开发库</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/univocity-parsers/" target="_blank" rel="noopener external nofollow noreferrer">uniVocity-parsers</a>：速度最快功能最全的CSV开发库之一，同时支持TSV与固定宽度记录的读写。<a href="https://github.com/uniVocity/univocity-parsers" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="database">数据库</h3>
+
+<p><em>简化数据库交互的相关工具。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/apache-phoenix/" target="_blank" rel="noopener external nofollow noreferrer">Apache Phoenix</a>：HBase针对低延时应用程序的高性能关系数据库层。<a href="http://phoenix.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/crate/" target="_blank" rel="noopener external nofollow noreferrer">Crate</a>：实现了数据同步、分片、缩放、复制的分布式数据存储。除此之外还可以使用基于SQL的语法跨集群查询。<a href="https://crate.io/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/flyway/" target="_blank" rel="noopener external nofollow noreferrer">Flyway</a>：简单的数据库迁移工具。<a href="http://flywaydb.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/h2/" target="_blank" rel="noopener external nofollow noreferrer">H2</a>：小型SQL数据库，以可以作为内存数据库使用著称。<a href="http://h2database.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/hikaricp/" target="_blank" rel="noopener external nofollow noreferrer">HikariCP</a>：高性能JDBC连接工具。<a href="https://github.com/brettwooldridge/HikariCP" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jdbi/" target="_blank" rel="noopener external nofollow noreferrer">JDBI</a>：便捷的JDBC抽象。<a href="http://jdbi.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jooq/" target="_blank" rel="noopener external nofollow noreferrer">jOOQ</a>：为SQL schema生成typesafe代码。<a href="http://www.jooq.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/mapdb/" target="_blank" rel="noopener external nofollow noreferrer">MapDB</a>：以磁盘或堆内存中并发集合为基础的嵌入式数据库引擎。<a href="http://www.mapdb.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/presto/" target="_blank" rel="noopener external nofollow noreferrer">Presto</a>：针对大数据的分布式SQL查询引擎。<a href="https://github.com/facebook/presto" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/querydsl/" target="_blank" rel="noopener external nofollow noreferrer">Querydsl</a>：Typesafe统一查询。<a href="http://www.querydsl.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="data-structures">数据结构</h3>
+
+<ul>
+<li><a href="http://hao.jobbole.com/apache-parquet/" target="_blank" rel="noopener external nofollow noreferrer">Apache Parquet</a>：Google Dremel论文中发布的基于组装算法的列式（Columnar）存储格式。<a href="http://parquet.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/protobuf/" target="_blank" rel="noopener external nofollow noreferrer">Protobuf</a>：Google数据交换格式。<a href="https://github.com/google/protobuf" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/sbe/" target="_blank" rel="noopener external nofollow noreferrer">SBE</a>：简单二进制编码，是最快速的消息格式之一。<a href="https://github.com/real-logic/simple-binary-encoding" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/wire/" target="_blank" rel="noopener external nofollow noreferrer">Wire</a>：整洁轻量级协议缓存。<a href="https://github.com/square/wire" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="date-and-time">时间日期工具库</h3>
+
+<p><em>处理时间和日期的开发库。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/joda-time/" target="_blank" rel="noopener external nofollow noreferrer">Joda-Time</a>：在Java 8发布前，Joda-Time是实际使用的时间日期库标准。<a href="http://www.joda.org/joda-time/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/time4j/" target="_blank" rel="noopener external nofollow noreferrer">Time4J</a>：高级时间和日期库。<a href="https://github.com/MenoData/Time4J" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/ThreeTen/" target="_blank" rel="noopener external nofollow noreferrer">ThreeTen</a>：JSR-310实现，为JDK提供更具特点的时间和日期API。<a href="http://www.threeten.org" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="dependency-injection">依赖注入</h3>
+
+<p><em>帮实现依赖翻转范式的开发库。</em> <a href="https://en.wikipedia.org/wiki/Inversion_of_control" target="_blank" rel="noopener external nofollow noreferrer">官网</a></p>
+<ul>
+<li><a href="http://hao.jobbole.com/apache-deltaspike/" target="_blank" rel="noopener external nofollow noreferrer">Apache DeltaSpike</a>：CDI扩展框架。<a href="https://deltaspike.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/dagger2/" target="_blank" rel="noopener external nofollow noreferrer">Dagger2</a>：编译时注入框架，不需要使用反射。<a href="http://google.github.io/dagger/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/guice/" target="_blank" rel="noopener external nofollow noreferrer">Guice</a>：可以匹敌Dagger的轻量级注入框架。<a href="https://github.com/google/guice" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/hk2/" target="_blank" rel="noopener external nofollow noreferrer">HK2</a>：轻量级动态依赖注入框架。<a href="https://hk2.java.net" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="development">开发流程增强工具</h3>
+
+<p><em>从最基本的层面增强开发流程。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/adt4j/" target="_blank" rel="noopener external nofollow noreferrer">ADT4J</a>：针对代数数据类型的JSR-269代码生成器。<a href="https://github.com/sviperll/adt4j" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/aspectj/" target="_blank" rel="noopener external nofollow noreferrer">AspectJ</a>：面向切面编程（AOP）的无缝扩展。<a href="https://eclipse.org/aspectj/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/auto/" target="_blank" rel="noopener external nofollow noreferrer">Auto</a>：源代码生成器集合。<a href="https://github.com/google/auto" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/dcevm/" target="_blank" rel="noopener external nofollow noreferrer">DCEVM</a>：通过修改JVM在运行时支持对已加载的类进行无限次重定义。<a href="http://dcevm.github.io/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>HotswapAgent：支持无限次重定义运行时类与资源。<a href="https://github.com/HotswapProjects/HotswapAgent" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Immutables：类似Scala的条件类。<a href="http://immutables.github.io/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>JHipster：基于Spring Boot与AngularJS应用程序的Yeoman源代码生成器。<a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jrebel/" target="_blank" rel="noopener external nofollow noreferrer">JRebel</a>：无需重新部署，可以即时重新加载代码与配置的商业软件。<a href="http://zeroturnaround.com/software/jrebel/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Lombok：减少冗余的代码生成器。<a href="https://projectlombok.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Spring Loaded：类重载代理。<a href="https://github.com/spring-projects/spring-loaded" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/vert-x/" target="_blank" rel="noopener external nofollow noreferrer">vert.x</a>：多语言事件驱动应用框架。<a href="http://vertx.io/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="distributed-applications">分布式应用</h3>
+
+<p><em>用来编写分布式容错应用的开发库和框架。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/akka/" target="_blank" rel="noopener external nofollow noreferrer">Akka</a>：用来编写分布式容错并发事件驱动应用程序的工具和运行时。<a href="http://akka.io" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/storm/" target="_blank" rel="noopener external nofollow noreferrer">Apache Storm</a>：实时计算系统。<a href="http://storm.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/zookeeper/" target="_blank" rel="noopener external nofollow noreferrer">Apache ZooKeeper</a>：针对大型分布式系统的协调服务，支持分布式配置、同步和名称注册。<a href="http://zookeeper.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/Hazelcast/" target="_blank" rel="noopener external nofollow noreferrer">Hazelcast</a>：高可扩展内存数据网格。<a href="http://hazelcast.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/hystrix/" target="_blank" rel="noopener external nofollow noreferrer">Hystrix</a>：提供延迟和容错。<a href="https://github.com/Netflix/Hystrix" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jgroups/" target="_blank" rel="noopener external nofollow noreferrer">JGroups</a>：提供可靠的消息传递和集群创建的工具。<a href="http://www.jgroups.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/orbit/" target="_blank" rel="noopener external nofollow noreferrer">Orbit</a>：支持虚拟角色（Actor），在传统角色的基础上增加了另外一层抽象。<a href="http://orbit.bioware.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/quasar/" target="_blank" rel="noopener external nofollow noreferrer">Quasar</a>：为JVM提供轻量级线程和角色。<a href="http://www.paralleluniverse.co/quasar/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="distributed-databases">分布式数据库</h3>
+
+<p><em>对应用程序而言，在分布式系统中的数据库看起来就像是只有一个数据源。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/cassandra/" target="_blank" rel="noopener external nofollow noreferrer">Apache Cassandra</a>：列式数据库，可用性高且没有单点故障。<a href="http://cassandra.apache.org" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/hbase/" target="_blank" rel="noopener external nofollow noreferrer">Apache HBase</a>：针对大数据的Hadoop数据库。<a href="http://hbase.apache.org" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/druid/" target="_blank" rel="noopener external nofollow noreferrer">Druid</a>：实时和历史OLAP数据存储，在聚集查询和近似查询方面表现不俗。<a href="http://druid.io" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/infinispan/" target="_blank" rel="noopener external nofollow noreferrer">Infinispan</a>：针对缓存的高并发键值对数据存储。<a href="http://infinispan.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="distribution">发布</h3>
+
+<p><em>以本机格式发布应用程序的工具。</em></p>
+<ul>
+<li>Bintray：发布二进制文件版本控制工具。可以于Maven或Gradle一起配合使用。提供开源免费版本和几种商业收费版本。<a href="https://bintray.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/central-repository/" target="_blank" rel="noopener external nofollow noreferrer">Central Repository</a>：最大的二进制组件仓库，面向开源社区提供免费服务。Apache Maven默认使用Central <a href="http://search.maven.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a>Repository，也可以在所有其他构建工具中使用。</li>
+<li>IzPack：为跨平台部署建立创作工具（Authoring Tool）。<a href="http://izpack.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>JitPack：打包GitHub仓库的便捷工具。可根据需要构建Maven、Gradle项目，发布可立即使用的组件。<a href="https://jitpack.io/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Launch4j：将JAR包装为轻量级本机Windows可执行程序。<a href="http://launch4j.sourceforge.net/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Nexus：支持代理和缓存功能的二进制管理工具。<a href="http://www.sonatype.com/nexus" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>packr：将JAR、资源和JVM打包成Windows、Linux和Mac OS X本地发布文件。<a href="https://github.com/libgdx/packr/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="document-processing">文档处理工具</h3>
+
+<p><em>处理Office文档的开发库。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/poi/" target="_blank" rel="noopener external nofollow noreferrer">Apache POI</a>：支持OOXML规范（XLSX、DOCX、PPTX）以及OLE2规范（XLS、DOC、PPT）。<a href="http://poi.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/documents4j/" target="_blank" rel="noopener external nofollow noreferrer">documents4j</a>：使用第三方转换器进行文档格式转换，转成类似MS Word这样的格式。<a href="http://documents4j.com" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jopendocument/" target="_blank" rel="noopener external nofollow noreferrer">jOpenDocument</a>：处理OpenDocument格式（由Sun公司提出基于XML的文档格式）。<a href="http://www.jopendocument.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="functional-programming">函数式编程</h3>
+
+<p><em>函数式编程支持库。</em></p>
+<ul>
+<li>Cyclops：支持一元（Monad）操作和流操作工具类、comprehension（List语法）、模式匹配、trampoline等特性。<a href="https://github.com/aol/cyclops" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Fugue：Guava的函数式编程扩展。<a href="https://bitbucket.org/atlassian/fugue" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Functional Java：实现了多种基础和高级编程抽象，用来辅助面向组合开发（composition-oriented development）。<a href="http://www.functionaljava.org" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Javaslang：一个函数式组件库，提供持久化数据类型和函数式控制结构。<a href="http://javaslang.com" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>jOOλ：旨在填补Java 8 lambda差距的扩展，提供了众多缺失的类型和一组丰富的顺序流API。<a href="https://github.com/jOOQ/jOOL" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="game-development">游戏开发</h3>
+
+<p><em>游戏开发框架。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/jmonkeyengine/" target="_blank" rel="noopener external nofollow noreferrer">jMonkeyEngine</a>：现代3D游戏开发引擎。<a href="http://jmonkeyengine.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/libgdx/" target="_blank" rel="noopener external nofollow noreferrer">libGDX</a>：全面的跨平台高级框架。<a href="https://libgdx.badlogicgames.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/lwjgl/" target="_blank" rel="noopener external nofollow noreferrer">LWJGL</a>：对OpenGL/CL/AL等技术进行抽象的健壮框架。<a href="https://www.lwjgl.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="gui">GUI</h3>
+
+<p><em>现代图形化用户界面开发库。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/javafx/" target="_blank" rel="noopener external nofollow noreferrer">JavaFX</a>：Swing的后继者。<a href="http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/scene_builder/" target="_blank" rel="noopener external nofollow noreferrer">Scene Builder</a>：开发JavaFX应用的可视化布局工具。<a href="http://docs.oracle.com/javase/8/scene-builder-2/get-started-tutorial/overview.htm#JSBGS164" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="high-performance">高性能计算</h3>
+
+<p><em>涵盖了从集合到特定开发库的高性能计算相关工具。</em></p>
+<ul>
+<li>Agrona：高性能应用中常见的数据结构和工具方法。<a href="https://github.com/real-logic/Agrona" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Disruptor：线程间消息传递开发库。<a href="http://lmax-exchange.github.io/disruptor/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>fastutil：快速紧凑的特定类型集合（Collection）。<a href="http://fastutil.di.unimi.it/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>GS Collections：受Smalltalk启发的集合框架。<a href="https://github.com/goldmansachs/gs-collections" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/hppc/" target="_blank" rel="noopener external nofollow noreferrer">HPPC</a>：基础类型集合。<a href="http://labs.carrotsearch.com/hppc.html" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Javolution：实时和嵌入式系统的开发库。<a href="http://javolution.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jctools/" target="_blank" rel="noopener external nofollow noreferrer">JCTools</a>：JDK中缺失的并发工具。<a href="https://github.com/JCTools/JCTools" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/koloboke/" target="_blank" rel="noopener external nofollow noreferrer">Koloboke</a>：Hash set和hash map。<a href="https://github.com/OpenHFT/Koloboke" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Trove：基础类型集合。<a href="http://trove.starlight-systems.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>High-scale-lib:Cliff Click 个人开发的高性能并发库<a href="https://github.com/stephenc/high-scale-lib" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="ide">IDE</h3>
+
+<p><em>简化开发的集成开发环境。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/eclipse/" target="_blank" rel="noopener external nofollow noreferrer">Eclipse</a>：老牌开源项目，支持多种插件和编程语言。<a href="http://www.eclipse.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/intellij-idea/" target="_blank" rel="noopener external nofollow noreferrer">IntelliJ IDEA</a>：支持众多JVM语言，是安卓开发者好的选择。商业版主要针对企业客户。<a href="http://www.jetbrains.com/idea/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/netbeans/" target="_blank" rel="noopener external nofollow noreferrer">NetBeans</a>：为多种技术提供集成化支持，包括Java SE、Java EE、数据库访问、HTML5等。<a href="https://netbeans.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/scala-ide/" target="_blank" rel="noopener external nofollow noreferrer">Scala IDE</a>：一款基于Eclipse开源平台打造的Scala集成开发环境。<a href="http://scala-ide.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/springsource-tool-suite/" target="_blank" rel="noopener external nofollow noreferrer">SpringSource Tool Suite（STS）</a>:一款基于Eclipse开源平台打造的Spring应用开发环境。<a href="http://spring.io/tools/sts/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="imagery">图像处理</h3>
+
+<p><em>创建、评价和操作图片的支持库。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/imgscalr/" target="_blank" rel="noopener external nofollow noreferrer">Imgscalr</a>：纯Java 2D实现，简单、高效、支持硬件加速的图像缩放开发库。<a href="https://github.com/thebuzzmedia/imgscalr" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/picasso/" target="_blank" rel="noopener external nofollow noreferrer">Picasso</a>：安卓图片下载和图片缓存开发库。<a href="http://square.github.io/picasso/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/thumbnailator/" target="_blank" rel="noopener external nofollow noreferrer">Thumbnailator</a>：Thumbnailator是一个高质量Java缩略图开发库。<a href="https://github.com/coobird/thumbnailator" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/zxing/" target="_blank" rel="noopener external nofollow noreferrer">ZXing</a>：支持多种格式的一维、二维条形码图片处理开发库。<a href="https://github.com/zxing/zxing" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/im4java/" target="_blank" rel="noopener external nofollow noreferrer">im4java</a>: 基于ImageMagick或GraphicsMagick命令行的图片处理开发库，基本上ImageMagick能够支持的图片格式和处理方式都能够处理。<a href="http://im4java.sourceforge.net/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Apache Batik：在Java应用中程序以SVG格式显示、生成及处理图像的工具集，包括SVG解析器、SVG生成器、SVG DOM等模块，可以集成使用也可以单独使用，还可以扩展自定义的SVG标签。<a href="http://xmlgraphics.apache.org/batik/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="json">JSON</h3>
+
+<p><em>简化JSON处理的开发库。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/genson/" target="_blank" rel="noopener external nofollow noreferrer">Genson</a>：强大且易于使用的Java到JSON转换开发库。<a href="http://owlike.github.io/genson" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/gson/" target="_blank" rel="noopener external nofollow noreferrer">Gson</a>：谷歌官方推出的JSON处理库，支持在对象与JSON之间双向序列化，性能良好且可以实时调用。<a href="https://github.com/google/gson" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jackson/" target="_blank" rel="noopener external nofollow noreferrer">Jackson</a>：与GSON类似，在频繁使用时性能更佳。<a href="http://wiki.fasterxml.com/JacksonHome" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/logansquare/" target="_blank" rel="noopener external nofollow noreferrer">LoganSquare</a>：基于Jackson流式API，提供对JSON解析和序列化。比GSON与Jackson组合方式效果更好。<a href="https://github.com/bluelinelabs/LoganSquare" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/fastjson/" target="_blank" rel="noopener external nofollow noreferrer">Fastjson</a>：一个Java语言编写的高性能功能完善的JSON库。<a href="https://github.com/Alibaba/fastjson" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Kyro：快速、高效、自动化的Java对象序列化和克隆库。<a href="https://github.com/EsotericSoftware/kryo" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="jvm-and-jdk">JVM与JDK</h3>
+
+<p><em>目前的JVM和JDK实现。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/jdk-9/" target="_blank" rel="noopener external nofollow noreferrer">JDK 9</a>：JDK 9的早期访问版本。<a href="https://jdk9.java.net/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/openjdk/" target="_blank" rel="noopener external nofollow noreferrer">OpenJDK</a>：JDK开源实现。<a href="http://openjdk.java.net/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="languages">基于JVM的语言</h3>
+
+<p><em>除Java外，可以用来编写JVM应用程序的编程语言。</em></p>
+<ul>
+<li>Scala：融合了面向对象和函数式编程思想的静态类型编程语言。<a href="http://www.scala-lang.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/groovy/" target="_blank" rel="noopener external nofollow noreferrer">Groovy</a>：类型可选（Optionally typed）的动态语言，支持静态类型和静态编译。目前是一个Apache孵化器项目。<a href="http://www.groovy-lang.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Clojure：可看做现代版Lisp的动态类型语言。<a href="http://clojure.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Ceylon：RedHat开发的面向对象静态类型编程语言。<a href="http://ceylon-lang.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Kotlin：JetBrain针对JVM、安卓和浏览器提供的静态类型编程语言。<a href="http://kotlinlang.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/xtend/" target="_blank" rel="noopener external nofollow noreferrer">Xtend</a>：一种静态编程语言，能够将其代码转换为简洁高效的Java代码，并基于JVM运行。<a href="http://www.eclipse.org/xtend/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="logging">日志</h3>
+
+<p><em>记录应用程序行为日志的开发库。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/log4j2/" target="_blank" rel="noopener external nofollow noreferrer">Apache Log4j 2</a>：使用强大的插件和配置架构进行完全重写。<a href="http://logging.apache.org/log4j/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/kibana/" target="_blank" rel="noopener external nofollow noreferrer">kibana</a>：分析及可视化日志文件。<a href="https://www.elastic.co/products/kibana" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/logback/" target="_blank" rel="noopener external nofollow noreferrer">Logback</a>：强健的日期开发库，通过Groovy提供很多有趣的选项。<a href="http://logback.qos.ch/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/logstash/" target="_blank" rel="noopener external nofollow noreferrer">logstash</a>：日志文件管理工具。<a href="https://www.elastic.co/products/logstash" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/metrics/" target="_blank" rel="noopener external nofollow noreferrer">Metrics</a>：通过JMX或HTTP发布参数，并且支持存储到数据库。<a href="https://github.com/dropwizard/metrics" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/slf4j/" target="_blank" rel="noopener external nofollow noreferrer">SLF4J</a>：日志抽象层，需要与具体的实现配合使用。<a href="http://www.slf4j.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="machine-learning">机器学习</h3>
+
+<p><em>提供具体统计算法的工具。其算法可从数据中学习。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/apache-flink/" target="_blank" rel="noopener external nofollow noreferrer">Apache Flink</a>：快速、可靠的大规模数据处理引擎。<a href="https://flink.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/apache-hadoop/" target="_blank" rel="noopener external nofollow noreferrer">Apache Hadoop</a>：在商用硬件集群上用来进行大规模数据存储的开源软件框架。<a href="http://hadoop.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/apache-mahout/" target="_blank" rel="noopener external nofollow noreferrer">Apache Mahout</a>：专注协同过滤、聚类和分类的可扩展算法。<a href="https://mahout.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/apache-spark/" target="_blank" rel="noopener external nofollow noreferrer">Apache Spark</a>：开源数据分析集群计算框架。<a href="http://spark.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/deepdive/" target="_blank" rel="noopener external nofollow noreferrer">DeepDive</a>：从非结构化数据建立结构化信息并集成到已有数据库的工具。<a href="http://deepdive.stanford.edu" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/deeplearning4j/" target="_blank" rel="noopener external nofollow noreferrer">Deeplearning4j</a>：分布式多线程深度学习开发库。<a href="http://deeplearning4j.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/h2o/" target="_blank" rel="noopener external nofollow noreferrer">H2O</a>：用作大数据统计的分析引擎。<a href="http://h2o.ai/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/weka/" target="_blank" rel="noopener external nofollow noreferrer">Weka</a>：用作数据挖掘的算法集合，包括从预处理到可视化的各个层次。<a href="http://www.cs.waikato.ac.nz/ml/weka/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/quickml/" target="_blank" rel="noopener external nofollow noreferrer">QuickML</a>：高效机器学习库。<a href="http://quickml.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a>、<a href="https://github.com/sanity/quickml" target="_blank" rel="noopener external nofollow noreferrer">GitHub</a></li>
+</ul>
+<h3 id="messaging">消息传递</h3>
+
+<p><em>在客户端之间进行消息传递，确保协议独立性的工具。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/aeron/" target="_blank" rel="noopener external nofollow noreferrer">Aeron</a>：高效可扩展的单播、多播消息传递工具。<a href="https://github.com/real-logic/Aeron" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/activemq/" target="_blank" rel="noopener external nofollow noreferrer">Apache ActiveMQ</a>：实现JMS的开源消息代理（broker），可将同步通讯转为异步通讯。<a href="http://activemq.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/apache-camel/" target="_blank" rel="noopener external nofollow noreferrer">Apache Camel</a>：通过企业级整合模式（Enterprise Integration Pattern EIP）将不同的消息传输API整合在一起。<a href="http://camel.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/kafka/" target="_blank" rel="noopener external nofollow noreferrer">Apache Kafka</a>：高吞吐量分布式消息系统。<a href="http://kafka.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/hermes/" target="_blank" rel="noopener external nofollow noreferrer">Hermes</a>：快速、可靠的消息代理（Broker），基于Kafka构建。<a href="http://hermes.allegro.tech" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>JBoss HornetQ：清晰、准确、模块化，可以方便嵌入的消息工具。<a href="http://hornetq.jboss.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jeromq/" target="_blank" rel="noopener external nofollow noreferrer">JeroMQ</a>：ZeroMQ的纯Java实现。<a href="https://github.com/zeromq/jeromq" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/smack/" target="_blank" rel="noopener external nofollow noreferrer">Smack</a>：跨平台XMPP客户端函数库。<a href="https://github.com/igniterealtime/Smack/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Openfire：是开源的、基于XMPP、采用Java编程语言开发的实时协作服务器。 Openfire安装和使用都非常简单，并可利用Web界面进行管理。 <a href="http://www.igniterealtime.org/projects/openfire/index.jsp" target="_blank" rel="noopener external nofollow noreferrer">官网</a> <a href="https://github.com/igniterealtime/Openfire" target="_blank" rel="noopener external nofollow noreferrer">GitHub</a></li>
+<li>Spark：是一个开源，跨平台IM客户端。它的特性支持集组聊天，电话集成和强大安全性能。如果企业内部部署IM使用Openfire+Spark是最佳的组合。 <a href="http://www.igniterealtime.org/projects/spark/index.jsp" target="_blank" rel="noopener external nofollow noreferrer">官网</a> <a href="https://github.com/igniterealtime/Spark" target="_blank" rel="noopener external nofollow noreferrer">GitHub</a></li>
+<li>Tigase： 是一个轻量级的可伸缩的 Jabber/XMPP 服务器。无需其他第三方库支持，可以处理非常高的复杂和大量的用户数，可以根据需要进行水平扩展。 <a href="http://www.tigase.net" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="miscellaneous">杂项</h3>
+
+<p><em>未分类其它资源。</em></p>
+<ul>
+<li>Design Patterns：实现并解释了最常见的设计模式。<a href="https://github.com/iluwatar/java-design-patterns" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Jimfs：内存文件系统。<a href="https://github.com/google/jimfs" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Lanterna：类似curses的简单console文本GUI函数库。<a href="https://code.google.com/p/lanterna/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>LightAdmin：可插入式CRUD UI函数库，可用来快速应用开发。<a href="http://lightadmin.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>OpenRefine：用来处理混乱数据的工具，包括清理、转换、使用Web Service进行扩展并将其关联到数据库。<a href="http://openrefine.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>RoboVM：Java编写原生iOS应用。<a href="https://robovm.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/quartz/" target="_blank" rel="noopener external nofollow noreferrer">Quartz</a>：强大的任务调度库.<a href="http://www.quartz-scheduler.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="monitoring">应用监控工具</h3>
+
+<p><em>监控生产环境中应用程序的工具。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/appdynamics/" target="_blank" rel="noopener external nofollow noreferrer">AppDynamics</a>：性能监测商业工具。<a href="http://www.appdynamics.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/javamelody/" target="_blank" rel="noopener external nofollow noreferrer">JavaMelody</a>：性能监测和分析工具。<a href="https://github.com/javamelody/javamelody" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/Kamon/" target="_blank" rel="noopener external nofollow noreferrer">Kamon</a>：Kamon用来监测在JVM上运行的应用程序。<a href="http://www.kamon.io/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/new-relic/" target="_blank" rel="noopener external nofollow noreferrer">New Relic</a>：性能监测商业工具。<a href="http://newrelic.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>SPM：支持对JVM应用程序进行分布式事务追踪的性能监测商业工具。<a href="https://sematext.com/spm/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/overops_takipi/" target="_blank" rel="noopener external nofollow noreferrer">OverOps(Takipi)</a>：产品运行时错误监测及调试商业工具。<a href="https://www.takipi.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="native">原生开发库</h3>
+
+<p><em>用来进行特定平台开发的原生开发库。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/jna/" target="_blank" rel="noopener external nofollow noreferrer">JNA</a>：不使用JNI就可以使用原生开发库。此外，还为常见系统函数提供了接口。<a href="https://github.com/java-native-access/jna" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="natural-language-processing">自然语言处理</h3>
+
+<p><em>用来专门处理文本的函数库。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/apache-opennlp/" target="_blank" rel="noopener external nofollow noreferrer">Apache OpenNLP</a>：处理类似分词等常见任务的工具。<a href="https://opennlp.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/stanford_corenlp/" target="_blank" rel="noopener external nofollow noreferrer">CoreNLP</a>：斯坦佛CoreNLP提供了一组基础工具，可以处理类似标签、实体名识别和情感分析这样的任务。<a href="http://nlp.stanford.edu/software/coenlp.shtml" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/lingpipe/" target="_blank" rel="noopener external nofollow noreferrer">LingPipe</a>：一组可以处理各种任务的工具集，支持POS标签、情感分析等。<a href="http://alias-i.com/lingpipe/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/mallet/" target="_blank" rel="noopener external nofollow noreferrer">Mallet</a>：统计学自然语言处理、文档分类、聚类、主题建模等。<a href="http://mallet.cs.umass.edu/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="networking">网络</h3>
+
+<p><em>网络编程函数库。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/async-http-client/" target="_blank" rel="noopener external nofollow noreferrer">Async Http Client</a>：异步HTTP和WebSocket客户端函数库。<a href="https://github.com/AsyncHttpClient/async-http-client" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/grizzly/" target="_blank" rel="noopener external nofollow noreferrer">Grizzly</a>：NIO框架，在Glassfish中作为网络层使用。<a href="https://grizzly.java.net/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/netty/" target="_blank" rel="noopener external nofollow noreferrer">Netty</a>：构建高性能网络应用程序开发框架。<a href="http://netty.io/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/okhttp/" target="_blank" rel="noopener external nofollow noreferrer">OkHttp</a>：一个Android和Java应用的HTTP+SPDY客户端。<a href="http://square.github.io/okhttp/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Undertow：基于NIO实现了阻塞和非阻塞API的Web服务器，在WildFly中作为网络层使用。<a href="http://undertow.io/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>unirest-java: Unirest 是一个轻量级的 HTTP 请求库，涵盖 Node、Ruby、Java、PHP、Python、Objective-C、.NET 等多种语言。可发起 GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS 请求。<a href="http://unirest.io/java" target="_blank" rel="noopener external nofollow noreferrer">官网</a><h3 id="orm">ORM</h3>
+
+</li>
+</ul>
+<p><em>处理对象持久化的API。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/ebean/" target="_blank" rel="noopener external nofollow noreferrer">Ebean</a>：支持快速数据访问和编码的ORM框架。<a href="http://ebean-orm.github.io/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/eclipselink/" target="_blank" rel="noopener external nofollow noreferrer">EclipseLink</a>：支持许多持久化标准，JPA、JAXB、JCA和SDO。<a href="https://www.eclipse.org/eclipselink/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/hibernate/" target="_blank" rel="noopener external nofollow noreferrer">Hibernate</a>：广泛使用、强健的持久化框架。Hibernate的技术社区非常活跃。<a href="http://hibernate.org/orm/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/mybatis/" target="_blank" rel="noopener external nofollow noreferrer">MyBatis</a>：带有存储过程或者SQL语句的耦合对象（Couples object）。<a href="http://mybatis.github.io/mybatis-3/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/ormlite/" target="_blank" rel="noopener external nofollow noreferrer">OrmLite</a>：轻量级开发包，免除了其它ORM产品中的复杂性和开销。<a href="http://ormlite.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Nutz：另一个SSH。<a href="http://nutzam.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a>，<a href="https://github.com/nutzam/nutz" target="_blank" rel="noopener external nofollow noreferrer">Github</a>，<a href="https://nutz.cn/" target="_blank" rel="noopener external nofollow noreferrer">论坛</a></li>
+<li>JFinal：JAVA WEB + ORM框架。<a href="http://www.jfinal.com" target="_blank" rel="noopener external nofollow noreferrer">官网</a>，<a href="https://github.com/jfinal/jfinal" target="_blank" rel="noopener external nofollow noreferrer">Github</a></li>
+<li><a href="http://openjpa.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">Apache OpenJPA</a>: 实现了 EJB 3.0 中的 JPA 标准,为开发者提供功能强大、使用简单的持久化数据管理框架。 <a href="http://openjpa.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="pdf">PDF</h3>
+
+<p><em>用来帮助创建PDF文件的资源。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/apache_fop/" target="_blank" rel="noopener external nofollow noreferrer">Apache FOP</a>：从XSL-FO创建PDF。<a href="http://xmlgraphics.apache.org/fop/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/apache-pdfbox/" target="_blank" rel="noopener external nofollow noreferrer">Apache PDFBox</a>：用来创建和操作PDF的工具集。<a href="http://pdfbox.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/dynamicreports/" target="_blank" rel="noopener external nofollow noreferrer">DynamicReports</a>：JasperReports的精简版。<a href="http://dynamicreports.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/flyingsaucer/" target="_blank" rel="noopener external nofollow noreferrer">flyingsaucer</a>：XML/XHTML和CSS 2.1渲染器。<a href="https://github.com/flyingsaucerproject/flyingsaucer" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/itext/" target="_blank" rel="noopener external nofollow noreferrer">iText</a>：一个易于使用的PDF函数库，用来编程创建PDF文件。注意，用于商业用途时需要许可证。<a href="http://itextpdf.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jasperreports/" target="_blank" rel="noopener external nofollow noreferrer">JasperReports</a>：一个复杂的报表引擎。<a href="http://community.jaspersoft.com/project/jasperreports-library" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="performance-analysis">性能分析</h3>
+
+<p><em>性能分析、性能剖析及基准测试工具。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/jhiccup/" target="_blank" rel="noopener external nofollow noreferrer">jHiccup</a>：提供平台中JVM暂停的日志和记录。<a href="https://github.com/giltene/jHiccup" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jmh/" target="_blank" rel="noopener external nofollow noreferrer">JMH</a>：JVM基准测试工具。<a href="http://openjdk.java.net/projects/code-tools/jmh/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jprofiler/" target="_blank" rel="noopener external nofollow noreferrer">JProfiler</a>：商业分析器。<a href="https://www.ej-technologies.com/products/jprofiler/overview.html" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/latencyutils/" target="_blank" rel="noopener external nofollow noreferrer">LatencyUtils</a>：测量和报告延迟的工具。<a href="https://github.com/LatencyUtils/LatencyUtils" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/visualvm/" target="_blank" rel="noopener external nofollow noreferrer">VisualVM</a>：对运行中的应用程序信息提供了可视化界面。<a href="http://visualvm.java.net/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/yourkit-java-profiler/" target="_blank" rel="noopener external nofollow noreferrer">YourKit Java Profiler</a>：商业分析器。<a href="https://www.yourkit.com/features/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="reactive-libraries">响应式开发库</h3>
+
+<p><em>用来开发响应式应用程序的开发库。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/reactive-streams/" target="_blank" rel="noopener external nofollow noreferrer">Reactive Streams</a>：异步流处理标准，支持非阻塞式反向压力（backpressure）。<a href="https://github.com/reactive-streams/reactive-streams-jv/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/reactor/" target="_blank" rel="noopener external nofollow noreferrer">Reactor</a>：构建响应式快速数据（fast-data）应用程序的开发库。<a href="http://projectreactor.io/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/rxjava/" target="_blank" rel="noopener external nofollow noreferrer">RxJava</a>：通过JVM可观察序列（observable sequence）构建异步和基于事件的程序。<a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="rest-frameworks">REST框架</h3>
+
+<p><em>用来创建RESTful 服务的框架。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/dropwizard/" target="_blank" rel="noopener external nofollow noreferrer">Dropwizard</a>：偏向于自己使用的Web框架。用来构建Web应用程序，使用了Jetty、Jackson、Jersey和Metrics。<a href="https://dropwizard.github.io/drpwizard/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/feign/" target="_blank" rel="noopener external nofollow noreferrer">Feign</a>：受Retrofit、JAXRS-2.0和WebSocket启发的HTTP客户端连接器（binder）。<a href="https://github.com/Netflix/feign" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Jersey：JAX-RS参考实现。<a href="https://jersey.java.net/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/resteasy/" target="_blank" rel="noopener external nofollow noreferrer">RESTEasy</a>：经过JAX-RS规范完全认证的可移植实现。<a href="http://resteasy.jboss.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/restexpress/" target="_blank" rel="noopener external nofollow noreferrer">RestExpress</a>：一个Java类型安全的REST客户端。<a href="https://github.com/RestExpress/RestExpress" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/restx/" target="_blank" rel="noopener external nofollow noreferrer">RestX</a>：基于注解处理和编译时源码生成的框架。<a href="http://restx.io" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/retrofit/" target="_blank" rel="noopener external nofollow noreferrer">Retrofit</a>：类型安全的REST客户端。<a href="http://square.github.io/retrofit/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/sparkjava/" target="_blank" rel="noopener external nofollow noreferrer">Spark</a>：受到Sinatra启发的Java REST框架。<a href="http://sparkjava.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/swagger/" target="_blank" rel="noopener external nofollow noreferrer">Swagger</a>：Swagger是一个规范且完整的框架，提供描述、生产、消费和可视化RESTful Web Service。<a href="http://swagger.io/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/bladejava/" target="_blank" rel="noopener external nofollow noreferrer">Blade</a>：国人开发的一个轻量级的MVC框架. 它拥有简洁的代码，优雅的设计。<a href="https://github.com/biezhi/blade" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="science">科学计算与分析</h3>
+
+<p><em>用于科学计算和分析的函数库。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/datamelt/" target="_blank" rel="noopener external nofollow noreferrer">DataMelt</a>：用于科学计算、数据分析及数据可视化的开发环境。<a href="http://jwork.org/dmelt/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jgrapht/" target="_blank" rel="noopener external nofollow noreferrer">JGraphT</a>：支持数学图论对象和算法的图形库。<a href="https://github.com/jgrapht/jgrapht" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jscience/" target="_blank" rel="noopener external nofollow noreferrer">JScience</a>：用来进行科学测量和单位的一组类。<a href="http://jscience.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="search">搜索引擎</h3>
+
+<p><em>文档索引引擎，用于搜索和分析。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/solr/" target="_blank" rel="noopener external nofollow noreferrer">Apache Solr</a>：一个完全的企业搜索引擎。为高吞吐量通信进行了优化。<a href="http://lucene.apache.org/solr/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Elasticsearch：一个分布式、支持多租户（multitenant）全文本搜索引擎。提供了RESTful Web接口和无schema的JSON文档。<a href="http://www.elsticsearch.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Apache Lucene：是一个开放源代码的全文检索引擎工具包，是一个全文检索引擎的架构，提供了完整的查询引擎和索引引擎，部分文本分析引擎。<a href="http://lucene.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="security">安全</h3>
+
+<p><em>用于处理安全、认证、授权或会话管理的函数库。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/shiro/" target="_blank" rel="noopener external nofollow noreferrer">Apache Shiro</a>：执行认证、授权、加密和会话管理。<a href="http://shiro.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/bouncy-castle/" target="_blank" rel="noopener external nofollow noreferrer">Bouncy Castle</a>，涵盖了从基础的帮助函数到PGP/SMIME操作。<a href="https://www.bouncycastle.org/java.html" target="_blank" rel="noopener external nofollow noreferrer">官网</a>：多途加密开发库。支持JCA提供者（JCA provider)</li>
+<li><a href="http://hao.jobbole.com/cryptomator/" target="_blank" rel="noopener external nofollow noreferrer">Cryptomator</a>：在云上进行客户端跨平台透明加密。<a href="https://cryptomator.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/keycloak/" target="_blank" rel="noopener external nofollow noreferrer">Keycloak</a>：为浏览器应用和RESTful Web Service集成SSO和IDM。目前还处于beta版本，但是看起来非常有前途。<a href="http://keycloak.jboss.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/picketlink/" target="_blank" rel="noopener external nofollow noreferrer">PicketLink</a>：PicketLink是一个针对Java应用进行安全和身份认证管理的大型项目（Umbrella Project）。<a href="http://picketlink.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="serialization">序列化</h3>
+
+<p><em>用来高效处理序列化的函数库。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/flatbuffers/" target="_blank" rel="noopener external nofollow noreferrer">FlatBuffers</a>：高效利用内存的序列化函数库，无需解包和解析即可高效访问序列化数据。<a href="https://github.com/google/flatbuffers" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/kryo/" target="_blank" rel="noopener external nofollow noreferrer">Kryo</a>：快速、高效的对象图形序列化框架。<a href="https://github.com/EsotericSoftware/kryo" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/fst/" target="_blank" rel="noopener external nofollow noreferrer">FST</a>：提供兼容JDK的高性能对象图形序列化。<a href="https://github.com/RuedigerMoeller/fast-serialization" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/messagepack/" target="_blank" rel="noopener external nofollow noreferrer">MessagePack</a>：一种高效的二进制序列化格式。<a href="https://github.com/msgpack/msgpack-java" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="server">应用服务器</h3>
+
+<p><em>用来部署应用程序的服务器。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/apache-tomcat/" target="_blank" rel="noopener external nofollow noreferrer">Apache Tomcat</a>：针对Servlet和JSP的应用服务器，健壮性好且适用性强。<a href="http://tomcat.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/tomee/" target="_blank" rel="noopener external nofollow noreferrer">Apache TomEE</a>：Tomcat加Java EE。<a href="http://tomee.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jetty/" target="_blank" rel="noopener external nofollow noreferrer">Jetty</a>：轻量级、小巧的应用服务器，通常会嵌入到项目中。<a href="http://www.eclipse.org/jetty/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/websphere-liberty/" target="_blank" rel="noopener external nofollow noreferrer">WebSphere Liberty</a>：轻量级、模块化应用服务器，由IBM开发。<a href="https://developer.ibm.com/wasdev/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/wildfly/" target="_blank" rel="noopener external nofollow noreferrer">WildFly</a>：之前被称作JBoss，由Red Hat开发。支持很多Java EE功能。<a href="http://www.wildfly.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="template-engine">模板引擎</h3>
+
+<p><em>在模板中替换表达式的工具。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/velocity/" target="_blank" rel="noopener external nofollow noreferrer">Apache Velocity</a>：提供HTML页面模板、email模板和通用开源代码生成器模板。<a href="http://velocity.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/freemarker/" target="_blank" rel="noopener external nofollow noreferrer">FreeMarker</a>：通用模板引擎，不需要任何重量级或自己使用的依赖关系。<a href="http://freemarker.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/handlebars-java/" target="_blank" rel="noopener external nofollow noreferrer">Handlebars.java</a>：使用Java编写的模板引擎，逻辑简单，支持语义扩展（semantic Mustache）。<a href="http://jknack.github.io/handlebars.java/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/thymeleaf/" target="_blank" rel="noopener external nofollow noreferrer">Thymeleaf</a>：旨在替换JSP，支持XML文件的工具。<a href="http://www.thymeleaf.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://ibeetl.com/" target="_blank" rel="noopener external nofollow noreferrer">Beetl</a>：新一代的模板引擎，功能强大，性能良好，超过当前流行的模板引擎。而且还易学易用。<a href="http://ibeetl.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="testing">测试</h3>
+
+<p><em>测试内容从对象到接口，涵盖性能测试和基准测试工具。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/jmeter/" target="_blank" rel="noopener external nofollow noreferrer">Apache JMeter</a>：功能性测试和性能评测。<a href="http://jmeter.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/arquillian/" target="_blank" rel="noopener external nofollow noreferrer">Arquillian</a>：集成测试和功能行测试平台，集成Java EE容器。<a href="http://arquillian.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/assertj/" target="_blank" rel="noopener external nofollow noreferrer">AssertJ</a>：支持流式断言提高测试的可读性。<a href="http://joel-costigliola.github.io/assertj/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/awaitility/" target="_blank" rel="noopener external nofollow noreferrer">Awaitility</a>：用来同步异步操作的DSL。<a href="https://github.com/jayway/awaitility" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/cucumber-jvm/" target="_blank" rel="noopener external nofollow noreferrer">Cucumber</a>：BDD测试框架。<a href="https://github.com/cucumber/cucumber-jvm" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Gatling：设计为易于使用、可维护的和高性能负载测试工具。<a href="http://gatling.io/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/hamcrest/" target="_blank" rel="noopener external nofollow noreferrer">Hamcrest</a>：可用来灵活创建意图（intent）表达式的匹配器。<a href="http://hamcrest.org/JavaHamcrest/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>JMockit：用来模拟静态、final方法等。<a href="http://jmockit.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/junit/" target="_blank" rel="noopener external nofollow noreferrer">JUnit</a>：通用测试框架。<a href="http://junit.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/mockito/" target="_blank" rel="noopener external nofollow noreferrer">Mockito</a>：在自动化单元测试中创建测试对象，为TDD或BDD提供支持。<a href="https://github.com/mockito/mockito" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/powermock/" target="_blank" rel="noopener external nofollow noreferrer">PowerMock</a>： 支持模拟静态方法、构造函数、final类和方法、私有方法以及移除静态初始化器的模拟工具。<a href="https://github.com/jayway/powermock" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/rest-assured/" target="_blank" rel="noopener external nofollow noreferrer">REST Assured</a>：为REST/HTTP服务提供方便测试的Java DSL。<a href="https://github.com/jayway/rest-assured" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/selenide/" target="_blank" rel="noopener external nofollow noreferrer">Selenide</a>：为Selenium提供精准的周边API，用来编写稳定且可读的UI测试。<a href="http://selenide.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/selenium/" target="_blank" rel="noopener external nofollow noreferrer">Selenium</a>：为Web应用程序提供可移植软件测试框架。<a href="http://docs.seleniumhq.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/spock/" target="_blank" rel="noopener external nofollow noreferrer">Spock</a>：JUnit-compatible framework featuring an expressive Groovy-derived specification language.<a href="http://docs.spockframework.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a>兼容JUnit框架，支持衍生的Groovy范的语言。</li>
+<li><a href="http://hao.jobbole.com/testng/" target="_blank" rel="noopener external nofollow noreferrer">TestNG</a>：测试框架。<a href="http://testng.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/truth/" target="_blank" rel="noopener external nofollow noreferrer">Truth</a>：Google的断言和命题（proposition）框架。<a href="https://github.com/google/truth" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/unitils/" target="_blank" rel="noopener external nofollow noreferrer">Unitils</a>：模块化测试函数库，支持单元测试和集成测试。<a href="http://www.unitils.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/wiremock/" target="_blank" rel="noopener external nofollow noreferrer">WireMock</a>：Web Service测试桩（Stub）和模拟函数。<a href="http://wiremock.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="utility">通用工具库</h3>
+
+<p><em>通用工具类函数库。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/apache-commons/" target="_blank" rel="noopener external nofollow noreferrer">Apache Commons</a>：提供各种用途的函数，比如配置、验证、集合、文件上传或XML处理等。<a href="http://commons.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/args4j/" target="_blank" rel="noopener external nofollow noreferrer">args4j</a>：命令行参数解析器。<a href="http://args4j.kohsuke.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/crash/" target="_blank" rel="noopener external nofollow noreferrer">CRaSH</a>：为运行进行提供CLI。<a href="http://www.crashub.org" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/gephi/" target="_blank" rel="noopener external nofollow noreferrer">Gephi</a>：可视化跨平台网络图形化操作程序。<a href="https://github.com/gephi/gephi/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/guava/" target="_blank" rel="noopener external nofollow noreferrer">Guava</a>：集合、缓存、支持基本类型、并发函数库、通用注解、字符串处理、I/O等。<a href="https://github.com/google/guava" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jade/" target="_blank" rel="noopener external nofollow noreferrer">JADE</a>：构建、调试多租户系统的框架和环境。<a href="http://jade.tilab.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/javatuples/" target="_blank" rel="noopener external nofollow noreferrer">javatuples</a>：正如名字表示的那样，提供tuple支持。尽管目前tuple的概念还有留有争议。<a href="http://www.javatuples.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jcommander/" target="_blank" rel="noopener external nofollow noreferrer">JCommander</a>：命令行参数解析器。<a href="http://jcommander.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/protege/" target="_blank" rel="noopener external nofollow noreferrer">Protégé</a>：提供存在论（ontology）编辑器以及构建知识系统的框架。<a href="http://protege.stanford.edu/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="web-crawling">网络爬虫</h3>
+
+<p><em>用于分析网站内容的函数库。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/nutch/" target="_blank" rel="noopener external nofollow noreferrer">Apache Nutch</a>：可用于生产环境的高度可扩展、可伸缩的网络爬虫。<a href="http://nutch.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/crawler4j/" target="_blank" rel="noopener external nofollow noreferrer">Crawler4j</a>：简单的轻量级网络爬虫。<a href="https://github.com/yasserg/crawler4j" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jsoup/" target="_blank" rel="noopener external nofollow noreferrer">JSoup</a>：刮取、解析、操作和清理HTML。<a href="http://jsoup.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="https://github.com/code4craft/webmagic/" target="_blank" rel="noopener external nofollow noreferrer">webmagic</a>：一个可扩展的Java爬虫框架，架构类似Python的Scrapy。</li>
+</ul>
+<h3 id="web-frameworks">Web框架</h3>
+
+<p><em>用于处理Web应用程序不同层次间通讯的框架。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/apache-tapestry/" target="_blank" rel="noopener external nofollow noreferrer">Apache Tapestry</a>：基于组件的框架，使用Java创建动态、强健的、高度可扩展的Web应用程序。<a href="http://tapestry.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/apache-wicket/" target="_blank" rel="noopener external nofollow noreferrer">Apache Wicket</a>：基于组件的Web应用框架，与Tapestry类似带有状态显示GUI。<a href="http://wicket.apache.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/gwt/" target="_blank" rel="noopener external nofollow noreferrer">Google Web Toolkit</a>：一组Web开发工具集，包含在客户端将Java代码转为JavaScript的编译器、XML解析器、RCP <a href="http://www.gwtproject.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a>API、JUnit集成、国际化支持和GUI控件。</li>
+<li><a href="http://hao.jobbole.com/grails/" target="_blank" rel="noopener external nofollow noreferrer">Grails</a>：Groovy框架，旨在提供一个高效开发环境，使用约定而非配置、没有XML并支持混入（mixin）。<a href="https://grails.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/ninja/" target="_blank" rel="noopener external nofollow noreferrer">Ninja</a>：Java全栈Web开发框架。非常稳固、快速和高效。<a href="http://www.ninjaframework.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/pippo/" target="_blank" rel="noopener external nofollow noreferrer">Pippo</a>：小型、高度模块化的类Sinatra框架。<a href="http://www.pippo.ro/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/play-framework/" target="_blank" rel="noopener external nofollow noreferrer">Play</a>：使用约定而非配置，支持代码热加载并在浏览器中显示错误。<a href="https://www.playframework.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/primefaces/" target="_blank" rel="noopener external nofollow noreferrer">PrimeFaces</a>：JSF框架，提供免费和带支持的商业版本。包括若干前端组件。<a href="http://primefaces.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/ratpack/" target="_blank" rel="noopener external nofollow noreferrer">Ratpack</a>：一组Java开发函数库，用于构建快速、高效、可扩展且测试完备的HTTP应用程序。<a href="https://ratpack.io/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/spring-boot/" target="_blank" rel="noopener external nofollow noreferrer">Spring Boot</a>：微框架，简化了Spring新程序的开发过程。<a href="http://projects.spring.io/spring-boot/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/spring-framework/" target="_blank" rel="noopener external nofollow noreferrer">Spring</a>：旨在简化Java EE的开发过程，提供依赖注入相关组件并支持面向切面编程。<a href="http://projects.spring.io/spring-framework/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/vaadin/" target="_blank" rel="noopener external nofollow noreferrer">Vaadin</a>：基于GWT构建的事件驱动框架。使用服务端架构，客户端使用Ajax。<a href="https://vaadin.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Blade：国人开发的一个轻量级的MVC框架. 它拥有简洁的代码，优雅的设计。<a href="https://github.com/biezhi/blade" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="Business-Process-Management">业务流程管理套件</h3>
+
+<p><em>流程驱动的软件系统构建。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/jbpm/" target="_blank" rel="noopener external nofollow noreferrer">jBPM</a>：非常灵活的业务流程管理框架，致力于构建开发与业务分析人员之间的桥梁。<a href="http://www.jbpm.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Activity：轻量级工作流和业务流程管理框架。<a href="http://www.activiti.org/" target="_blank" rel="noopener external nofollow noreferrer">官网</a> <a href="https://github.com/Activiti/Activiti" target="_blank" rel="noopener external nofollow noreferrer">github</a></li>
+</ul>
+<h2 id="resources">资源</h2>
+<h3 id="communities">社区</h3>
+
+<ul>
+<li>r/java：Reddit的Java子社区。<a href="https://www.reddit.com/r/java" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>stackoverflow：问答平台。<a href="http://stackoverflow.com/questions/tagged/java" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>vJUG：虚拟Java用户组。<a href="http://virtualjug.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>java8 新特性教程例子。<a href="https://github.com/winterbe/java8-tutorial" target="_blank" rel="noopener external nofollow noreferrer">github</a></li>
+</ul>
+<h3 id="influential-books">有影响力的书</h3>
+
+<p><em>具有广泛影响且值得阅读的Java经典书籍。</em></p>
+<ul>
+<li><a href="http://hao.jobbole.com/effective-java/" target="_blank" rel="noopener external nofollow noreferrer">Effective Java (2nd Edition)</a></li>
+<li><a href="http://hao.jobbole.com/java-8-in-action/" target="_blank" rel="noopener external nofollow noreferrer">Java 8 in Action</a></li>
+<li><a href="http://hao.jobbole.com/java-concurrency-in-practice/" target="_blank" rel="noopener external nofollow noreferrer">Java Concurrency in Practice | Java并发编程实战</a></li>
+<li><a href="http://hao.jobbole.com/thinking-in-java/" target="_blank" rel="noopener external nofollow noreferrer">Thinking in Java | Java编程思想</a></li>
+<li><a href="http://hao.jobbole.com/java-puzzlers/" target="_blank" rel="noopener external nofollow noreferrer">Java Puzzlers | Java解惑</a></li>
+</ul>
+<h3 id="podcasts">播客</h3>
+
+<p><em>可以一边编程一边听的东西。</em></p>
+<ul>
+<li>Java Council：<a href="http://virtualjug.com/podcast/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li>Java Posse：Discontinued as of 02/2015.<a href="http://www.javaposse.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+<h3 id="weibo-weixin">微博、微信公众号</h3>
+
+<ul>
+<li>ImportNew：是最受欢迎的、专注Java技术分享的微信公众号。专注Java技术分享，包括Java基础技术、进阶技能、架构设计和Java技术领域动态等。<br><br><img src= "/img/loading.gif" data-src="http://ww2.sinaimg.cn/small/63918611gw1epb2c7rv2uj20460463ym.jpg" alt=""></li>
+<li>ImportNew 微博：<a href="http://weibo.com/importnew" target="_blank" rel="noopener external nofollow noreferrer">@ImportNew</a></li>
+</ul>
+<h3 id="twitter">Twitter</h3>
+
+<ul>
+<li><a href="https://twitter.com/AdamBien/" target="_blank" rel="noopener external nofollow noreferrer">Adam Bien</a>：自由职业者、作家、JavaONE明星演讲者、顾问、Java Champion。</li>
+<li><a href="https://twitter.com/agoncal/" target="_blank" rel="noopener external nofollow noreferrer">Antonio Goncalves</a>：Java Champion、JUG Leader、Devoxx France、Java EE 6/7、JCP、作家。</li>
+<li><a href="https://twitter.com/arungupta/" target="_blank" rel="noopener external nofollow noreferrer">Arun Gupta</a>：Java Champion、JavaONE明星演讲者、JUG Leader、Devoxx4Kids成员、Red Hatter。</li>
+<li><a href="https://twitter.com/brunoborges" target="_blank" rel="noopener external nofollow noreferrer">Bruno Borges</a>：Oracle产品经理、Java Jock。</li>
+<li><a href="https://twitter.com/edburns" target="_blank" rel="noopener external nofollow noreferrer">Ed Burns</a>：Oracle技术团队顾问。</li>
+<li><a href="https://twitter.com/baeldung" target="_blank" rel="noopener external nofollow noreferrer">Eugen Paraschiv</a>：Spring安全课程作者。</li>
+<li><a href="https://twitter.com/JavaFXpert" target="_blank" rel="noopener external nofollow noreferrer">James Weaver</a>：Java、JavaFX、IoT开发者、作者和演讲者。</li>
+<li><a href="https://twitter.com/Java_EE/" target="_blank" rel="noopener external nofollow noreferrer">Java EE</a>：Java EE Twitter官方账号。</li>
+<li><a href="https://twitter.com/Oraclejavamag" target="_blank" rel="noopener external nofollow noreferrer">Java Magazine</a>：Java杂志官方账号。</li>
+<li><a href="https://twitter.com/javanetbuzz/" target="_blank" rel="noopener external nofollow noreferrer">Java.net</a>：Java.net官方账号。</li>
+<li><a href="https://twitter.com/java/" target="_blank" rel="noopener external nofollow noreferrer">Java</a>：Java Twitter官方账号。</li>
+<li><a href="https://twitter.com/javinpaul" target="_blank" rel="noopener external nofollow noreferrer">Javin Paul</a>：知名Java博客作者。</li>
+<li><a href="https://twitter.com/lukaseder" target="_blank" rel="noopener external nofollow noreferrer">Lukas Eder</a>：Data Geekery（jOOQ）创始人兼CEO。</li>
+<li><a href="https://twitter.com/mariofusco" target="_blank" rel="noopener external nofollow noreferrer">Mario Fusco</a>：RedHatter、JUG协调、活跃讲师和作者。</li>
+<li><a href="https://twitter.com/mreinhold" target="_blank" rel="noopener external nofollow noreferrer">Mark Reinhold</a>：Oracle首席架构师、Java平台开发组。</li>
+<li><a href="https://twitter.com/karianna" target="_blank" rel="noopener external nofollow noreferrer">Martijn Verburg</a>：London JUG co-leader、演讲者、作家、Java Champion等。</li>
+<li><a href="https://twitter.com/OpenJDK" target="_blank" rel="noopener external nofollow noreferrer">OpenJDK</a>：OpenJDK官方账号。</li>
+<li><a href="https://twitter.com/reza_rahman" target="_blank" rel="noopener external nofollow noreferrer">Reza Rahman</a>：Java EE、GlassFish、WebLogic传道者、作家、演讲者、开源黑客。</li>
+<li><a href="https://twitter.com/sjmaple" target="_blank" rel="noopener external nofollow noreferrer">Simon Maple</a>：Java Champion、virtualJUG创始人、LJC leader、RebelLabs作者。</li>
+<li><a href="https://twitter.com/jodastephen" target="_blank" rel="noopener external nofollow noreferrer">Stephen Colebourne</a>： Java Champion、演讲者。</li>
+<li><a href="https://twitter.com/kablosna" target="_blank" rel="noopener external nofollow noreferrer">Tim Boudreau</a>：作家、NetBeans大牛。</li>
+<li><a href="https://twitter.com/trisha_gee" target="_blank" rel="noopener external nofollow noreferrer">Trisha Gee</a>：Java Champion、演讲者。</li>
+</ul>
+<h3 id="weibo-weixin">微博、微信公众号</h3>
+
+<ul>
+<li>ImportNew 微博：<a href="http://weibo.com/importnew" target="_blank" rel="noopener external nofollow noreferrer">@ImportNew</a></li>
+<li>ImportNew：最受欢迎的、专注Java技术分享的微信公众号。专注Java技术分享，包括Java基础技术、进阶技能、架构设计和Java技术领域动态等。<br><br><img src= "/img/loading.gif" data-src="http://ww2.sinaimg.cn/small/63918611gw1epb2c7rv2uj20460463ym.jpg" width=150 height=150></li>
+</ul>
+<h3 id="websites">知名网站</h3>
+
+<p><em>值得关注的Java技术站点。</em></p>
+<h4>中文站点</h4>
+
+<ul>
+<li><a href="http://www.importnew.com/" target="_blank" rel="noopener external nofollow noreferrer">ImportNew</a>（ImportNew 专注 Java 技术）</li>
+</ul>
+<h4>英文站点</h4>
+
+<ul>
+<li><a href="https://android-arsenal.com" target="_blank" rel="noopener external nofollow noreferrer">Android Arsenal</a></li>
+<li><a href="http://hao.jobbole.com/google-java-style/" target="_blank" rel="noopener external nofollow noreferrer">Google Java Style</a>：<a href="https://google.github.io/styleguide/javaguide.html" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/infoq/" target="_blank" rel="noopener external nofollow noreferrer">InfoQ</a>：<a href="http://www.infoq.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://www.javacodegeeks.com/" target="_blank" rel="noopener external nofollow noreferrer">Java Code Geeks</a></li>
+<li><a href="http://blog.jooq.org/" target="_blank" rel="noopener external nofollow noreferrer">Java, SQL, and jOOQ</a></li>
+<li><a href="http://java.net/" target="_blank" rel="noopener external nofollow noreferrer">Java.net</a></li>
+<li><a href="http://java.dzone.com/" target="_blank" rel="noopener external nofollow noreferrer">Javalobby</a></li>
+<li><a href="http://hao.jobbole.com/javaworld/" target="_blank" rel="noopener external nofollow noreferrer">JavaWorld</a>：<a href="http://www.javaworld.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://hao.jobbole.com/jaxenter/" target="_blank" rel="noopener external nofollow noreferrer">JAXenter</a>：<a href="https://jaxenter.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://zeroturnaround.com/rebellabs/" target="_blank" rel="noopener external nofollow noreferrer">RebelLabs</a></li>
+<li><a href="http://hao.jobbole.com/javaspecialists/" target="_blank" rel="noopener external nofollow noreferrer">The Java Specialist’ Newsletter</a>：<a href="http://www.javaspecialists.eu/archive/archive.jsp" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://blog.takipi.com/" target="_blank" rel="noopener external nofollow noreferrer">The Takipi Blog</a></li>
+<li><a href="http://hao.jobbole.com/theserverside/" target="_blank" rel="noopener external nofollow noreferrer">TheServerSide.com</a>：服务器编程交流平台是一个老牌的IT信息网站，关注服务器端编程的，以Java和.Net周边信息为主。<a href="http://www.theserverside.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+<li><a href="http://www.thoughts-on-java.org/" target="_blank" rel="noopener external nofollow noreferrer">Thoughts On Java</a></li>
+<li><a href="http://vanillajava.blogspot.ch/" target="_blank" rel="noopener external nofollow noreferrer">Vanilla Java</a></li>
+<li><a href="http://vladmihalcea.com/" target="_blank" rel="noopener external nofollow noreferrer">Vlad Mihalcea on Hibernate</a></li>
+<li><a href="https://www.voxxed.com/" target="_blank" rel="noopener external nofollow noreferrer">Voxxed</a></li>
+<li><a href="http://hao.jobbole.com/onjava/" target="_blank" rel="noopener external nofollow noreferrer">OnJava</a>：O’Reilly Java包含最新的Java技术资讯，优质代码，完全的实例和详解。<a href="http://www.onjava.com/" target="_blank" rel="noopener external nofollow noreferrer">官网</a></li>
+</ul>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:978252321@qq.com" rel="external nofollow noreferrer">cl</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://wangchuanli001.github.io/posts/56655.html">https://wangchuanli001.github.io/posts/56655.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://wangchuanli001.github.io" target="_blank">Sky & Sea</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><button class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="/img/wechat.jpg" alt="wechat" onclick="window.open('/img/wechat.jpg')"/><div class="post-qr-code__desc">wechat</div></li><li class="reward-item"><img class="post-qr-code__img" src="/img/alipay.jpg" alt="alipay" onclick="window.open('/img/alipay.jpg')"/><div class="post-qr-code__desc">alipay</div></li></ul></div></button></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/32582.html"><img class="prev-cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">MarkDown操作</div></div></a></div><div class="next-post pull-right"><a href="/posts/42610.html"><img class="next-cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">JAVA--IO知识整理</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/posts/42610.html" title="JAVA--IO知识整理"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2018-06-29</div><div class="relatedPosts_title">JAVA--IO知识整理</div></div></a></div><div class="relatedPosts_item"><a href="/posts/19072.html" title="JAVA基础知识"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2018-06-28</div><div class="relatedPosts_title">JAVA基础知识</div></div></a></div><div class="relatedPosts_item"><a href="/posts/18925.html" title="JAVA集合"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2018-11-29</div><div class="relatedPosts_title">JAVA集合</div></div></a></div><div class="relatedPosts_item"><a href="/posts/8329.html" title="JAVA并发知识整理"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2018-11-29</div><div class="relatedPosts_title">JAVA并发知识整理</div></div></a></div><div class="relatedPosts_item"><a href="/posts/60574.html" title="JAVA虚拟机"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2018-11-30</div><div class="relatedPosts_title">JAVA虚拟机</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: '052d9d6486112e93fa50',
+  clientSecret: '6fea35bfb7a17521694a95f705683622976d2f53',
+  repo: 'gitalk',
+  owner: 'wangchuanli001',
+  admin: ['wangchuanli001'],
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN',
+  perPage: 10,
+  distractionFreeMode: false,
+  pagerDirection: 'last',
+  createIssueManually: false,
+  updateCountCallback: commentCount
+})
+gitalk.render('gitalk-container')
+
+function commentCount(n){
+  try {
+    document.getElementsByClassName('gitalk-comment-count')[0].innerHTML= n
+  } catch (e) {
+    return false
+  }
+}</script></div></article></main><footer id="footer" style="background-image: url(https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2020 By cl</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener external nofollow noreferrer"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener external nofollow noreferrer"><span>Butterfly</span></a></div><div class="footer_custom_text">Welcome to Here!</div><div class="icp"><a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener external nofollow noreferrer"><img class="icp-icon" src="/img/icp.png"/><span>皖ICP-978252321</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">简</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fas fa-comments"></i></a><button class="close" id="mobile-toc-button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener external nofollow noreferrer" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script defer id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script><script>var isChatBtn = true
+
+if (isChatBtn) {
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'wangchuangli-/community',
+    activationElement: '#chat_btn'
+  };
+} else {
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'wangchuangli-/community',
+  };
+
+  if (true) {
+    var gitterBtn = document.getElementsByClassName('gitter-open-chat-button')
+
+    function chatBtnHide () {
+      gitterBtn[0].style.display= 'none'
+    }
+
+    function chatBtnShow () {
+      gitterBtn[0].style.display= 'block'
+    }
+  }
+}
+</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="async" defer="defer"></script></body></html>

@@ -1,0 +1,605 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sky &amp; Sea - Blue Sky and Sea.</title><meta name="description" content="wangchuanli&#39;s blog"><meta name="keywords" content="博客,blog,王传礼,java,python,大数据"><meta name="author" content="cl,978252321@qq.com"><meta name="copyright" content="cl"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://i.loli.net/2020/06/19/OuDBhHn3GCE6mr7.jpg"><link rel="canonical" href="https://wangchuanli001.github.io/page/3/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta name="baidu-site-verification" content="qKvGNFZPF9"/><meta property="og:type" content="website"><meta property="og:title" content="Sky &amp; Sea"><meta property="og:url" content="https://wangchuanli001.github.io/page/3/"><meta property="og:site_name" content="Sky &amp; Sea"><meta property="og:description" content="wangchuanli&#39;s blog"><meta property="og:image" content="https://i.loli.net/2020/06/19/NbXetJWUwHQEC9z.jpg"><meta property="article:published_time" content="2020-06-23T09:09:10.632Z"><meta property="article:modified_time" content="2020-06-23T09:09:10.632Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39bd6e37a6e70dc030e6a043a642784e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Sky & Sea" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://i.loli.net/2020/06/19/NbXetJWUwHQEC9z.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">33</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">20</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fa fa-picture-o"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://i.loli.net/2020/06/19/npIZ9Dkqfd3gaRS.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Sky &amp; Sea</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fa fa-picture-o"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">Sky &amp; Sea</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/wangchuanli001" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:wangchuanli_@hotamil.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS链接"><i class="fa fa-rss"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/43648.html" title="IDEA快捷键">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IDEA快捷键"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/43648.html" title="IDEA快捷键">IDEA快捷键</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-11-22 18:12:32"><i class="far fa-calendar-alt"></i>2018-11-22</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Star/">Star</a></span></div><div class="content">IDEA的快捷键整理记录
+———–自动代码——– 
+
+常用的有fori/sout/psvm+Tab即可生成循环、System.out、main方法等boilerplate样板代码例如要输入for(User user : users)只需输入user.for+Tab再比如，要输入Date birthday = user.getBirthday();只需输入user.getBirthday().var+Tab即可。代码标签输入完成后，按Tab，生成代码。
+Ctrl+Alt+O 优化导入的类和包Alt+Insert 生成代码(如get,set方法,构造函数等)   或者右键（Generate）fori/sout/psvm + TabCtrl+Alt+T  生成try catch  或者 Alt+enterCTRL+ALT+T  把选中的代码放在 TRY{} IF{} ELSE{} 里Ctrl + O 重写方法Ctrl + I 实现方法Ctr+shift+U 大小写转化ALT+回车    导入包,自动修正ALT+/       代码提示CTRL+J      自动代码Ctrl+Shift+J， ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/18557.html" title="ReadMe Guide">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ReadMe Guide"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/18557.html" title="ReadMe Guide">ReadMe Guide</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-11-21 16:12:32"><i class="far fa-calendar-alt"></i>2018-11-21</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Star/">Star</a></span></div><div class="content">ReadMe.md 语法指导===========================该文件用来测试和展示书写README的各种markdown语法。GitHub的markdown语法在标准的markdown语法基础上做了扩充，称之为GitHub Flavored Markdown。简称GFM，GFM在GitHub上有广泛应用，除了README文件外，issues和wiki均支持markdown语法。
+===========================
+##目录
+
+横线
+标题
+文本
+普通文本
+单行文本
+多行文本
+文字高亮
+
+
+链接 
+文字超链接
+链接外部URL
+链接本仓库里的URL
+
+
+锚点
+图片超链接
+
+
+图片
+来源于网络的图片
+GitHub仓库中的图片
+
+
+列表
+圆点列表
+数字列表
+复选框列表
+
+
+块引用
+代码
+表格 
+表情
+
+
+##***、---、___显示虚横线
+***
+---
+___
+
+
+
+
+#一级标题
+##二级标题
+###三级标题
+####四级标题
+#####五级标题
+######六级标题
+
+
+##显示文本###普通文本这是一段普通的文本####关于换行直接回车不能换行，可 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/61455.html" title="Emoji">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Emoji"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/61455.html" title="Emoji">Emoji</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-11-21 14:11:39"><i class="far fa-calendar-alt"></i>2018-11-21</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E9%9B%86%E5%90%88/">集合</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E9%9B%86%E5%90%88/Hexo/">Hexo</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Star/">Star</a></span></div><div class="content">github的全部表情系列Emoji表情将对应emoji表情的符号码复制后输入你的markdown文本即可显示emoji表情。如:blush:，显示为:blush:
+人物
+
+
+syntax
+preview
+syntax
+preview
+syntax
+preview
+
+
+
+:bowtie:
+:bowtie:
+:smile:
+:smile:
+:laughing:
+:laughing:
+
+
+:blush:
+:blush:
+:smiley:
+:smiley:
+:relaxed:
+:relaxed:
+
+
+:smirk:
+:smirk:
+:heart_eyes:
+:heart_eyes:
+:kissing_heart:
+:kissing_heart:
+
+
+:kissing_closed_eyes:
+:kissing_closed_eyes:
+:flushed:
+:flushed:
+:relieved:
+:relieved:
+
+
+:satisfied:
+:satisfied:
+:grin:
+:grin:
+:wink:
+:wink:
+
+
+:stuck_out_tongue_winking_eye:
+: ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/33955.html" title="GitHub的表情预览">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GitHub的表情预览"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/33955.html" title="GitHub的表情预览">GitHub的表情预览</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-11-21 11:07:29"><i class="far fa-calendar-alt"></i>2018-11-21</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Star/">Star</a></span></div><div class="content">github的全部表情系列最新emoji大全：emoji列表
+emoji-list
+
+
+目录
+人物
+自然
+事物
+地点
+符号
+
+人物
+
+
+
+
+
+ :bowtie:
+
+
+ :smile:
+
+
+ :laughing:
+
+
+
+
+
+ :blush:
+
+
+ :smiley:
+
+
+ :relaxed:
+
+
+
+
+ :smirk:
+
+
+ :heart_eyes:
+
+
+ :kissing_heart:
+
+
+
+
+ :kissing_closed_eyes:
+
+
+ :flushed:
+
+
+ :relieved:
+
+
+
+
+ :satisfied:
+
+
+ :grin:
+
+
+ :wink:
+
+
+
+
+ :stuck_out_tongue_winking_eye:
+
+
+ :stuck_out_tongue_closed_eyes:
+
+
+ :grinning:
+
+
+
+
+ :kissing:
+
+
+ :kissing_smiling_eyes:
+
+
+ :stuck_out_tongue:
+
+
+
+
+ :sleeping:
+
+
+ :worried:
+
+
+ :frowning:
+
+
+
+
+ :anguished:
+
+
+ :open_ ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/4496.html" title="编程系列豆瓣书单">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编程系列豆瓣书单"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/4496.html" title="编程系列豆瓣书单">编程系列豆瓣书单</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-09-05 11:20:20"><i class="far fa-calendar-alt"></i>2018-09-05</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Star/">Star</a></span></div><div class="content">豆瓣书单    数据结构与算法、操作系统、计算机网络、数据库、java等
+数据结构与算法
+算法
+数据结构与算法分析
+编程珠玑
+剑指 Offer
+
+操作系统
+现代操作系统
+深入理解计算机系统
+鸟哥的 Linux 私房菜
+Unix 环境高级编程
+Unix/Linux 编程实践教程
+Operating Systems: Three Easy Pieces (OSTEP)
+
+计算机网络
+计算机网络
+计算机网络 自顶向下方法
+图解 HTTP
+TCP/IP 详解 卷 1：协议
+UNIX 网络编程
+Linux 多线程服务端编程
+
+面向对象
+Head First 设计模式
+设计模式 可复用面向对象软件的基础
+敏捷软件开发 原则、模式与实践
+
+数据库
+数据库系统概念
+MySQL 必知必会
+高性能 MySQL
+Redis 设计与实现
+Redis 实战
+
+Java
+Java 编程思想
+Effective java 中文版
+深入理解 Java 虚拟机
+Java 并发编程实战
+精通 Spring 4.x
+Spring 揭秘
+
+C++
+C++ Primer
+Effective C++
+C++ 编程规范
+STL 源 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/36806.html" title="Python-字符串相关操作">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python-字符串相关操作"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/36806.html" title="Python-字符串相关操作">Python-字符串相关操作</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-08-17 09:20:20"><i class="far fa-calendar-alt"></i>2018-08-17</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Python/">Python</a></span></div><div class="content">   Python 字符串操作（string替换、删除、截取、复制、连接、比较、查找、包含、大小写转换）
+一、去空格及特殊符号s.strip().lstrip().rstrip(&apos;,&apos;)二、复制字符串#strcpy(sStr1,sStr2)
+sStr1 = &apos;strcpy&apos;
+sStr2 = sStr1
+sStr1 = &apos;strcpy2&apos;
+print(sStr2)三、连接字符串#strcat(sStr1,sStr2)
+sStr1 = &apos;strcat&apos;
+sStr2 = &apos;append&apos;
+sStr1 += sStr2
+print(sStr1)四、查找字符#strchr(sStr1,sStr2)
+# &lt; 0 为未找到
+sStr1 = &apos;strchr&apos;
+sStr2 = &apos;s&apos;
+nPos = sStr1.index(sStr2)
+print(nPos)五、比较字符串#strcmp(sStr1,sStr2)
+sStr1 = &apos;strchr&apo ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/32582.html" title="MarkDown操作">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MarkDown操作"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/32582.html" title="MarkDown操作">MarkDown操作</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-07-15 10:07:29"><i class="far fa-calendar-alt"></i>2018-07-15</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Star/">Star</a></span></div><div class="content">MarkDown操作
+标题：
+#h1级标题
+##h2级标题
+###h3级标题
+####h4级标题
+#####h5级标题
+######h6级标题
+
+分割线：三个以上的短线 即可作出分割线
+
+----
+
+超链接：[连接名称](网址 , 标题)
+[我是链接名](http://www.izhangbo.cn, &quot;我是标题&quot;)
+[&lt;i class=&quot;icon-refresh&quot;&gt;&lt;/i&gt; 点我刷新](/sonfilename/)
+
+另一种超链接写法：[链接名][链接代号]
+[here][3]
+然后在别的地方定义 3 这个详细链接信息，
+[3]: http://www.izhangbo.cn &quot;聚牛团队&quot;
+
+直接展示链接的写法：&lt;http://www.izhangbo.cn&gt;
+
+键盘键
+&lt;kbd&gt;Ctrl+[&lt;/kbd&gt; and &lt;kbd&gt;Ctrl+]&lt;/kbd&gt;
+
+code格式：反引号
+Use the `printf()` function.
+
+``The ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/56655.html" title="Java资源大全">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java资源大全"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/56655.html" title="Java资源大全">Java资源大全</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-07-02 09:20:20"><i class="far fa-calendar-alt"></i>2018-07-02</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Java/">Java</a></span></div><div class="content">Java资源大全中文    java相关工具、相关知识书籍、java相关资源链接
+Java资源大全中文版我想很多程序员应该记得 GitHub 上有一个 Awesome - XXX 系列的资源整理。awesome-java 就是 akullpp 发起维护的 Java 资源列表，内容包括：构建工具、数据库、框架、模板、安全、代码分析、日志、第三方库、书籍、Java 站点等等。伯乐在线已经把 awesome-java 资源列表翻成中文后发布于 ImportNew。
+Awesome 系列虽然挺全，但基本只对收录的资源做了极为简要的介绍，如果有更详细的中文介绍，对相应开发者的帮助会更大。这也是我们发起这个开源项目的初衷。
+
+我们要做什么？
+基于 awesome-java 资源列表，我们将对各个资源项进行编译整理。
+整理后的内容，将收录在伯乐在线资源频道。可参考已整理的内容：
+《OWNER：Java配置文件解决方案》
+《Spring Boot：简化Spring应用初始搭建以及开发过程》
+《SonarQube：开源的代码质量管理工具》
+
+
+
+
+如何参与本项目？
+
+
+如何为列表贡献新资源？欢迎大家为列 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/42610.html" title="JAVA--IO知识整理">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JAVA--IO知识整理"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/42610.html" title="JAVA--IO知识整理">JAVA--IO知识整理</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-06-29 17:22:58"><i class="far fa-calendar-alt"></i>2018-06-29</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Java/">Java</a></span></div><div class="content">Java  I/O  的知识内容        磁盘操作、字节操作、字符操作、网络操作、缓冲。。。
+
+一、概览
+二、磁盘操作
+三、字节操作
+四、字符操作
+五、对象操作
+六、网络操作
+InetAddress
+URL
+Sockets
+Datagram
+
+
+七、NIO
+流与块
+通道与缓冲区
+缓冲区状态变量
+文件 NIO 实例
+选择器
+套接字 NIO 实例
+内存映射文件
+对比
+
+
+八、参考资料
+
+
+
+
+一、概览Java 的 I/O 大概可以分成以下几类：
+
+磁盘操作：File
+字节操作：InputStream 和 OutputStream
+字符操作：Reader 和 Writer
+对象操作：Serializable
+网络操作：Socket
+新的输入/输出：NIO
+
+二、磁盘操作File 类可以用于表示文件和目录的信息，但是它不表示文件的内容。
+递归地输出一个目录下所有文件：
+public static void listAllFiles(File dir) &#123;    if (dir == null || !dir.exists()) &#123;        return;     ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/19072.html" title="JAVA基础知识">     <img class="post_bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JAVA基础知识"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/19072.html" title="JAVA基础知识">JAVA基础知识</a><div class="article-meta-wrap"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-06-28 15:42:38"><i class="far fa-calendar-alt"></i>2018-06-28</span><span class="article-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history"></i>2020-06-23</span></time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Java/">Java</a></span></div><div class="content">Java相关的基础知识、数据类型、String、特性、关键字、反射、异常、泛型、注解等
+
+一、数据类型
+包装类型
+缓存池
+
+
+二、String
+概览
+不可变的好处
+String, StringBuffer and StringBuilder
+String.intern()
+
+
+三、运算
+参数传递
+float 与 double
+隐式类型转换
+switch
+
+
+四、继承
+访问权限
+抽象类与接口
+super
+重写与重载
+
+
+五、Object 通用方法
+概览
+equals()
+hashCode()
+toString()
+clone()
+
+
+六、关键字
+final
+static
+
+
+七、反射
+八、异常
+九、泛型
+十、注解
+十一、特性
+Java 各版本的新特性
+Java 与 C++ 的区别
+JRE or JDK
+
+
+参考资料
+
+
+
+
+一、数据类型包装类型八个基本类型：
+
+boolean/1
+byte/8
+char/16
+short/16
+int/32
+float/32
+long/64
+double/64
+
+基本类型都有对应的包装类型，基本类型与其对应的包装类型之间的赋值使用自动装箱与拆箱完成。
+I ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://i.loli.net/2020/06/19/NbXetJWUwHQEC9z.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">cl</div><div class="author-info__description">wangchuanli's blog</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">33</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">20</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">5</div></a></div></div><div class="card-info-bookmark is-center"><button class="button--animated" id="bookmark-it" title="加入书签"><i class="fas fa-bookmark"></i><span>加入书签</span></button></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/wangchuanli001" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:wangchuanli_@hotamil.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS链接"><i class="fa fa-rss"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/posts/63534.html"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="test" alt="test"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/63534.html" title="test">test</div><time class="aside-post_meta post-meta__date" title="发表于 2020-06-23 14:18:00">2020-06-23</time></div></a></div><div class="aside-recent-post"><a href="/posts/3791.html"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/06/19/NbXetJWUwHQEC9z.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="使用pm2在Linux后台监控hexo运行" alt="使用pm2在Linux后台监控hexo运行"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/3791.html" title="使用pm2在Linux后台监控hexo运行">使用pm2在Linux后台监控hexo运行</div><time class="aside-post_meta post-meta__date" title="发表于 2020-06-23 14:18:00">2020-06-23</time></div></a></div><div class="aside-recent-post"><a href="/posts/56200.html"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/06/19/NbXetJWUwHQEC9z.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Butterfly 文章Demo" alt="Butterfly 文章Demo"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/56200.html" title="Butterfly 文章Demo">Butterfly 文章Demo</div><time class="aside-post_meta post-meta__date" title="发表于 2020-02-02 00:00:00">2020-02-02</time></div></a></div><div class="aside-recent-post"><a href="/posts/16566.html"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="面向对象的思想" alt="面向对象的思想"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/16566.html" title="面向对象的思想">面向对象的思想</div><time class="aside-post_meta post-meta__date" title="发表于 2018-12-02 12:11:21">2018-12-02</time></div></a></div><div class="aside-recent-post"><a href="/posts/19844.html"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="项目构建工具" alt="项目构建工具"/></div><div class="aside-post-title"><div class="aside-post_title" href="/posts/19844.html" title="项目构建工具">项目构建工具</div><time class="aside-post_meta post-meta__date" title="发表于 2018-12-02 12:11:21">2018-12-02</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/hexo/"><span class="card-category-list-name">hexo</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/pm2/"><span class="card-category-list-name">pm2</span><span class="card-category-list-count">1</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/pm2/hexo/"><span class="card-category-list-name">hexo</span><span class="card-category-list-count">1</span></a></li></ul><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%9B%86%E5%90%88/"><span class="card-category-list-name">集合</span><span class="card-category-list-count">1</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%9B%86%E5%90%88/Hexo/"><span class="card-category-list-name">Hexo</span><span class="card-category-list-count">1</span></a></li></ul>
+                       
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/HTTP/" style="font-size: 16px; color: #999">HTTP</a> <a href="/tags/I-O/" style="font-size: 16px; color: #999">I/O</a> <a href="/tags/Java/" style="font-size: 20.5px; color: #99a5b6">Java</a> <a href="/tags/OO/" style="font-size: 16px; color: #999">OO</a> <a href="/tags/Python/" style="font-size: 16px; color: #999">Python</a> <a href="/tags/Radis/" style="font-size: 16px; color: #999">Radis</a> <a href="/tags/SQL/" style="font-size: 19px; color: #99a1ac">SQL</a> <a href="/tags/Star/" style="font-size: 22px; color: #99a9bf">Star</a> <a href="/tags/Tools/" style="font-size: 16px; color: #999">Tools</a> <a href="/tags/demo/" style="font-size: 16px; color: #999">demo</a> <a href="/tags/git/" style="font-size: 16px; color: #999">git</a> <a href="/tags/hexo/" style="font-size: 16px; color: #999">hexo</a> <a href="/tags/linux/" style="font-size: 16px; color: #999">linux</a> <a href="/tags/pm2/" style="font-size: 16px; color: #999">pm2</a> <a href="/tags/test/" style="font-size: 16px; color: #999">test</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 17.5px; color: #999da3">操作系统</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 16px; color: #999">教程</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 16px; color: #999">正则表达式</a> <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" style="font-size: 16px; color: #999">消息队列</a> <a href="/tags/%E7%BC%93%E5%AD%98/" style="font-size: 16px; color: #999">缓存</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">六月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/02/"><span class="card-archive-list-date">二月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2018/12/"><span class="card-archive-list-date">十二月 2018</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2018/11/"><span class="card-archive-list-date">十一月 2018</span><span class="card-archive-list-count">18</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2018/09/"><span class="card-archive-list-date">九月 2018</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2018/08/"><span class="card-archive-list-date">八月 2018</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2018/07/"><span class="card-archive-list-date">七月 2018</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2018/06/"><span class="card-archive-list-date">六月 2018</span><span class="card-archive-list-count">5</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">33</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已运行时间 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" publish_date="6/7/2018 00:00:00">     </div></div><div class="webinfo-item"><div class="webinfo-site-wordcount-name">本站总字数 :</div><div class="webinfo-site-wordcount">114.9k</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://i.loli.net/2020/06/19/npIZ9Dkqfd3gaRS.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2020 By cl</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener external nofollow noreferrer"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener external nofollow noreferrer"><span>Butterfly</span></a></div><div class="footer_custom_text">Welcome to Here!</div><div class="icp"><a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener external nofollow noreferrer"><img class="icp-icon" src="/img/icp.png"/><span>皖ICP-978252321</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">简</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button id="chat_btn" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener external nofollow noreferrer" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script defer id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleType = function () {
+  loadScript('https://sdk.jinrishici.com/v2/browser/jinrishici.js',function () {
+      var subtitleEffect = true
+      jinrishici.load(function (result) {
+        if (subtitleEffect) {
+          var sub = "今日事&#44;今日毕,Never put off till tomorrow what you can do today".length == 0 ? new Array() : "今日事&#44;今日毕,Never put off till tomorrow what you can do today".split(',')
+          var content = result.data.content
+          var both = sub.unshift(content)
+          var typed = new Typed('#subtitle', {
+            strings: sub,
+            startDelay: 300,
+            typeSpeed: 150,
+            loop: true,
+            backSpeed: 50,
+          })
+        } else {
+          document.getElementById('subtitle').innerHTML = result.data.content
+        }
+      })
+    }
+  )
+}
+window.addEventListener('load', subtitleType)
+</script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script><script>var isChatBtn = true
+
+if (isChatBtn) {
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'wangchuangli-/community',
+    activationElement: '#chat_btn'
+  };
+} else {
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'wangchuangli-/community',
+  };
+
+  if (true) {
+    var gitterBtn = document.getElementsByClassName('gitter-open-chat-button')
+
+    function chatBtnHide () {
+      gitterBtn[0].style.display= 'none'
+    }
+
+    function chatBtnShow () {
+      gitterBtn[0].style.display= 'block'
+    }
+  }
+}
+</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="async" defer="defer"></script></body></html>

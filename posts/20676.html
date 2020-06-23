@@ -1,0 +1,582 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SQL经典例题学习 | Sky &amp; Sea</title><meta name="description" content="SQL方面的经典例题实践。数据库建库语句use fuxi;  CREATE TABLE STUDENT (   SNO       VARCHAR(3) NOT NULL,   SNAME     VARCHAR(4) NOT NULL,   SSEX      VARCHAR(2) NOT NULL,   SBIRTHDAY DATETIME,   CLASS     VARCHAR(5) );"><meta name="keywords" content="SQL"><meta name="author" content="cl,978252321@qq.com"><meta name="copyright" content="cl"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://i.loli.net/2020/06/19/OuDBhHn3GCE6mr7.jpg"><link rel="canonical" href="https://wangchuanli001.github.io/posts/20676.html"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta name="baidu-site-verification" content="qKvGNFZPF9"/><meta property="og:type" content="article"><meta property="og:title" content="SQL经典例题学习"><meta property="og:url" content="https://wangchuanli001.github.io/posts/20676.html"><meta property="og:site_name" content="Sky &amp; Sea"><meta property="og:description" content="SQL方面的经典例题实践。数据库建库语句use fuxi;  CREATE TABLE STUDENT (   SNO       VARCHAR(3) NOT NULL,   SNAME     VARCHAR(4) NOT NULL,   SSEX      VARCHAR(2) NOT NULL,   SBIRTHDAY DATETIME,   CLASS     VARCHAR(5) );"><meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><meta property="article:published_time" content="2018-11-24T09:45:53.000Z"><meta property="article:modified_time" content="2020-06-23T09:06:20.432Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="prev" title="计算机操作系统" href="https://wangchuanli001.github.io/posts/8398.html"><link rel="next" title="SQL学习" href="https://wangchuanli001.github.io/posts/32011.html"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5/js/md5.min.js"></script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39bd6e37a6e70dc030e6a043a642784e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Sky & Sea" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://i.loli.net/2020/06/19/NbXetJWUwHQEC9z.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">33</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">20</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fa fa-picture-o"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库建库语句"><span class="toc-number">1.</span> <span class="toc-text">数据库建库语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库数据录入"><span class="toc-number">2.</span> <span class="toc-text">数据库数据录入</span></a></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Sky &amp; Sea</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fa fa-picture-o"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">SQL经典例题学习</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2018-11-24 17:45:53"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2018-11-24</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-23 17:06:20"><i class="fas fa-history fa-fw"></i> 更新于 2020-06-23</span></time></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">2.4k</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 12 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><pre><code>SQL方面的经典例题实践。</code></pre><h3 id="数据库建库语句"><a href="#数据库建库语句" class="headerlink" title="数据库建库语句"></a>数据库建库语句</h3><pre><code>use fuxi;
+
+CREATE TABLE STUDENT
+(
+  SNO       VARCHAR(3) NOT NULL,
+  SNAME     VARCHAR(4) NOT NULL,
+  SSEX      VARCHAR(2) NOT NULL,
+  SBIRTHDAY DATETIME,
+  CLASS     VARCHAR(5)
+);
+
+CREATE TABLE COURSE
+(
+  CNO   VARCHAR(5)  NOT NULL,
+  CNAME VARCHAR(10) NOT NULL,
+  TNO   VARCHAR(10) NOT NULL
+);
+
+CREATE TABLE SCORE
+(
+  SNO    VARCHAR(3)     NOT NULL,
+  CNO    VARCHAR(5)     NOT NULL,
+  DEGREE NUMERIC(10, 1) NOT NULL
+);
+
+CREATE TABLE TEACHER
+(
+  TNO       VARCHAR(3)  NOT NULL,
+  TNAME     VARCHAR(4)  NOT NULL,
+  TSEX      VARCHAR(2)  NOT NULL,
+  TBIRTHDAY DATETIME    NOT NULL,
+  PROF      VARCHAR(6),
+  DEPART    VARCHAR(10) NOT NULL
+);</code></pre><h3 id="数据库数据录入"><a href="#数据库数据录入" class="headerlink" title="数据库数据录入"></a>数据库数据录入</h3><pre><code>INSERT INTO STUDENT (SNO, SNAME, SSEX, SBIRTHDAY, CLASS) VALUES (108, &apos;曾华&apos;
+  , &apos;男&apos;, &apos;1977-09-01&apos;, 95033);
+INSERT INTO STUDENT (SNO, SNAME, SSEX, SBIRTHDAY, CLASS) VALUES (105, &apos;匡明&apos;
+  , &apos;男&apos;, &apos;1975-10-02&apos;, 95031);
+INSERT INTO STUDENT (SNO, SNAME, SSEX, SBIRTHDAY, CLASS) VALUES (107, &apos;王丽&apos;
+  , &apos;女&apos;, &apos;1976-01-23&apos;, 95033);
+INSERT INTO STUDENT (SNO, SNAME, SSEX, SBIRTHDAY, CLASS) VALUES (101, &apos;李军&apos;
+  , &apos;男&apos;, &apos;1976-02-20&apos;, 95033);
+INSERT INTO STUDENT (SNO, SNAME, SSEX, SBIRTHDAY, CLASS) VALUES (109, &apos;王芳&apos;
+  , &apos;女&apos;, &apos;1975-02-10&apos;, 95031);
+INSERT INTO STUDENT (SNO, SNAME, SSEX, SBIRTHDAY, CLASS) VALUES (103, &apos;陆君&apos;
+  , &apos;男&apos;, &apos;1974-06-03&apos;, 95031);
+
+INSERT INTO COURSE (CNO, CNAME, TNO) VALUES (&apos;3-105&apos;, &apos;计算机导论&apos;, 825);
+INSERT INTO COURSE (CNO, CNAME, TNO) VALUES (&apos;3-245&apos;, &apos;操作系统&apos;, 804);
+INSERT INTO COURSE (CNO, CNAME, TNO) VALUES (&apos;6-166&apos;, &apos;数据电路&apos;, 856);
+INSERT INTO COURSE (CNO, CNAME, TNO) VALUES (&apos;9-888&apos;, &apos;高等数学&apos;, 100);
+
+INSERT INTO SCORE (SNO, CNO, DEGREE) VALUES (103, &apos;3-245&apos;, 86);
+INSERT INTO SCORE (SNO, CNO, DEGREE) VALUES (105, &apos;3-245&apos;, 75);
+INSERT INTO SCORE (SNO, CNO, DEGREE) VALUES (109, &apos;3-245&apos;, 68);
+INSERT INTO SCORE (SNO, CNO, DEGREE) VALUES (103, &apos;3-105&apos;, 92);
+INSERT INTO SCORE (SNO, CNO, DEGREE) VALUES (105, &apos;3-105&apos;, 88);
+INSERT INTO SCORE (SNO, CNO, DEGREE) VALUES (109, &apos;3-105&apos;, 76);
+INSERT INTO SCORE (SNO, CNO, DEGREE) VALUES (101, &apos;3-105&apos;, 64);
+INSERT INTO SCORE (SNO, CNO, DEGREE) VALUES (107, &apos;3-105&apos;, 91);
+INSERT INTO SCORE (SNO, CNO, DEGREE) VALUES (101, &apos;6-166&apos;, 85);
+INSERT INTO SCORE (SNO, CNO, DEGREE) VALUES (107, &apos;6-106&apos;, 79);
+INSERT INTO SCORE (SNO, CNO, DEGREE) VALUES (108, &apos;3-105&apos;, 78);
+INSERT INTO SCORE (SNO, CNO, DEGREE) VALUES (108, &apos;6-166&apos;, 81);
+
+INSERT INTO TEACHER (TNO, TNAME, TSEX, TBIRTHDAY, PROF, DEPART)
+VALUES (804, &apos;李诚&apos;, &apos;男&apos;, &apos;1958-12-02&apos;, &apos;副教授&apos;, &apos;计算机系&apos;);
+INSERT INTO TEACHER (TNO, TNAME, TSEX, TBIRTHDAY, PROF, DEPART)
+VALUES (856, &apos;张旭&apos;, &apos;男&apos;, &apos;1969-03-12&apos;, &apos;讲师&apos;, &apos;电子工程系&apos;);
+INSERT INTO TEACHER (TNO, TNAME, TSEX, TBIRTHDAY, PROF, DEPART)
+VALUES (825, &apos;王萍&apos;, &apos;女&apos;, &apos;1972-05-05&apos;, &apos;助教&apos;, &apos;计算机系&apos;);
+INSERT INTO TEACHER (TNO, TNAME, TSEX, TBIRTHDAY, PROF, DEPART)
+VALUES (831, &apos;刘冰&apos;, &apos;女&apos;, &apos;1977-08-14&apos;, &apos;助教&apos;, &apos;电子工程系&apos;);</code></pre><ul>
+<li><p>1、 查询Student表中的所有记录的Sname、Ssex和Class列。</p>
+<pre><code>select SNAME,SSEX,CLASS from STUDENT;</code></pre></li>
+<li><p>2、 查询教师所有的单位即不重复的Depart列。</p>
+<pre><code>select distinct DEPART from TEACHER1;</code></pre></li>
+<li><p>3、 查询Student表的所有记录。</p>
+<pre><code>select * from STUDENT;</code></pre></li>
+<li><p>4、 查询Score表中成绩在60到80之间的所有记录。</p>
+<pre><code>select *
+from SCORE
+where DEGREE &gt; 60 and DEGREE &lt; 80;</code></pre></li>
+<li><p>5、 查询Score表中成绩为85，86或88的记录。</p>
+<pre><code>select *
+from SCORE
+where DEGREE = 85 or DEGREE = 86 or DEGREE = 88;</code></pre></li>
+<li><p>6、 查询Student表中“95031”班或性别为“女”的同学记录。</p>
+<pre><code>select *
+from STUDENT
+where CLASS = &apos;95031&apos; or SSEX = &apos;女&apos;;</code></pre></li>
+<li><p>7、 以Class降序查询Student表的所有记录。</p>
+<pre><code>select *
+from STUDENT
+order by CLASS desc;</code></pre></li>
+<li><p>8、 以Cno升序、Degree降序查询Score表的所有记录。</p>
+<pre><code>select *
+from SCORE
+order by CNO asc, DEGREE desc;</code></pre></li>
+<li><p>9、 查询“95031”班的学生人数。</p>
+<pre><code>select count(*)
+from STUDENT
+where CLASS = &apos;95031&apos;;</code></pre></li>
+<li><p>10、查询Score表中的最高分的学生学号和课程号。</p>
+<pre><code>select
+  sno,
+  CNO
+from SCORE
+where DEGREE = (
+  select max(DEGREE)
+  from SCORE
+);</code></pre></li>
+<li><p>11、查询‘3-105’号课程的平均分。</p>
+<pre><code>select avg(DEGREE)
+from SCORE
+where CNO = &apos;3-105&apos;;</code></pre></li>
+<li><p>12、查询Score表中至少有5名学生选修的并以3开头的课程的平均分数。</p>
+<pre><code>select
+  avg(DEGREE),
+  CNO
+from SCORE
+where cno like &apos;3%&apos;
+group by CNO
+having count(*) &gt; 5;</code></pre></li>
+<li><p>13、查询最低分大于70，最高分小于90的Sno列。</p>
+<pre><code>select SNO
+from SCORE
+group by SNO
+having min(DEGREE) &gt; 70 and max(DEGREE) &lt; 90;</code></pre></li>
+<li><p>14、查询所有学生的Sname、Cno和Degree列。</p>
+<pre><code>select
+  SNAME,
+  CNO,
+  DEGREE
+from STUDENT, SCORE
+where STUDENT.SNO = SCORE.SNO;</code></pre></li>
+<li><p>15、查询所有学生的Sno、Cname和Degree列。</p>
+<pre><code>select
+  SCORE.SNO,
+  CNO,
+  DEGREE
+from STUDENT, SCORE
+where STUDENT.SNO = SCORE.SNO;</code></pre></li>
+<li><p>16、查询所有学生的Sname、Cname和Degree列。</p>
+<pre><code>SELECT
+  A.SNAME,
+  B.CNAME,
+  C.DEGREE
+FROM STUDENT A
+  JOIN (COURSE B, SCORE C)
+    ON A.SNO = C.SNO AND B.CNO = C.CNO;</code></pre></li>
+<li><p>17、查询“95033”班所选课程的平均分。</p>
+<pre><code>select avg(DEGREE)
+from SCORE
+where sno in (select SNO
+              from STUDENT
+              where CLASS = &apos;95033&apos;);</code></pre></li>
+<li><p>18、假设使用如下命令建立了一个grade表：</p>
+<pre><code>create table grade (
+  low  numeric(3, 0),
+  upp  numeric(3),
+  rank char(1)
+);
+insert into grade values (90, 100, &apos;A&apos;);
+insert into grade values (80, 89, &apos;B&apos;);
+insert into grade values (70, 79, &apos;C&apos;);
+insert into grade values (60, 69, &apos;D&apos;);
+insert into grade values (0, 59, &apos;E&apos;);</code></pre></li>
+<li><p>现查询所有同学的Sno、Cno和rank列。</p>
+<pre><code>SELECT
+  A.SNO,
+  A.CNO,
+  B.RANK
+FROM SCORE A, grade B
+WHERE A.DEGREE BETWEEN B.LOW AND B.UPP
+ORDER BY RANK;</code></pre></li>
+<li><p>19、查询选修“3-105”课程的成绩高于“109”号同学成绩的所有同学的记录。</p>
+<pre><code>select *
+from SCORE
+where CNO = &apos;3-105&apos; and DEGREE &gt; ALL (
+  select DEGREE
+  from SCORE
+  where SNO = &apos;109&apos;
+);
+
+set @@global.sql_mode = &apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;
+set sql_mode = &apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;</code></pre></li>
+<li><p>20、查询score中选学一门以上课程的同学中分数为非最高分成绩的记录</p>
+<pre><code>select *
+from SCORE
+where DEGREE &lt; (select MAX(DEGREE)
+                from SCORE)
+group by SNO
+having count(*) &gt; 1;</code></pre></li>
+<li><p>21、查询成绩高于学号为“109”、课程号为“3-105”的成绩的所有记录。</p>
+<pre><code>同19</code></pre></li>
+<li><p>22、查询和学号为108的同学同年出生的所有学生的Sno、Sname和Sbirthday列。</p>
+<pre><code>select
+  SNO,
+  SNAME,
+  SBIRTHDAY
+from STUDENT
+where year(SBIRTHDAY) = (
+  select year(SBIRTHDAY)
+  from STUDENT
+  where SNO = &apos;108&apos;
+);</code></pre></li>
+<li><p>23、查询“张旭“教师任课的学生成绩。</p>
+<pre><code>select *
+from SCORE
+where cno = (
+  select CNO
+  from COURSE
+    inner join TEACHER on COURSE.TNO = TEACHER.TNO and TNAME = &apos;张旭&apos;
+);</code></pre></li>
+<li><p>24、查询选修某课程的同学人数多于5人的教师姓名。</p>
+<pre><code>select TNAME
+from TEACHER
+where TNO = (
+  select TNO
+  from COURSE
+  where CNO = (select CNO
+               from SCORE
+               group by CNO
+               having count(SNO) &gt; 5)
+);</code></pre></li>
+<li><p>25、查询95033班和95031班全体学生的记录。</p>
+<pre><code>select *
+from STUDENT
+where CLASS in (&apos;95033&apos;, &apos;95031&apos;);</code></pre></li>
+<li><p>26、查询存在有85分以上成绩的课程Cno.</p>
+<pre><code>select cno
+from SCORE
+group by CNO
+having MAX(DEGREE) &gt; 85;</code></pre></li>
+<li><p>27、查询出“计算机系“教师所教课程的成绩表。</p>
+<pre><code>select *
+from SCORE
+where CNO in (select CNO
+              from TEACHER, COURSE
+              where DEPART = &apos;计算机系&apos; and COURSE.TNO = TEACHER.TNO);</code></pre></li>
+<li><p>28、查询“计算机系”与“电子工程系“不同职称的教师的Tname和Prof</p>
+<pre><code>select
+  tname,
+  prof
+from TEACHER
+where depart = &apos;计算机系&apos; and prof not in (
+  select prof
+  from TEACHER
+  where depart = &apos;电子工程系&apos;
+);</code></pre></li>
+<li><p>29、查询选修编号为“3-105“课程且成绩至少高于选修编号为“3-245”的同学的Cno、Sno和Degree,并按Degree从高到低次序排序。</p>
+<pre><code>select
+  CNO,
+  SNO,
+  DEGREE
+from SCORE
+where CNO = &apos;3-105&apos; and DEGREE &gt; any (
+  select DEGREE
+  from SCORE
+  where CNO = &apos;3-245&apos;
+)
+order by DEGREE desc;</code></pre></li>
+<li><p>30、查询选修编号为“3-105”且成绩高于选修编号为“3-245”课程的同学的Cno、Sno和Degree.</p>
+<pre><code>SELECT *
+FROM SCORE
+WHERE DEGREE &gt; ALL (
+  SELECT DEGREE
+  FROM SCORE
+  WHERE CNO = &apos;3-245&apos;
+)
+ORDER by DEGREE desc;</code></pre></li>
+<li><p>31、查询所有教师和同学的name、sex和birthday.</p>
+<pre><code>select
+  TNAME     name,
+  TSEX      sex,
+  TBIRTHDAY birthday
+from TEACHER
+union
+select
+  sname     name,
+  SSEX      sex,
+  SBIRTHDAY birthday
+from STUDENT;</code></pre></li>
+<li><p>32、查询所有“女”教师和“女”同学的name、sex和birthday.</p>
+<pre><code>select
+  TNAME     name,
+  TSEX      sex,
+  TBIRTHDAY birthday
+from TEACHER
+where TSEX = &apos;女&apos;
+union
+select
+  sname     name,
+  SSEX      sex,
+  SBIRTHDAY birthday
+from STUDENT
+where SSEX = &apos;女&apos;;</code></pre></li>
+<li><p>33、查询成绩比该课程平均成绩低的同学的成绩表。</p>
+<pre><code>SELECT A.*
+FROM SCORE A
+WHERE DEGREE &lt; (SELECT AVG(DEGREE)
+                FROM SCORE B
+                WHERE A.CNO = B.CNO);</code></pre></li>
+<li><p>34、查询所有任课教师的Tname和Depart.</p>
+<pre><code>select
+  TNAME,
+  DEPART
+from TEACHER a
+where exists(select *
+             from COURSE b
+             where a.TNO = b.TNO);</code></pre></li>
+<li><p>35、查询所有未讲课的教师的Tname和Depart.</p>
+<pre><code>select
+  TNAME,
+  DEPART
+from TEACHER a
+where tno not in (select tno
+                  from COURSE);</code></pre></li>
+<li><p>36、查询至少有2名男生的班号。</p>
+<pre><code>select CLASS
+from STUDENT
+where SSEX = &apos;男&apos;
+group by CLASS
+having count(SSEX) &gt; 1;</code></pre></li>
+<li><p>37、查询Student表中不姓“王”的同学记录。</p>
+<pre><code>select *
+from STUDENT
+where SNAME not like &quot;王%&quot;;</code></pre></li>
+<li><p>38、查询Student表中每个学生的姓名和年龄。</p>
+<pre><code>select
+  SNAME,
+  year(now()) - year(SBIRTHDAY)
+from STUDENT;</code></pre></li>
+<li><p>39、查询Student表中最大和最小的Sbirthday日期值。</p>
+<pre><code>select min(SBIRTHDAY) birthday
+from STUDENT
+union
+select max(SBIRTHDAY) birthday
+from STUDENT;</code></pre></li>
+<li><p>40、以班号和年龄从大到小的顺序查询Student表中的全部记录。</p>
+<pre><code>select *
+from STUDENT
+order by CLASS desc, year(now()) - year(SBIRTHDAY) desc;</code></pre></li>
+<li><p>41、查询“男”教师及其所上的课程。</p>
+<pre><code>select *
+from TEACHER, COURSE
+where TSEX = &apos;男&apos; and COURSE.TNO = TEACHER.TNO;</code></pre></li>
+<li><p>42、查询最高分同学的Sno、Cno和Degree列。</p>
+<pre><code>select
+  sno,
+  CNO,
+  DEGREE
+from SCORE
+where DEGREE = (select max(DEGREE)
+                from SCORE);</code></pre></li>
+<li><p>43、查询和“李军”同性别的所有同学的Sname.</p>
+<pre><code>select sname
+from STUDENT
+where SSEX = (select SSEX
+              from STUDENT
+              where SNAME = &apos;李军&apos;);</code></pre></li>
+<li><p>44、查询和“李军”同性别并同班的同学Sname.</p>
+<pre><code>select sname
+from STUDENT
+where (SSEX, CLASS) = (select
+                         SSEX,
+                         CLASS
+                       from STUDENT
+                       where SNAME = &apos;李军&apos;);</code></pre></li>
+<li><p>45、查询所有选修“计算机导论”课程的“男”同学的成绩表</p>
+<pre><code>select *
+from SCORE, STUDENT
+where SCORE.SNO = STUDENT.SNO and SSEX = &apos;男&apos; and CNO = (
+  select CNO
+  from COURSE
+  where CNAME = &apos;计算机导论&apos;);</code></pre></li>
+</ul>
+<ul>
+<li>46、使用游标方式来同时查询每位同学的名字，他所选课程及成绩。</li>
+</ul>
+<pre><code>declare
+ cursor student_cursor is
+  select S.SNO,S.SNAME,C.CNAME,SC.DEGREE as DEGREE
+  from STUDENT S, COURSE C, SCORE SC
+  where S.SNO=SC.SNO
+  and SC.CNO=C.CNO;
+
+  student_row student_cursor%ROWTYPE;
+
+begin
+  open student_cursor;
+   loop
+    fetch student_cursor INTO student_row;
+    exit when student_cursor%NOTFOUND;
+     dbms_output.put_line( student_row.SNO || &apos;&apos; || 
+
+student_row.SNAME|| &apos;&apos; || student_row.CNAME || &apos;&apos; ||
+
+student_row.DEGREE);
+   end loop;
+  close student_cursor;
+END;
+/ </code></pre><ul>
+<li><p>47、 声明触发器指令，每当有同学转换班级时执行触发器显示当前和之前所在班级。</p>
+<pre><code>CREATE OR REPLACE TRIGGER display_class_changes 
+AFTER DELETE OR INSERT OR UPDATE ON student 
+FOR EACH ROW 
+WHEN (NEW.sno &gt; 0) 
+
+BEGIN 
+
+   dbms_output.put_line(&apos;Old class: &apos; || :OLD.class); 
+   dbms_output.put_line(&apos;New class: &apos; || :NEW.class); 
+END; 
+/ </code></pre></li>
+</ul>
+<pre><code>Update student
+set class=95031
+where sno=109;</code></pre><ul>
+<li><p>48、 删除已设置的触发器指令</p>
+<pre><code>DROP TRIGGER display_class_changes;</code></pre></li>
+</ul>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:978252321@qq.com" rel="external nofollow noreferrer">cl</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://wangchuanli001.github.io/posts/20676.html">https://wangchuanli001.github.io/posts/20676.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://wangchuanli001.github.io" target="_blank">Sky & Sea</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/SQL/">SQL</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><button class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="/img/wechat.jpg" alt="wechat" onclick="window.open('/img/wechat.jpg')"/><div class="post-qr-code__desc">wechat</div></li><li class="reward-item"><img class="post-qr-code__img" src="/img/alipay.jpg" alt="alipay" onclick="window.open('/img/alipay.jpg')"/><div class="post-qr-code__desc">alipay</div></li></ul></div></button></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/8398.html"><img class="prev-cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">计算机操作系统</div></div></a></div><div class="next-post pull-right"><a href="/posts/32011.html"><img class="next-cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SQL学习</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/posts/64075.html" title="MySQL学习整理"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2018-11-22</div><div class="relatedPosts_title">MySQL学习整理</div></div></a></div><div class="relatedPosts_item"><a href="/posts/32011.html" title="SQL学习"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2018-11-24</div><div class="relatedPosts_title">SQL学习</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: '052d9d6486112e93fa50',
+  clientSecret: '6fea35bfb7a17521694a95f705683622976d2f53',
+  repo: 'gitalk',
+  owner: 'wangchuanli001',
+  admin: ['wangchuanli001'],
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN',
+  perPage: 10,
+  distractionFreeMode: false,
+  pagerDirection: 'last',
+  createIssueManually: false,
+  updateCountCallback: commentCount
+})
+gitalk.render('gitalk-container')
+
+function commentCount(n){
+  try {
+    document.getElementsByClassName('gitalk-comment-count')[0].innerHTML= n
+  } catch (e) {
+    return false
+  }
+}</script></div></article></main><footer id="footer" style="background-image: url(https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2020 By cl</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener external nofollow noreferrer"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener external nofollow noreferrer"><span>Butterfly</span></a></div><div class="footer_custom_text">Welcome to Here!</div><div class="icp"><a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener external nofollow noreferrer"><img class="icp-icon" src="/img/icp.png"/><span>皖ICP-978252321</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">简</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fas fa-comments"></i></a><button class="close" id="mobile-toc-button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener external nofollow noreferrer" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script defer id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script><script>var isChatBtn = true
+
+if (isChatBtn) {
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'wangchuangli-/community',
+    activationElement: '#chat_btn'
+  };
+} else {
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'wangchuangli-/community',
+  };
+
+  if (true) {
+    var gitterBtn = document.getElementsByClassName('gitter-open-chat-button')
+
+    function chatBtnHide () {
+      gitterBtn[0].style.display= 'none'
+    }
+
+    function chatBtnShow () {
+      gitterBtn[0].style.display= 'block'
+    }
+  }
+}
+</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="async" defer="defer"></script></body></html>
