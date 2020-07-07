@@ -1,0 +1,300 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>阿里云发布 Spring Boot 新脚手架 | Sky &amp; Sea</title><meta name="description" content="背景相信很多人都使用过 start.spring.io 来初始化自己的 Spring Boot 工程，这个工具为开发者提供了丰富的可选组件，并且可以选择多种打包方式，大大方便了开发人员的使用。最近，阿里的 Nacos、Sentinel 也进入 start.spring.io 的选项中，进一步的方便开发者使用阿里云的产品。 对软件工程的抽象层次自上而下进行切分，会得到如下的几个层级：行业、解决方案、"><meta name="keywords" content="阿里云,脚手架,springboot"><meta name="author" content="cl,978252321@qq.com"><meta name="copyright" content="cl"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://i.loli.net/2020/06/19/OuDBhHn3GCE6mr7.jpg"><link rel="canonical" href="https://wangchuanli001.github.io/posts/15961.html"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta name="baidu-site-verification" content="qKvGNFZPF9"/><meta property="og:type" content="article"><meta property="og:title" content="阿里云发布 Spring Boot 新脚手架"><meta property="og:url" content="https://wangchuanli001.github.io/posts/15961.html"><meta property="og:site_name" content="Sky &amp; Sea"><meta property="og:description" content="背景相信很多人都使用过 start.spring.io 来初始化自己的 Spring Boot 工程，这个工具为开发者提供了丰富的可选组件，并且可以选择多种打包方式，大大方便了开发人员的使用。最近，阿里的 Nacos、Sentinel 也进入 start.spring.io 的选项中，进一步的方便开发者使用阿里云的产品。 对软件工程的抽象层次自上而下进行切分，会得到如下的几个层级：行业、解决方案、"><meta property="og:image" content="https://i.loli.net/2020/06/29/YovFh1VuT29qzCN.jpg"><meta property="article:published_time" content="2020-06-29T01:28:00.000Z"><meta property="article:modified_time" content="2020-06-29T01:49:22.237Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="prev" title="Q：数据库连接过多 Too many connections" href="https://wangchuanli001.github.io/posts/48730.html"><link rel="next" title="使用pm2在Linux后台监控hexo运行" href="https://wangchuanli001.github.io/posts/3791.html"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5/js/md5.min.js"></script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39bd6e37a6e70dc030e6a043a642784e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Sky & Sea" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://i.loli.net/2020/06/19/NbXetJWUwHQEC9z.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">34</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">25</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fa fa-picture-o"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用篇"><span class="toc-number">2.</span> <span class="toc-text">使用篇</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#基本用法"><span class="toc-number">2.1.</span> <span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#高级定制"><span class="toc-number">2.2.</span> <span class="toc-text">高级定制</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#原理篇"><span class="toc-number">3.</span> <span class="toc-text">原理篇</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#启动阶段"><span class="toc-number">3.1.</span> <span class="toc-text">启动阶段</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#生成阶段"><span class="toc-number">3.2.</span> <span class="toc-text">生成阶段</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考资料"><span class="toc-number">4.</span> <span class="toc-text">参考资料</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#相关链接"><span class="toc-number">4.1.</span> <span class="toc-text">相关链接</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#spring-factories-明细"><span class="toc-number">4.2.</span> <span class="toc-text">spring.factories 明细</span></a></li></ol></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/06/29/YovFh1VuT29qzCN.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Sky &amp; Sea</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fa fa-picture-o"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">阿里云发布 Spring Boot 新脚手架</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-06-29 09:28:00"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2020-06-29</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-29 09:49:22"><i class="fas fa-history fa-fw"></i> 更新于 2020-06-29</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/springboot/">springboot</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">4.9k</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 19 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>相信很多人都使用过 start.spring.io 来初始化自己的 Spring Boot 工程，这个工具为开发者提供了丰富的可选组件，并且可以选择多种打包方式，大大方便了开发人员的使用。最近，阿里的 Nacos、Sentinel 也进入 start.spring.io 的选项中，进一步的方便开发者使用阿里云的产品。<br><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/06/29/oRTgZVDcOhYyNxG.png" alt="微信截图_20200629093124.png"></p>
+<p>对软件工程的抽象层次自上而下进行切分，会得到如下的几个层级：行业、解决方案、应用、功能、组件；明显的， start.spring.io 目前只能提供组件级别的支持。再将组件这层展开，会发现这样一个生命周期：组件引入、组件配置、功能开发、线上运维。start.spring.io 也只实现了“组件引入”这一功能。</p>
+<p>阿里云上线了自己的 bootstrap 站点 start.aliyun.com ：<br><a href="https://start.aliyun.com/" target="_blank" rel="noopener external nofollow noreferrer">https://start.aliyun.com/</a></p>
+<p>当然，本着不重复造轮子的原则，我们不再构建一套工程生成底层框架，而是使用 Spring Initializr 来实现这部分功能。在此之上专注于增加新特性，实现服务广大开发者的目标。</p>
+<p>Spring Initializr：<br><a href="https://github.com/spring-io/initializr" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/spring-io/initializr</a></p>
+<p>在 start.aliyun.com 中：</p>
+<p>为每个组件提供了单独的 DemoCode 和对应的配置样例（本次已发布）；</p>
+<p>工程内置说明，减少用户查找文档的困难（部分实现）；</p>
+<p>开发者只需要做减法，而非加法的使用方式（部分实现）；</p>
+<p>提供多组件集成的解决方案（开发中）；</p>
+<p>定期跟进 start.spring.io 的更新，方便大家使用到 spring 的最新功能。</p>
+<p>start.aliyun.com：<br><a href="https://start.aliyun.com/" target="_blank" rel="noopener external nofollow noreferrer">https://start.aliyun.com/</a></p>
+<p>未来，我们还需要再助力开发者这条路上继续发力，不仅仅是做好组件集成的工作，还要需要继续向上支持，提供更多功能、服务、应用层级的快速构建能力。</p>
+<p>本文，围绕 spring initializr 框架，以 start.spring.io 为例，全面的给大家介绍如何使用和扩展这个框架，以及背后的运行原理。</p>
+<h4 id="使用篇"><a href="#使用篇" class="headerlink" title="使用篇"></a>使用篇</h4><p>由于 spring-initializr 提供了灵活的扩展能力，以及丰富的默认实现；其使用方式也是非常的灵活多变；为了便于说明，我们直接通过 start.spring.io ，看看 Spring 自己是怎么使用这套框架的。</p>
+<h5 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h5><p>基本用法的原则，是尽量少写代码，甚至是不写代码。只通过配置就可以实现 initializr 工程的创建。</p>
+<p>依赖引入</p>
+<p>要使用 spring-initializr ，首先要引入这套框架。很简单，直接依赖 bom 即可：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;dependencyManagement&gt;</span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;io.spring.initializr&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;initializr-bom&lt;&#x2F;artifactId&gt;</span><br><span class="line">            &lt;version&gt;0.9.0.BUILD-SNAPSHOT&lt;&#x2F;version&gt;</span><br><span class="line">            &lt;type&gt;pom&lt;&#x2F;type&gt;</span><br><span class="line">            &lt;scope&gt;import&lt;&#x2F;scope&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line">    &lt;&#x2F;dependencies&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;dependencyManagement&gt;</span><br></pre></td></tr></table></figure>
+
+<p>有了这个 bom 依赖，我们就不用再关心内部组件的版本等信息了。</p>
+<p>一般来说，我们还需要引入具体组件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;io.spring.initializr&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;initializr-generator-spring&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;io.spring.initializr&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;initializr-version-resolver&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;io.spring.initializr&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;initializr-web&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>具体每个子模块的用途，这里列出来，供读者参考：</p>
+<p>initializr-actuator: 监控诊断的附加信息，这个暂时忽略；<br>initializr-bom: 便于外部使用的bom依赖；<br>initializr-docs: 使用文档；<br>initializr-generator: 核心工程生成库；<br>initializr-generator-spring: 用于生成典型的spring boot工程；<br>initializr-generator-test: 测试框架；<br>initializr-metadata: 项目各个方面的元数据基础结构；<br>initializr-service-sample: 基本使用案例；<br>initializr-version-resolver:版本号解析能力；<br>initializr-web: 提供给三方客户端使用的web入口。</p>
+<p>基本配置</p>
+<p>完成了框架引入，就需要做一些基础配置了</p>
+<p>支持哪些语言：Java、groovy、Kotlin</p>
+<p>支持哪些版本：1.8、11、13</p>
+<p>支持哪些打包方式：jar、war</p>
+<p>将这些信息全部配置到 application.yml 文件中，如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">initializr:</span><br><span class="line">    packagings:</span><br><span class="line">    - name: Jar</span><br><span class="line">      id: jar</span><br><span class="line">      default: true</span><br><span class="line">    - name: War</span><br><span class="line">      id: war</span><br><span class="line">      default: false</span><br><span class="line">  javaVersions:</span><br><span class="line">    - id: 13</span><br><span class="line">      default: false</span><br><span class="line">    - id: 11</span><br><span class="line">      default: false</span><br><span class="line">    - id: 1.8</span><br><span class="line">      name: 8</span><br><span class="line">      default: true</span><br><span class="line">  languages:</span><br><span class="line">    - name: Java</span><br><span class="line">      id: java</span><br><span class="line">      default: true</span><br><span class="line">    - name: Kotlin</span><br><span class="line">      id: kotlin</span><br><span class="line">      default: false</span><br><span class="line">    - name: Groovy</span><br><span class="line">      id: groovy</span><br><span class="line"></span><br><span class="line">      default: false</span><br></pre></td></tr></table></figure>
+<p>其中 name 是可选的， id 是必填的。</p>
+<p>每个配置项下，可以有一个默认值（将 default 这是为 true 即可），除了这些基本配置，我们还需要定义可以支持的项目类型：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">initializr:</span><br><span class="line">    types:</span><br><span class="line">    - name: Maven Project</span><br><span class="line">      id: maven-project</span><br><span class="line">      description: Generate a Maven based project archive.</span><br><span class="line">      tags:</span><br><span class="line">        build: maven</span><br><span class="line">        format: project</span><br><span class="line">      default: true</span><br><span class="line">      action: &#x2F;starter.zip</span><br><span class="line">    - name: Maven POM</span><br><span class="line">      id: maven-build</span><br><span class="line">      description: Generate a Maven pom.xml.</span><br><span class="line">      tags:</span><br><span class="line">        build: maven</span><br><span class="line">        format: build</span><br><span class="line">      default: false</span><br><span class="line">      action: &#x2F;pom.xml</span><br><span class="line">    - name: Gradle Project</span><br><span class="line">      id: gradle-project</span><br><span class="line">      description: Generate a Gradle based project archive.</span><br><span class="line">      tags:</span><br><span class="line">        build: gradle</span><br><span class="line">        format: project</span><br><span class="line">      default: false</span><br><span class="line">      action: &#x2F;starter.zip</span><br><span class="line">    - name: Gradle Config</span><br><span class="line">      id: gradle-build</span><br><span class="line">      description: Generate a Gradle build file.</span><br><span class="line">      tags:</span><br><span class="line">        build: gradle</span><br><span class="line">        format: build</span><br><span class="line">      default: false</span><br><span class="line">      action: &#x2F;build.gradle</span><br></pre></td></tr></table></figure>
+<p>默认情况下， initializr 已经支持 4 种项目类型：</p>
+<p>/pom.xml 生成一个 Maven 的 pom.xml 配置文件<br>/build.gradle 生成 Gradle 的配置文件<br>/starter.zip 生成 zip 方式压缩的工程文件<br>/starter.tgz 生成以 tgz 方式压缩的工程文件</p>
+<p>通过 tags 标签，我们可以定义不同配型的编译方式 (build) 和打包格式（format）。</p>
+<p>配置基本依赖</p>
+<p>完成了基本配置以后，就可以配置可选的依赖组件了。</p>
+<p>依赖配置以 dependency 为 key ，同样配置在 application.yml 的 initializr 下面，这里给出一个简单的样例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">initializr:</span><br><span class="line">  dependencies:</span><br><span class="line">    - name: Web</span><br><span class="line">      content:</span><br><span class="line">        - name: Web</span><br><span class="line">          id: web</span><br><span class="line">          description: Full-stack web development with Tomcat and Spring MVC</span><br><span class="line">        - name: Developer Tools</span><br><span class="line">      content:</span><br><span class="line">        - name: Spring Boot DevTools</span><br><span class="line">          id: devtools</span><br><span class="line">          groupId: org.springframework.boot</span><br><span class="line">          artifactId: spring-boot-devtools</span><br><span class="line">          description: Provides fast application restarts, LiveReload, and configurations for enhanced development experience.</span><br><span class="line">        - name: Lombok</span><br><span class="line">          id: lombok</span><br><span class="line">          groupId: org.projectlombok</span><br><span class="line">          artifactId: lombok</span><br><span class="line">          description: Java annotation library which helps to reduce boilerplate code.</span><br></pre></td></tr></table></figure>
+<p>dependencies 下定义分组。分组的作用是便于展示和快速查找，所以不需要 id ，只需要 name 信息；每个分组的 content 是分组的具体内容，也就是这个分组下的组件定义；支持以列表形式定义多个；另外，每个分组都可以设置当前分组内组件公用的配置信息。</p>
+<p>每一依赖，包含如下的基本信息：</p>
+<p>id：组件的唯一标识符<br>groupId &amp; artifactId：组件的坐标<br>name：显示名称<br>description：描述信息，主要用于展示用途<br>version：组件版本</p>
+<p>关于 groupId &amp; artifactId：如果设置了坐标，生成的项目里会使用这里的坐标定位组件；但是如果没有设置坐标，框架会认为这是一个标准的 spring-boot 组件，自动添加 spring-boot-starter-{id} 作为生成的依赖坐标。</p>
+<p>关于 version：如果直接在组件上设置版本信息，框架会直接使用这个值作为组件依赖的版本；但是很多时候，组件的版本会受到 spring-boot 版本的影响，此时就需要对版本做特殊的定义 &amp; 管理。</p>
+<p>配置依赖版本管理</p>
+<p>这里需要先了解一下版本命名规则：一个典型的版本，一般包含如下 4 个信息：大版本、小版本、修正版本、版本限定符。</p>
+<p>版本范围有一个上界和下界，可以方括号 [] 或者圆括号 () 表示。方括号代表上下界的闭区间，圆括号代表上下界的开区间。</p>
+<p>例如：“[1.1.6.RELEASE,1.3.0.M1)”<br>代表所有从 1.1.6.RELEASE 到 1.3.0.M1 之间所有的版本（包含 1.1.6.RELEASE ，但不包含 1.3.0.M1 ）。</p>
+<p>同时，可以使用单一版本号作为版本范围，例如 “1.2.0.RELEASE”。单一版本号的版本范围代表“从这个版本以及之后的所有版本”。</p>
+<p>如果需要使用“最新的 Release 版本”的概念，可以使用一个字母 x 代表具体的版本号。</p>
+<p>例如， 1.4.x.BUILD-SNAPSHOT 代表 1.4.x 的最新快照版本。</p>
+<p>再比如：如果需要表达，从 1.1.0.RELEASE 到 1.3.x 之间的所有版本，可以用[1.1.0.RELEASE,1.3.x.RELEASE]来表达。</p>
+<p>另外，版本限定符也是有顺序的（升序）：</p>
+<p>M：里程碑版本<br>RC：发布候选版本<br>RELEASE：发布版本<br>BUILD-SNAPSHOT：为开发构建的快照版本</p>
+<p>所以快照版本是所有限定符里优先级最高的。假设某个组件需要 Spring Boot 的最新版本，可以使用 1.5.x.BUILD-SNAPSHOT  (假设 1.5 版是 Spring Boot 的最新版本)。</p>
+<p>最后，版本范围中讨论的版本，指的都是 Spring Boot的版本，而不是组件自己的版本。</p>
+<p>前面介绍了，可以使用 version 属性定义组件的具体版本号；但是，如果组件版本与Spring Boot 的版本存在关联关系，就需要使用 compatibilityRange 来配置依赖的版本范围。</p>
+<p> compatibilityRange 可以定义在两个地方：</p>
+<p>直接定义在组件（或 Bom ）上</p>
+<p>这种定义方式，代表组件只支持  Spring Boot 的某一个版本范围，例如下面的配置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">initializr:</span><br><span class="line">  dependencies:</span><br><span class="line">    - name: Stuff</span><br><span class="line">      content:</span><br><span class="line">        - name: Foo</span><br><span class="line">          id: foo</span><br><span class="line">          ...</span><br><span class="line">          compatibilityRange: 1.2.0.M1</span><br><span class="line">        - name: Bar</span><br><span class="line">          id: bar</span><br><span class="line">          ...</span><br><span class="line"></span><br><span class="line">          compatibilityRange: &quot;[1.5.0.RC1,2.0.0.M1)&quot;</span><br></pre></td></tr></table></figure>
+<p>Foo 可以支持 Spring boot 1.2.0  之后的所有版本；而Bar只能支持 Spring Boot 1.5.0  到  2.0.0 之间的版本，且不包含 2.0.0 ；</p>
+<p>定义在组件的 mappgin 属性下</p>
+<p>可以支持在 Spring Boot 不同版本之下对组件做不同的设置（可以重置组件部分或者是所有的属性），下面的例子中对 artifactId 做了特殊定义：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">initializr:</span><br><span class="line">  dependencies:</span><br><span class="line">    - name: Stuff</span><br><span class="line">      content:</span><br><span class="line">        - name: Foo</span><br><span class="line">          id: foo</span><br><span class="line">          groupId: org.acme.foo</span><br><span class="line">          artifactId: foo-spring-boot-starter</span><br><span class="line">          compatibilityRange: 1.3.0.RELEASE</span><br><span class="line">          mappings:</span><br><span class="line">            - compatibilityRange: &quot;[1.3.0.RELEASE,1.3.x.RELEASE]&quot;</span><br><span class="line">              artifactId: foo-starter</span><br><span class="line"></span><br><span class="line">            - compatibilityRange: &quot;1.4.0.RELEASE&quot;</span><br></pre></td></tr></table></figure>
+<p>这个例子中， foo 在 Spring Boot 的 1.3 使用 foo-starter 作为坐标的 artifactId ；在 1.4.0.RELEASE 以及之后的版本中，还是使用 foo-spring-boot-starter 作为 artifactId 的值；</p>
+<p>使用 Bom 管理版本：有时候，需要使用 Bom 的方式管理组件版本；此时不需要对组件单独设置版本号。</p>
+<p>要使用 Bom ，首先要配置 Bom 定义：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">initializr:</span><br><span class="line">  env:</span><br><span class="line">    boms:</span><br><span class="line">      my-api-bom:</span><br><span class="line">        groupId: org.acme</span><br><span class="line">        artifactId: my-api-dependencies</span><br><span class="line">        version: 1.0.0.RELEASE</span><br><span class="line"></span><br><span class="line">        repositories: my-api-repo-1</span><br></pre></td></tr></table></figure>
+<p>注意：Bom 信息，定义在 initializr.env.boms下面。</p>
+<p>其属性和依赖组件基本一致，都是坐标、版本；同时， Bom 也支持版本范围管理。</p>
+<p>完成了 Bom 的定义，就需要在组件中引用 Bom ：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">initializr:</span><br><span class="line">  dependencies:</span><br><span class="line">    - name: Other</span><br><span class="line">      content:</span><br><span class="line">        - name: My API</span><br><span class="line">          id : my-api</span><br><span class="line">          groupId: org.acme</span><br><span class="line">          artifactId: my-api</span><br><span class="line"></span><br><span class="line">          bom: my-api-bom</span><br></pre></td></tr></table></figure>
+<p>一旦用户选择了 my-api 组件，框架会自动为生成的项目添加了 my-api-dependencies 的 Bom 依赖；</p>
+<h5 id="高级定制"><a href="#高级定制" class="headerlink" title="高级定制"></a>高级定制</h5><p>启用缓存</p>
+<p>如果你启动过 start.spring.io 项目，你会在日志里发现这样的输出 “Fetching boot metadata from spring.io/project_metadata/spring-boot” 为了避免过于频繁的检查 Spring Boot 版本，官方是建议配合缓存一起使用。</p>
+<p>首先需要引入缓存框架：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;javax.cache&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;cache-api&lt;&#x2F;artifactId&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.ehcache&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;ehcache&lt;&#x2F;artifactId&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>然后，在 SpringBootApplication 类上增加 @EnableCaching 注解:</p>
+<p>如果需要自己定义缓存，可以调整如下缓存配置：<br><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/06/29/GpAsfWUOFZ9rMRk.png" alt="微信截图_20200629093531.png"></p>
+<p>增加 Demo代码：由于不同的组件有不同的功能，如果需要为项目增加 Demo 代码。</p>
+<p>为不同的组件增加独立配置：还记得原理篇中提到的 spring.factories 吗？对，我们要增加自己的配置项，就需要在这里增加针对不同组件样例代码的扩展入口。</p>
+<p>io.spring.initializr.generator.project.ProjectGenerationConfiguration=<br>com.alibaba.alicloud.initializr.extension.dependency.springboot.SpringCloudProjectGenerationConfiguration</p>
+<p>在 SpringCloudProjectGenerationConfiguration 中，我们通过 ConditionalOnRequestedDependency 注解来识别不同组件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@ProjectGenerationConfiguration</span><br><span class="line">public class SpringCloudAlibabaProjectGenerationConfiguration &#123;</span><br><span class="line">    private final InitializrMetadata metadata;</span><br><span class="line">    private final ProjectDescription description;</span><br><span class="line">    private final IndentingWriterFactory indentingWriterFactory;</span><br><span class="line">    private final TemplateRenderer templateRenderer;</span><br><span class="line">    public SpringCloudAlibabaProjectGenerationConfiguration(InitializrMetadata metadata,</span><br><span class="line">                                                            ProjectDescription description,</span><br><span class="line">                                                            IndentingWriterFactory indentingWriterFactory,</span><br><span class="line">                                                            TemplateRenderer templateRenderer) &#123;</span><br><span class="line">        this.metadata &#x3D; metadata;</span><br><span class="line">        this.description &#x3D; description;</span><br><span class="line">        this.indentingWriterFactory &#x3D; indentingWriterFactory;</span><br><span class="line">        this.templateRenderer &#x3D; templateRenderer;</span><br><span class="line">    &#125;</span><br><span class="line">    @Bean</span><br><span class="line">    @ConditionalOnRequestedDependency(&quot;sca-oss&quot;)</span><br><span class="line">    public OSSDemoCodeContributor ossContributor() &#123;</span><br><span class="line">        return new OSSDemoCodeContributor(description, templateRenderer);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的代码，会在选择了 sca-oss 组件时，创建一个 OSSDemoCodeContributor 用于对应 Demo 代码的生成。</p>
+<p>生成具体的 Demo 代码：继续以 OSSDemoCodeContributor 为例，它是一个 ProjectContributor ，会在项目文件空间创建完成了调用。我们需要为这个 Contributor 在实例化时增加生成过程中需要的元数据信息，例如 ProjectDescription 。</p>
+<p>代码生成过程，比较简单，可以直接复用框架中就提供的 mstache 模板引擎。</p>
+<p>我们直接将 Demo 代码，以模板的形式，放置在 resources 文件夹之下：</p>
+<p>然后，我们再通过模板引擎，解析这些模板文件，再拷贝到项目目录下即可：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">private void writeCodeFile(TemplateRenderer templateRenderer, Language langeuage,</span><br><span class="line">                             Map&lt;String, Object&gt; params, Path path, String temp) throws IOException &#123;</span><br><span class="line">      ......</span><br><span class="line">      Path pkgPath &#x3D; 生成包路径</span><br><span class="line">      Path filePath &#x3D; 成成代码文件路径</span><br><span class="line">      &#x2F;&#x2F; 渲染模板</span><br><span class="line">      String code &#x3D; templateRenderer.render(temp, params);</span><br><span class="line">      &#x2F;&#x2F; demo 文件写入</span><br><span class="line">      Files.createDirectories(pkgPath);</span><br><span class="line">      Files.write(filePath, code.getBytes(&quot;UTF-8&quot;));</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>除了模板代码以外，我们通常还需要在 applicatioin.properties 文件写入模块的配置信息。</p>
+<p>这里，我们依然可以使用代码生成的方式：创建模板、解析模板，追加文件的方式来实现。具体代码这里就不贴了，读者可以自己发挥。</p>
+<h4 id="原理篇"><a href="#原理篇" class="headerlink" title="原理篇"></a>原理篇</h4><p>原理篇，主要介绍 spring.initializr 是如何实现项目工程构建的，以及作为一个框架，如何提供丰富的扩展能力的。</p>
+<p>在原理篇，我们将 initializr 的执行分为两个阶段：启动阶段和生成阶段。</p>
+<p>启动阶段：启动应用，加载配置，扩展信息初始化；<br>生成阶段：一个项目生成，从收到请求，到返回内容的完整流程。</p>
+<h5 id="启动阶段"><a href="#启动阶段" class="headerlink" title="启动阶段"></a>启动阶段</h5><p>再开始启动流程之前，先要看一下 initializr 的扩展体系。</p>
+<p>整个架构大量使用了 spring 的 spi 机制，我们来看一下一共有哪些 spring.factories ：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">initializr-generator&#x2F;src&#x2F;main&#x2F;resources&#x2F;META-INF&#x2F;spring.factories</span><br><span class="line"></span><br><span class="line">initializr-generator-spring&#x2F;src&#x2F;main&#x2F;resources&#x2F;META-INF&#x2F;spring.factories</span><br><span class="line"></span><br><span class="line">initializr-web&#x2F;src&#x2F;main&#x2F;resources&#x2F;META-INF&#x2F;spring.factories</span><br><span class="line"></span><br><span class="line">initializr-actuator&#x2F;src&#x2F;main&#x2F;resources&#x2F;META-INF&#x2F;spring.factories</span><br><span class="line"></span><br><span class="line">start-site&#x2F;src&#x2F;main&#x2F;resources&#x2F;META-INF&#x2F;spring.factories</span><br></pre></td></tr></table></figure>
+
+<p>其中只有一个在 start.spring.io 中，其他 4 个都在 initializr 工程中（各 spring.factories 的具体内容见参考资料）。</p>
+<p>不过要注意，这些 spring.factories 定义，仅仅代表了各个 SPI 有哪些扩展。不同spi的实现创建和使用完全是在不同的阶段进行的。</p>
+<p>在应用启动阶段，其实只有一个 spi 会被加载（暂不考虑 actuator）：io.spring.initializr.web.autoconfigure.InitializrAutoConfiguration 。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">@EnableConfigurationProperties(InitializrProperties.class)</span><br><span class="line">public class InitializrAutoConfiguration &#123;</span><br><span class="line">    @Bean</span><br><span class="line">    @ConditionalOnMissingBean</span><br><span class="line">    public ProjectDirectoryFactory projectDirectoryFactory()</span><br><span class="line">    @Bean</span><br><span class="line">    @ConditionalOnMissingBean</span><br><span class="line">    public IndentingWriterFactory indentingWriterFactory()</span><br><span class="line">    @Bean</span><br><span class="line">    @ConditionalOnMissingBean(TemplateRenderer.class)</span><br><span class="line">    public MustacheTemplateRenderer templateRenderer(Environment environment, ObjectProvider&lt;CacheManager&gt; cacheManager)</span><br><span class="line">    @Bean</span><br><span class="line">    @ConditionalOnMissingBean</span><br><span class="line">    public InitializrMetadataUpdateStrategy initializrMetadataUpdateStrategy(RestTemplateBuilder restTemplateBuilder,</span><br><span class="line">            ObjectMapper objectMapper)</span><br><span class="line">    @Bean</span><br><span class="line">    @ConditionalOnMissingBean(InitializrMetadataProvider.class)</span><br><span class="line">    public InitializrMetadataProvider initializrMetadataProvider(InitializrProperties properties,</span><br><span class="line">            InitializrMetadataUpdateStrategy initializrMetadataUpdateStrategy)</span><br><span class="line">    @Bean</span><br><span class="line">    @ConditionalOnMissingBean</span><br><span class="line">    public DependencyMetadataProvider dependencyMetadataProvider()</span><br><span class="line">    @Configuration</span><br><span class="line">    @ConditionalOnWebApplication</span><br><span class="line">    static class InitializrWebConfiguration &#123;</span><br><span class="line">        @Bean</span><br><span class="line">        InitializrWebConfig initializrWebConfig()</span><br><span class="line">        @Bean</span><br><span class="line">        @ConditionalOnMissingBean</span><br><span class="line">        ProjectGenerationController&lt;ProjectRequest&gt; projectGenerationController(</span><br><span class="line">                InitializrMetadataProvider metadataProvider, ApplicationContext applicationContext)</span><br><span class="line">        @Bean</span><br><span class="line">        @ConditionalOnMissingBean</span><br><span class="line">        ProjectMetadataController projectMetadataController(InitializrMetadataProvider metadataProvider,</span><br><span class="line">                DependencyMetadataProvider dependencyMetadataProvider)</span><br><span class="line">        @Bean</span><br><span class="line">        @ConditionalOnMissingBean</span><br><span class="line">        CommandLineMetadataController commandLineMetadataController(InitializrMetadataProvider metadataProvider,</span><br><span class="line">                TemplateRenderer templateRenderer)</span><br><span class="line">        @Bean</span><br><span class="line">        @ConditionalOnMissingBean</span><br><span class="line">        SpringCliDistributionController cliDistributionController(InitializrMetadataProvider metadataProvider)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里会做如下几件事情：</p>
+<p>初始化元数据 Provider<br>创建模板引擎<br>创建目录、缩进工厂<br>初始化 web 配置<br>创建 spring mvc 的 web 入口<br>各种 ProjectGenerationController</p>
+<p>其中最关键的元数据加载部分，使用了 EnableConfigurationProperties 注解，将 spring 环境中的配置项写到 InitializrProperties 上：</p>
+<p>在 application.yml 文件中，可以找到如下的配置信息，这里就是实际的项目依赖关系元数据的配置存储点：</p>
+<p>整体来看，启动阶段的动作还是比较简单的，这也是为什么 start.spring.io 启动只需要数秒的原因。</p>
+<p>更多的逻辑，都被留在了工程生成阶段。</p>
+<h5 id="生成阶段"><a href="#生成阶段" class="headerlink" title="生成阶段"></a>生成阶段</h5><p>生成阶段，spring-initializr 使用了一个很有意思的实现方式：initializr 框架会为每一次项目生成，创建一个独立的 context 用于存放生成流程中需要使用到的各种 bean 。</p>
+<p>从上面的时序图中可以看出：一个典型的创建行为，通常从 ProjectGenerationController收到web端的创建请求开始，通过 ProjectGenerationInvoker 这个中间层转换，最终进入 ProjectGenerator 的核心构建流程。</p>
+<p>扩展流程</p>
+<p>spring-initializr 提供了 2 种主要扩展途径：ProjectContributor 和 xxxxxCustomizer。</p>
+<p>从方法签名就可以看出，入参只有一个项目的根路径，其职责就是向这个路径下些人项目文件。这个扩展点非常的灵活，几乎可以支持任何的代码、配置文件写入工作。</p>
+<p>实现过程中，可以通过 ProjectGenerationContext 获取相关依赖，然后通过自定义逻辑完成文件生成工作。</p>
+<p>下面是 initializr 和 start.spring.io 提供的 ProjectContributor 实现：</p>
+<p>拿几个主要的实现看看：</p>
+<p>MavenBuildProjectContributor：写入 maven 项目 pom.xml 文件；<br>WebFoldersContributor：创建 web 项目的资源文件夹；<br>ApplicationPropertiesContributor：写入 application.properties 文件；<br>MainSourceCodeProjectContributor：写入应用入口类 xxxApplication.java 文件；<br>HelpDocumentProjectContributor：写入帮助文档 HELP.md 文件。</p>
+<p>相对于 ProjectContributor，xxxxxCustomizer  不是一个统一的接口，我把他理解为一种感念和与之对应的命名习惯；每个 Customizer 都有自己明确的名字，同时也对应了明确的触发逻辑和职责边界。</p>
+<p>下面列出框架提供的 Customizer 的说明：</p>
+<p>MainApplicationTypeCustomizer：自定义 MainApplication 类；<br>MainCompilationUnitCustomizer：自定义 MainApplication 编译单元；<br>MainSourceCodeCustomizer：自定义 MainApplication 源码；<br>BuildCustomizer：自定义项目构建工具的配置内容；<br>GitIgnoreCustomizer：自定义项目的 .gitignore 文件；<br>HelpDocumentCustomizer：自定义项目的帮助文档；<br>InitializrMetadataCustomizer：自定义项目初始化配置元数据；这个 Customizer 比较特殊，框架会在首次加载元数据配置时调用；<br>ProjectDescriptionCustomizer：自定义 ProjectDescription ；即在生成项目文件之前，允许调整项目描述信息；<br>ServletInitializerCustomizer：自定义 web 应用在类上的配置内容；<br>TestApplicationTypeCustomizer：自定义测试 Application 类；<br>TestSourceCodeCustomizer：自定义测试 Application 类的源码。</p>
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><h5 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h5><p>initializr 说明文档</p>
+<p><a href="https://docs.spring.io/initializr/docs/current-SNAPSHOT/reference/html/" target="_blank" rel="noopener external nofollow noreferrer">https://docs.spring.io/initializr/docs/current-SNAPSHOT/reference/html/</a></p>
+<p>spring-initializr 项目地址</p>
+<p><a href="https://github.com/spring-io/initializr" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/spring-io/initializr</a></p>
+<p>start.spring.io 项目地址</p>
+<p><a href="https://github.com/spring-io/start.spring.io" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/spring-io/start.spring.io</a></p>
+<h5 id="spring-factories-明细"><a href="#spring-factories-明细" class="headerlink" title="spring.factories 明细"></a>spring.factories 明细</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">initializr-generator&#x2F;src&#x2F;main&#x2F;resources&#x2F;META-INF&#x2F;spring.factoriesio.spring.initializr.generator.buildsystem.BuildSystemFactory&#x3D;\</span><br><span class="line">io.spring.initializr.generator.buildsystem.gradle.GradleBuildSystemFactory,\</span><br><span class="line">io.spring.initializr.generator.buildsystem.maven.MavenBuildSystemFactory</span><br><span class="line">io.spring.initializr.generator.language.LanguageFactory&#x3D;\</span><br><span class="line">io.spring.initializr.generator.language.groovy.GroovyLanguageFactory,\</span><br><span class="line">io.spring.initializr.generator.language.java.JavaLanguageFactory,\</span><br><span class="line">io.spring.initializr.generator.language.kotlin.KotlinLanguageFactory</span><br><span class="line">io.spring.initializr.generator.packaging.PackagingFactory&#x3D;\</span><br><span class="line">io.spring.initializr.generator.packaging.jar.JarPackagingFactory,\</span><br><span class="line">io.spring.initializr.generator.packaging.war.WarPackagingFactory</span><br></pre></td></tr></table></figure>
+
+<p>initializr-generator-spring/src/main/resources/META-INF/spring.factories：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">io.spring.initializr.generator.project.ProjectGenerationConfiguration&#x3D;\</span><br><span class="line">io.spring.initializr.generator.spring.build.BuildProjectGenerationConfiguration,\</span><br><span class="line">io.spring.initializr.generator.spring.build.gradle.GradleProjectGenerationConfiguration,\</span><br><span class="line">io.spring.initializr.generator.spring.build.maven.MavenProjectGenerationConfiguration,\</span><br><span class="line">io.spring.initializr.generator.spring.code.SourceCodeProjectGenerationConfiguration,\</span><br><span class="line">io.spring.initializr.generator.spring.code.groovy.GroovyProjectGenerationConfiguration,\</span><br><span class="line">io.spring.initializr.generator.spring.code.java.JavaProjectGenerationConfiguration,\</span><br><span class="line">io.spring.initializr.generator.spring.code.kotlin.KotlinProjectGenerationConfiguration,\</span><br><span class="line">io.spring.initializr.generator.spring.configuration.ApplicationConfigurationProjectGenerationConfiguration,\</span><br><span class="line">io.spring.initializr.generator.spring.documentation.HelpDocumentProjectGenerationConfiguration,\</span><br><span class="line">io.spring.initializr.generator.spring.scm.git.GitProjectGenerationConfiguration</span><br></pre></td></tr></table></figure>
+<p>initializr-web/src/main/resources/META-INF/spring.factories：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">org.springframework.boot.autoconfigure.EnableAutoConfiguration&#x3D;\</span><br><span class="line">io.spring.initializr.web.autoconfigure.InitializrAutoConfiguration</span><br><span class="line">org.springframework.boot.env.EnvironmentPostProcessor&#x3D;\</span><br><span class="line">io.spring.initializr.web.autoconfigure.CloudfoundryEnvironmentPostProcessor</span><br></pre></td></tr></table></figure>
+<p>initializr-actuator/src/main/resources/META-INF/spring.factories：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">org.springframework.boot.autoconfigure.EnableAutoConfiguration&#x3D;\</span><br><span class="line">io.spring.initializr.actuate.autoconfigure.InitializrActuatorEndpointsAutoConfiguration,\</span><br><span class="line">io.spring.initializr.actuate.autoconfigure.InitializrStatsAutoConfiguration</span><br></pre></td></tr></table></figure>
+<p>start-site/src/main/resources/META-INF/spring.factories：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">io.spring.initializr.generator.project.ProjectGenerationConfiguration&#x3D;\</span><br><span class="line">io.spring.start.site.extension.build.gradle.GradleProjectGenerationConfiguration,\</span><br><span class="line">io.spring.start.site.extension.build.maven.MavenProjectGenerationConfiguration,\</span><br><span class="line">io.spring.start.site.extension.dependency.DependencyProjectGenerationConfiguration,\</span><br><span class="line">io.spring.start.site.extension.dependency.springamqp.SpringAmqpProjectGenerationConfiguration,\</span><br><span class="line">io.spring.start.site.extension.dependency.springboot.SpringBootProjectGenerationConfiguration,\</span><br><span class="line">io.spring.start.site.extension.dependency.springcloud.SpringCloudProjectGenerationConfiguration,\</span><br><span class="line">io.spring.start.site.extension.dependency.springdata.SpringDataProjectGenerationConfiguration,\</span><br><span class="line">io.spring.start.site.extension.dependency.springintegration.SpringIntegrationProjectGenerationConfiguration,\</span><br><span class="line">io.spring.start.site.extension.dependency.springrestdocs.SpringRestDocsProjectGenerationConfiguration,\</span><br><span class="line">io.spring.start.site.extension.description.DescriptionProjectGenerationConfiguration,\</span><br><span class="line">io.spring.start.site.extension.code.kotin.KotlinProjectGenerationConfiguration</span><br></pre></td></tr></table></figure></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:978252321@qq.com" rel="external nofollow noreferrer">cl</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://wangchuanli001.github.io/posts/15961.html">https://wangchuanli001.github.io/posts/15961.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://wangchuanli001.github.io" target="_blank">Sky & Sea</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">阿里云</a><a class="post-meta__tags" href="/tags/%E8%84%9A%E6%89%8B%E6%9E%B6/">脚手架</a><a class="post-meta__tags" href="/tags/springboot/">springboot</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/06/29/dOAJLNvkMh8ctrB.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><button class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="/img/wechat.jpg" alt="wechat" onclick="window.open('/img/wechat.jpg')"/><div class="post-qr-code__desc">wechat</div></li><li class="reward-item"><img class="post-qr-code__img" src="/img/alipay.jpg" alt="alipay" onclick="window.open('/img/alipay.jpg')"/><div class="post-qr-code__desc">alipay</div></li></ul></div></button></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/48730.html"><img class="prev-cover" data-src="https://i.loli.net/2020/06/29/dOAJLNvkMh8ctrB.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Q：数据库连接过多 Too many connections</div></div></a></div><div class="next-post pull-right"><a href="/posts/3791.html"><img class="next-cover" data-src="https://i.loli.net/2020/06/19/NbXetJWUwHQEC9z.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">使用pm2在Linux后台监控hexo运行</div></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: '052d9d6486112e93fa50',
+  clientSecret: '6fea35bfb7a17521694a95f705683622976d2f53',
+  repo: 'gitalk',
+  owner: 'wangchuanli001',
+  admin: ['wangchuanli001'],
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN',
+  perPage: 10,
+  distractionFreeMode: false,
+  pagerDirection: 'last',
+  createIssueManually: false,
+  updateCountCallback: commentCount
+})
+gitalk.render('gitalk-container')
+
+function commentCount(n){
+  try {
+    document.getElementsByClassName('gitalk-comment-count')[0].innerHTML= n
+  } catch (e) {
+    return false
+  }
+}</script></div></article></main><footer id="footer" style="background-image: url(https://i.loli.net/2020/06/29/YovFh1VuT29qzCN.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2020 By cl</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener external nofollow noreferrer"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener external nofollow noreferrer"><span>Butterfly</span></a></div><div class="footer_custom_text">Welcome to Here!</div><div class="icp"><a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener external nofollow noreferrer"><img class="icp-icon" src="/img/icp.png"/><span>皖ICP-978252321</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">简</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fas fa-comments"></i></a><button class="close" id="mobile-toc-button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener external nofollow noreferrer" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script defer id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script><script>var isChatBtn = true
+
+if (isChatBtn) {
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'wangchuangli-/community',
+    activationElement: '#chat_btn'
+  };
+} else {
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'wangchuangli-/community',
+  };
+
+  if (true) {
+    var gitterBtn = document.getElementsByClassName('gitter-open-chat-button')
+
+    function chatBtnHide () {
+      gitterBtn[0].style.display= 'none'
+    }
+
+    function chatBtnShow () {
+      gitterBtn[0].style.display= 'block'
+    }
+  }
+}
+</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="async" defer="defer"></script></body></html>
